@@ -3,7 +3,7 @@
 
 		<Label id="NeoSTORE" class="NeoSTORE" top="100"></Label>
 
-		<View class="view123" top="148px">
+		<View class="view123" top="50">
 			<Label class="falabel" text="\uf007"></Label>
 			<TextField class="textField123" id="user_name" hintText="UserName"/>
 		</View>
@@ -13,6 +13,12 @@
 		</View>
 		<View class="buttonContainer" top="100px">
 			<Button onClick="check_Login" class="button">LOGIN</Button>
+		</View>
+
+		<Label top="21" class="forgotPwd" onClick="GoToForgotPwd">Forgot Password ?</Label>
+		<View id="bottom" height="30" top="30%">
+			<Label class="dont_Acc">DONT HAVE AN ACCOUNT?</Label>
+			<Label class="falabelPlus" onClick="GoToRegister" text="\uf067"></Label>
 		</View>
 	</Window>
 </Alloy>

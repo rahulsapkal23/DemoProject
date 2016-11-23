@@ -1,0 +1,53 @@
+<Alloy>
+    <Window id="win" class="container" layout="vertical">
+        <ScrollView layout="vertical">
+            <View class="viewhead">
+                <Label class="falabel" id="back" onClick="goto_back" text="\uf053"></Label>
+                <Label color="white">Register</Label>
+            </View>
+            <Label id="NeoSTORE" class="NeoSTORE" top="50"></Label>
+            <View class="view123" id="viewfirst_name">
+                <Label class="falabel" text="\uf007"></Label>
+                <TextField id="first_name" class="textField123" hintText="please enter first name"/>
+            </View>
+            <View class="view123" id="viewlast_name">
+                <Label class="falabel" text="\uf007"></Label>
+                <TextField id="last_name" class="textField123" hintText="please enter last name"/>
+            </View>
+            <View class="view123" id="viewemail_id">
+                <Label class="falabel" text="\uf0e0"></Label>
+                <TextField id="email_id" class="textField123" hintText="please enter email_id"/>
+            </View>
+            <View class="view123" id="viewpassword">
+                <Label class="falabel" text="\uf13e"></Label>
+                <TextField id="password" class="textField123" hintText="please enter password" passwordMask="true"/>
+            </View>
+            <View class="view123" id="viewconform_password">
+                <Label class="falabel" text="\uf13e"></Label>
+                <TextField id="conform_password" class="textField123" hintText="please Re-enter password" passwordMask="true"/>
+            </View>
+
+            <View class="view123" id="viewphone_no">
+                <Label class="falabel" text="\uf10b"></Label>
+                <TextField id="phone_no" class="textField123" hintText="please enter phone_no"/>
+            </View>
+
+            <View class="view123" id="viewGender" layout="horizontal">
+                <Label class="radio1">Gender:</Label>
+                <Label class="radio1" onClick="clickMale" id="male" text="\uf1db"></Label>
+                <Label class="radio1" onClick="clickMale">Male</Label>
+                <Label class="radio1" onClick="clickFemale" id="female" text="\uf1db"></Label>
+                <Label class="radio1" onClick="clickFemale">Female</Label>
+            </View>
+
+            <View class="checkbox1" id="viewcheck">
+
+                <Label class="check" onClick="clickCheck" id="check" text="\uf0c8"></Label>
+                <Label class="agree">I agree Terms & Condition</Label>
+            </View>
+            <View class="buttonContainer">
+                <Button onClick="check_Register" class="button">REGISTER</Button>
+            </View>
+        </ScrollView>
+    </Window>
+</Alloy>
