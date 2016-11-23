@@ -1,0 +1,11 @@
+<Alloy>
+    <!-- <View id="WidView" backgroundColor="blue" height="70" top="20">
+        <Label id="back" left="10"></Label>
+        <Label id="tital"></Label>
+    </View> -->
+
+    <View id="WidView" class="viewhead">
+        <Label class="falabel" id="back" onClick="goto_back" text="\uf053"></Label>
+        <Label color="white">Register</Label>
+    </View>
+</Alloy>

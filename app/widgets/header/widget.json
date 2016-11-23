@@ -1,0 +1,14 @@
+{
+	"id": "header",
+	"name": "header",
+	"description" : "",
+	"author": "rahul",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2016",
+	"license":"Public Domain",
+	"min-alloy-version": "1.9.4",
+	"min-titanium-version":"5.0.10",
+	"tags":"",
+	"platforms":"android,ios"
+
+}

@@ -1,10 +1,11 @@
 <Alloy>
     <Window id="win" class="container" layout="vertical">
         <ScrollView layout="vertical">
-            <View class="viewhead">
+            <Widget id="header" src="header"/>
+            <!-- <View class="viewhead">
                 <Label class="falabel" id="back" onClick="goto_back" text="\uf053"></Label>
                 <Label color="white">Register</Label>
-            </View>
+            </View> -->
             <Label id="NeoSTORE" class="NeoSTORE" top="50"></Label>
             <View class="view123" id="viewfirst_name">
                 <Label class="falabel" text="\uf007"></Label>

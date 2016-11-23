@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-
+		<Widget id="header" src="header"/>
 		<Label id="NeoSTORE" class="NeoSTORE" top="100"></Label>
 
 		<View class="view123" top="50">

@@ -1,11 +1,6 @@
 ".container" : {
     backgroundImage: "imgpsh_fullsize.png"
 }
-".viewhead" : {
-    borderColor: "white",
-    top: "40px",
-    height: "40"
-}
 ".falabel" : {
     font: {
         fontFamily: 'FontAwesome',

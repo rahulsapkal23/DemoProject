@@ -1,0 +1,16 @@
+
+".falabel" : {
+    font: {
+        fontFamily: 'FontAwesome',
+        height: "48px",
+        width: "48px"
+    },
+    left: "10",
+    color: "white"
+}
+
+".viewhead" : {
+    borderColor: "white",
+    top: "40px",
+    height: "40"
+}
