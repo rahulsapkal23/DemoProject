@@ -1,7 +1,3 @@
-function goto_back() {
-    $.win.close();
-}
-
 function clickMale() {
     $.male.text = "\uf111";
     $.female.text = "\uf1db";

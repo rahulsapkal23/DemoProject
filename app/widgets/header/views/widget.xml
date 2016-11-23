@@ -5,7 +5,7 @@
     </View> -->
 
     <View id="WidView" class="viewhead">
-        <Label class="falabel" id="back" onClick="goto_back" text="\uf053"></Label>
+        <Label class="falabel" id="back" text="\uf053"></Label>
         <Label color="white">Register</Label>
     </View>
 </Alloy>

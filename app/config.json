@@ -8,5 +8,7 @@
 	"os:ios": {},
 	"os:mobileweb": {},
 	"os:windows": {},
-	"dependencies": {}
+	"dependencies":{
+    "header":"1.0"
+}
 }
