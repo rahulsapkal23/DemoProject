@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
 	<id>com.DemoProject.app</id>
 	<name>DemoProject</name>
 	<version>1.0</version>
@@ -7,8 +8,8 @@
 	<description/>
 	<copyright>not specified</copyright>
 	<icon>appicon.png</icon>
-	<fullscreen>false</fullscreen>
-	<navbar-hidden>false</navbar-hidden>
+	<fullscreen>true</fullscreen>
+	<navbar-hidden>true</navbar-hidden>
 	<analytics>true</analytics>
 	<guid>a7e084de-14d2-4376-9287-8b5d0e3fe7c2</guid>
 	<property name="ti.ui.defaultunit" type="string">dp</property>
@@ -40,19 +41,16 @@
 			</dict>
 		</plist>
 	</ios>
-	<android xmlns:android="http://schemas.android.com/apk/res/android">
-	</android>
+	<android xmlns:android="http://schemas.android.com/apk/res/android"></android>
 	<mobileweb>
-		<precache>
-		</precache>
+		<precache></precache>
 		<splash>
 			<enabled>true</enabled>
 			<inline-css-images>true</inline-css-images>
 		</splash>
 		<theme>default</theme>
 	</mobileweb>
-	<modules>
-	</modules>
+	<modules></modules>
 	<deployment-targets>
 		<target device="android">true</target>
 		<target device="ipad">true</target>
@@ -60,6 +58,7 @@
 		<target device="mobileweb">true</target>
 	</deployment-targets>
 	<sdk-version>6.1.0.v20161107130301</sdk-version>
-<plugins><plugin version="1.0">ti.alloy</plugin>
-</plugins>
+	<plugins>
+		<plugin version="1.0">ti.alloy</plugin>
+	</plugins>
 </ti:app>

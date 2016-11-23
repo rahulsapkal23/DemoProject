@@ -1,5 +1,18 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
+	<Window class="container" layout="vertical">
+
+		<Label id="NeoSTORE" class="NeoSTORE" top="100"></Label>
+
+		<View class="view123" top="148px">
+			<Label class="falabel" text="\uf007"></Label>
+			<TextField class="textField123" id="user_name" hintText="UserName"/>
+		</View>
+		<View class="view123">
+			<Label class="falabel" text="\uf0b1"></Label>
+			<TextField class="textField123" id="password" passwordMask="true" hintText="PassWord"/>
+		</View>
+		<View class="buttonContainer" top="100px">
+			<Button onClick="check_Login" class="button">LOGIN</Button>
+		</View>
 	</Window>
 </Alloy>
