@@ -1,70 +1,23 @@
-".container" : {
-	backgroundImage: "imgpsh_fullsize.png"
-}
-"Label" : {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
-}
-"#label" : {
-	font: {
-		fontSize: 12
-	}
-}
-".textField123" : {
-	color: "#FFFFFF",
-	height: Ti.UI.SIZE,
-	left: "30",
-	width: "350",
-	hintTextColor: "#FFFFFF",
-	backgroundColor: "transparent",
-	font: {
-		fontSize: "18"
-	}
-},
-".falabel" : {
-	font: {
-		fontFamily: 'FontAwesome',
-		height: "48px",
-		width: "48px"
-	},
-	left: "10",
-	color: "#FFFFFF"
-}
-".view123" : {
-	borderColor: "#FFFFFF",
-	left: "100px",
-	top: "40px",
-	right: "100px",
-	height: "40",
-	fontWeight: "5"
-}
-".buttonContainer" : {
-	left: "100px",
-	top: "40px",
-	right: "100px",
-	height: "40",
-	fontWeight: "35",
-	bottom: "40px"
-}
-".button" : {
-	backgroundColor: "#FFFFFF",
-	width: "100%",
-	height: "100%",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	borderRadius: 7,
-	font: {
-		fontSize: "26"
-	},
-	color: "#E91C1A"
-}
+
+
+
+
+
+
 ".forgotPwd" : {
 	color: "#FFFFFF",
 	font: {
 		fontSize: "18"
 	}
 }
-".dont_Acc" : {
+".dont_Acc[platform=ios formFactor=tablet]" : {
+
+	color: "#FFFFFF",
+	font: {
+		fontSize: "16"
+	}
+}
+".dont_Acc[platform=android ]" : {
 	left: "40px",
 	color: "#FFFFFF",
 	font: {

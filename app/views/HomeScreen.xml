@@ -1,0 +1,5 @@
+<Alloy>
+  <Window id="win" class="container" >
+    <Widget id="header" src="header"/>
+  </Window>
+</Alloy>

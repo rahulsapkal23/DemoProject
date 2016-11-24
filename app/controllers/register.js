@@ -1,3 +1,7 @@
+$.header.__views.tital.text = "Register";
+$.header.__views.back.addEventListener('click', function(e) {
+    $.win.close();
+});
 function clickMale() {
     $.male.text = "\uf111";
     $.female.text = "\uf1db";
@@ -7,22 +11,18 @@ function clickMale() {
 function clickFemale() {
     $.female.text = "\uf111";
     $.male.text = "\uf1db";
-
-
 }
-
+/* ######################### Validatoin Of CheckBox ######################### */
 function clickCheck() {
     if ($.check.text == "\uf0c8") {
         $.check.text = "\uf14a";
     } else {
         $.check.text = "\uf0c8";
     }
-
-
 }
 
 
-
+/* *********************************************checking Register Validation of each Field ************************************** */
 function check_Register(e) {
     var emailRE = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/;
     var mobRE = /^\d{10}$/;
@@ -92,6 +92,8 @@ function check_Register(e) {
         $.viewGender.backgroundColor = "transprent";
         $.viewcheck.backgroundColor = "transprent";
         alert("Congradulations Your Registration is Successful !");
+        var HomeScreen=Alloy.createController('HomeScreen').getView();
+        HomeScreen.open();
     }
 
 }

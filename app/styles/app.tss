@@ -24,11 +24,96 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+
+".view123[platform=ios formFactor=tablet]": {
+  	borderColor: "#FFFFFF",
+    	top: "40px",
+    width: "293",
+    	height: "40",
+
+      	fontWeight: "5"
+
+}
+
+    ".view123[platform=android ]" : {
+    	borderColor: "#FFFFFF",
+    	left: "100px",
+    	top: "40px",
+    	right: "100px",
+
+    	height: "40",
+    	fontWeight: "5"
+    }
+    ".buttonContainer[platform=ios formFactor=tablet]": {
+      width: "293",
+
+    }
+
+        ".buttonContainer[platform=android ]" : {
+          left: "100px",
+        right: "100px",
+        }
+
+
+
+
 ".NeoSTORE" : {
     color: "#FFFFFF",
     font: {
         fontSize: 45,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontFamily: 'ufonts.com_gotham-bold-1-opentype',
     },
     text: "NeoSTORE"
 }
+".container" : {
+	backgroundImage: "imgpsh_fullsize.png"
+}
+".falabel[platform=android ]" : {
+    font: {
+        fontFamily: 'FontAwesome',
+        height: "16",
+        width: "16"
+    },
+    left: "10",
+    color: "#FFFFFF"
+}
+".falabel[platform=ios formFactor=tablet]" : {
+    font: {
+        fontFamily: 'FontAwesome',
+        height: "18",
+        width: "18"
+    },
+    left: "10",
+    color: "#FFFFFF"
+}
+".buttonContainer" : {
+
+	top: "40px",
+
+	height: "40",
+	fontWeight: "35",
+	bottom: "40px"
+}
+".button" : {
+	backgroundColor: "#FFFFFF",
+	width: "100%",
+	height: "100%",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	borderRadius: 7,
+	font: {
+		fontSize: "26"
+	},
+	color: "#E91C1A"
+}
+".textField123" : {
+	color: "#FFFFFF",
+	height: Ti.UI.SIZE,
+	left: "30",
+	width: "350",
+	hintTextColor: "#FFFFFF",
+	backgroundColor: "transparent",
+	font: {
+		fontSize: "18"
+	}
+},

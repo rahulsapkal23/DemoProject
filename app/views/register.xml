@@ -2,44 +2,40 @@
     <Window id="win" class="container" layout="vertical">
         <ScrollView layout="vertical">
             <Widget id="header" src="header"/>
-            <!-- <View class="viewhead">
-                <Label class="falabel" id="back" onClick="goto_back" text="\uf053"></Label>
-                <Label color="white">Register</Label>
-            </View> -->
-            <Label id="NeoSTORE" class="NeoSTORE" top="50"></Label>
+            <Label id="NeoSTORE" class="NeoSTORE" top="40"></Label>
             <View class="view123" id="viewfirst_name">
                 <Label class="falabel" text="\uf007"></Label>
-                <TextField id="first_name" class="textField123" hintText="please enter first name"/>
+                <TextField id="first_name" class="textField123" hintText="First Name"/>
             </View>
             <View class="view123" id="viewlast_name">
                 <Label class="falabel" text="\uf007"></Label>
-                <TextField id="last_name" class="textField123" hintText="please enter last name"/>
+                <TextField id="last_name" class="textField123" hintText="Last Name"/>
             </View>
             <View class="view123" id="viewemail_id">
                 <Label class="falabel" text="\uf0e0"></Label>
-                <TextField id="email_id" class="textField123" hintText="please enter email_id"/>
+                <TextField id="email_id" class="textField123" hintText="Email"/>
             </View>
             <View class="view123" id="viewpassword">
                 <Label class="falabel" text="\uf13e"></Label>
-                <TextField id="password" class="textField123" hintText="please enter password" passwordMask="true"/>
+                <TextField id="password" class="textField123" hintText="Password" passwordMask="true"/>
             </View>
             <View class="view123" id="viewconform_password">
                 <Label class="falabel" text="\uf13e"></Label>
-                <TextField id="conform_password" class="textField123" hintText="please Re-enter password" passwordMask="true"/>
+                <TextField id="conform_password" class="textField123" hintText="Conform Password" passwordMask="true"/>
             </View>
-
-            <View class="view123" id="viewphone_no">
-                <Label class="falabel" text="\uf10b"></Label>
-                <TextField id="phone_no" class="textField123" hintText="please enter phone_no"/>
-            </View>
-
-            <View class="view123" id="viewGender" layout="horizontal">
+            <View class="view123" id="viewGender" borderColor="transparent" layout="horizontal">
                 <Label class="radio1">Gender:</Label>
                 <Label class="radio1" onClick="clickMale" id="male" text="\uf1db"></Label>
                 <Label class="radio1" onClick="clickMale">Male</Label>
                 <Label class="radio1" onClick="clickFemale" id="female" text="\uf1db"></Label>
                 <Label class="radio1" onClick="clickFemale">Female</Label>
             </View>
+            <View class="view123" id="viewphone_no">
+                <Label class="falabel" text="\uf10b"></Label>
+                <TextField id="phone_no" class="textField123" hintText="Phone No"/>
+            </View>
+
+
 
             <View class="checkbox1" id="viewcheck">
 

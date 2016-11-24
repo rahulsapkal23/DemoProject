@@ -1,31 +1,7 @@
-".container" : {
-    backgroundImage: "imgpsh_fullsize.png"
-}
-".falabel" : {
-    font: {
-        fontFamily: 'FontAwesome',
-        height: "48px",
-        width: "48px"
-    },
-    left: "10",
-    color: "white"
-}
-".view123" : {
-    borderColor: "white",
-    left: "100px",
-    top: "40px",
-    right: "100px",
-    height: "40",
-    fontWeight: "5"
-}
-".textField123" : {
-    color: "white",
-    height: Ti.UI.SIZE,
-    left: "30",
-    width: "350",
-    hintTextColor: "white",
-    backgroundColor: "transparent"
-},
+
+
+
+
 ".radio1" : {
     font: {
         fontFamily: 'FontAwesome',
@@ -78,20 +54,4 @@
         fontSize: "15"
     },
     color: "white"
-}
-".buttonContainer" : {
-    left: "100px",
-    top: "40px",
-    right: "100px",
-    height: "40",
-    fontWeight: "5",
-    bottom: "40px"
-}
-".button" : {
-    backgroundColor: "white",
-    width: "80%",
-    height: "100%",
-    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-    borderRadius: 7,
-    color: "red"
 }
