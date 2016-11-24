@@ -92,10 +92,16 @@ function check_Register(e) {
         $.viewphone_no.backgroundColor = "transprent";
         $.viewGender.backgroundColor = "transprent";
         $.viewcheck.backgroundColor = "transprent";
-        // alert("Congradulations Your Registration is Successful !");
         GoToAPI();
 
+
+
     }
+
+
+
+
+
 
 }
 
@@ -108,6 +114,7 @@ function GoToAPI() {
 
 
     // HomeScreen.open();
+
 
 
     var data = {
@@ -126,6 +133,7 @@ function GoToAPI() {
     var xhr = Ti.Network.createHTTPClient();
     xhr.onload = function(e) {
         //handle response, which at minimum will be an HTTP status code
+
         Ti.API.info(JSON.stringify(e));
         Ti.API.info(e);
         Ti.API.info("xhr.load");
@@ -134,12 +142,14 @@ function GoToAPI() {
     xhr.onerror = function(e) {
         //handle response, which at minimum will be an HTTP status code
         Ti.API.info(JSON.stringify(e));
+
         Ti.API.info("xhr.responseData");
         Ti.API.info(xhr.responseData);
 
     };
 
     xhr.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/register');
+
     // xhr.setRequestHeader("Content-Type", "application/json")
     //multipart/form-data
     xhr.send(data);
@@ -147,4 +157,6 @@ function GoToAPI() {
     Ti.API.info("rhjhfhf" + xhr.responseData);
     // var HomeScreen = Alloy.createController('HomeScreen').getView();
     // HomeScreen.open();
+
+
 }

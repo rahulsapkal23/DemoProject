@@ -1,4 +1,3 @@
-$.index.open();
 $.header.__views.tital.text = "Home";
 $.header.__views.back.text = " ";
 
@@ -25,3 +24,4 @@ function GoToRegister(e) {
     var w = Alloy.createController('register').getView();
     w.open();
 }
+$.index.open();
