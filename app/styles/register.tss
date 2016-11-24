@@ -33,9 +33,14 @@
     left: "40px",
     color: "white"
 }
-".checkbox1" : {
+".checkbox1[platform=ios formFactor=tablet]":{
+  width: "293",
+}
+".checkbox1[platform=android ]":{
     left: "100px",
-    right: "100px",
+      right: "100px",
+}
+".checkbox1" : {
     height: "70",
     fontWeight: "5"
 }

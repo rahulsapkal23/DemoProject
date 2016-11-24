@@ -12,7 +12,7 @@ if (Ti.Platform.osname == "android") {
     $.bottom.top = "15%";
 }
 else {
-  $.bottom.top = "25%";
+  $.bottom.top = "40%";
 }
 
 function GoToForgotPwd(e) {
