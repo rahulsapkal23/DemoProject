@@ -1,5 +1,26 @@
 <Alloy>
-  <Window id="win" class="container" >
+  <Window id="win" class="container" layout="vertical" >
     <Widget id="header" src="header"/>
+    <View backgroundColor="lime" height="684px"></View>
+<View height="540px" backgroundColor="pink" layout="horizontal">
+<View height="485px" width="695px" left="40px" top="40px" backgroundColor="gray"><Label onClick="ListProduct">Table</Label></View>
+<View height="485px" width="695px" left="40px" top="40px" backgroundColor="gray" ><Label onClick="ListProduct">Sofas</Label></View>
+</View>
+<View height="540px" backgroundColor="pink" layout="horizontal">
+<View height="485px" width="695px" left="40px" top="40px" backgroundColor="gray" ><Label onClick="ListProduct">Chairs</Label></View>
+<View height="485px" width="695px" left="40px" top="40px" backgroundColor="gray" ><Label onClick="ListProduct">CupBurds</Label></View>
+</View>
+<!--
+<ListView  height="970px">
+  <ListSection  >
+                 <ListItem height="485px"  backgroundColor="pink">
+</ListItem>
+             </ListSection>
+             <ListSection >
+                            <ListItem height="485px"  backgroundColor="blue">
+           </ListItem>
+                        </ListSection>
+</ListView> -->
+
   </Window>
 </Alloy>

@@ -1,0 +1,16 @@
+<Alloy>
+  <Window id="win" class="container" layout="vertical" >
+    <Widget id="header" src="header"/>
+
+
+<ListView  >
+  <ListSection  >
+                 <ListItem height="270px"  backgroundColor="pink"/>
+<ListItem height="270px"  backgroundColor="blue" />
+<ListItem height="270px"  backgroundColor="green"/>
+<ListItem height="270px"  backgroundColor="black" />
+
+ </ListSection>
+</ListView>
+  </Window>
+</Alloy>
