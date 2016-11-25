@@ -92,12 +92,12 @@ function check_Register(e) {
         $.viewphone_no.backgroundColor = "transprent";
         $.viewGender.backgroundColor = "transprent";
         $.viewcheck.backgroundColor = "transprent";
-        GoToAPI();
+        GoToRegisterAPI();
 
     }
 }
 
-function GoToAPI() {
+function GoToRegisterAPI() {
     var data = {
         first_name: $.first_name.value,
         last_name: $.last_name.value,
@@ -110,20 +110,21 @@ function GoToAPI() {
     Ti.API.info(data);
     var xhr = Ti.Network.createHTTPClient();
     xhr.onload = function(e) {
+        var response = JSON.parse(xhr.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
-        //  Ti.API.info((xhr.getResponseText()).message);
-        alert("Secessful Regestration");
+        Ti.API.info(response.message);
+        alert(response.message);
         var HomeScreen = Alloy.createController('HomeScreen').getView();
         HomeScreen.open();
 
     };
     xhr.onerror = function(e) {
-
+        var response = JSON.parse(xhr.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("xhr.responseText onerror" + xhr.getResponseText());
-        //Ti.API.info((xhr.getResponseText()).message);
-        alert("Unsecessful Regestration");
+        Ti.API.info(response.message);
+        alert(response.message);
 
     };
     xhr.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/register');
