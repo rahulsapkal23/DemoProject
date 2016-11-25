@@ -94,29 +94,10 @@ function check_Register(e) {
         $.viewcheck.backgroundColor = "transprent";
         GoToAPI();
 
-
-
     }
-
-
-
-
-
-
 }
 
 function GoToAPI() {
-
-
-
-
-
-
-
-    // HomeScreen.open();
-
-
-
     var data = {
         first_name: $.first_name.value,
         last_name: $.last_name.value,
@@ -126,37 +107,26 @@ function GoToAPI() {
         gender: "male",
         phone_no: $.phone_no.value
     }
-
     Ti.API.info(data);
-
-
     var xhr = Ti.Network.createHTTPClient();
     xhr.onload = function(e) {
-        //handle response, which at minimum will be an HTTP status code
+        Ti.API.info("json stringfy load" + JSON.stringify(e));
+        Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
+        //  Ti.API.info((xhr.getResponseText()).message);
+        alert("Secessful Regestration");
+        var HomeScreen = Alloy.createController('HomeScreen').getView();
+        HomeScreen.open();
 
-        Ti.API.info(JSON.stringify(e));
-        Ti.API.info(e);
-        Ti.API.info("xhr.load");
-        Ti.API.info(xhr.responseData);
     };
     xhr.onerror = function(e) {
-        //handle response, which at minimum will be an HTTP status code
-        Ti.API.info(JSON.stringify(e));
 
-        Ti.API.info("xhr.responseData");
-        Ti.API.info(xhr.responseData);
+        Ti.API.info(" onerror" + JSON.stringify(e));
+        Ti.API.info("xhr.responseText onerror" + xhr.getResponseText());
+        //Ti.API.info((xhr.getResponseText()).message);
+        alert("Unsecessful Regestration");
 
     };
-
     xhr.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/register');
-
-    // xhr.setRequestHeader("Content-Type", "application/json")
-    //multipart/form-data
     xhr.send(data);
-
-    Ti.API.info("rhjhfhf" + xhr.responseData);
-    // var HomeScreen = Alloy.createController('HomeScreen').getView();
-    // HomeScreen.open();
-
 
 }
