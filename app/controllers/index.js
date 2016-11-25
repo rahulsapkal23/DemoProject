@@ -1,18 +1,19 @@
 $.index.open();
 $.header.__views.tital.text = "Home";
 $.header.__views.back.text = " ";
+
 function check_Login(e) {
     Ti.API.info("inside check_Login");
-    var HomeScreen=Alloy.createController('HomeScreen').getView();
+
+    var HomeScreen = Alloy.createController('HomeScreen').getView();
     HomeScreen.open();
 }
 
 
 if (Ti.Platform.osname == "android") {
     $.bottom.top = "15%";
-}
-else {
-  $.bottom.top = "40%";
+} else {
+    $.bottom.top = "40%";
 }
 
 function GoToForgotPwd(e) {

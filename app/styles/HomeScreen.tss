@@ -1,1 +1,33 @@
-
+".HomeScreenItem[platform=ios formFactor=tablet]" : {
+    height: "485px",
+    width: "695px",
+    left: "40px",
+    top: "40px",
+    backgroundColor: "gray"
+}
+".HomeScreenItem[platform=android ]" : {
+    height: "80%",
+    width: "40%",
+    left: "15px",
+    top: "15px",
+    backgroundColor: "gray"
+}
+".HomeScreenItemContainer[platform=android]" : {
+    height: "25%",
+    backgroundColor: "pink",
+    layout: "horizontal"
+}
+".HomeScreenItemContainer[platform=ios formFactor=tablet]" : {
+    height: "540px",
+    backgroundColor: "pink",
+    layout: "horizontal",
+    borderColor: "navy"
+}
+".HomeScreenScrollable[platform=ios formFactor=tablet]" : {
+    backgroundColor: "lime",
+    height: "684px"
+}
+".HomeScreenScrollable[platform=android]" : {
+    backgroundColor: "lime",
+    height: "686px"
+}

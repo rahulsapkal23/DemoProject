@@ -1,0 +1,29 @@
+".container" : {
+	backgroundColor: 'green',
+	top: 20
+}
+'Window' : {
+	navBarHidden: true,
+	tabBarHidden: true,
+	fullscreen: true
+}
+".TableViewRowcontainer" : {
+	borderColor: "pink",
+	backgroundColor: "transparent",
+	selectedBackgroundColor: 'green',
+	height: 110
+}
+".ImageViewcontainer" : {
+	left: 10,
+	top: 5,
+	width: 50,
+	height: 50
+}
+".Labelcontainer" : {
+	color: '#576996',
+	font: {
+		fontFamily: 'Arial',
+		fontWeight: 'bold',
+		fontSize: '10'
+	}
+}

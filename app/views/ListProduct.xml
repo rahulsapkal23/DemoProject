@@ -3,14 +3,16 @@
     <Widget id="header" src="header"/>
 
 
-<ListView  >
-  <ListSection  >
-                 <ListItem height="270px"  backgroundColor="pink"/>
-<ListItem height="270px"  backgroundColor="blue" />
-<ListItem height="270px"  backgroundColor="green"/>
-<ListItem height="270px"  backgroundColor="black" />
-
- </ListSection>
-</ListView>
+    <ListView id="dynamicListView">
+  			<Templates>
+  				<ItemTemplate name="image_title" height="100">
+  					<View layout="horizontal" left="15">
+  						<ImageView bindId="image" height="70" width="70" onClick="WebView" id="image"/>
+  						<Label bindId="label" class="Labelcontainer" id="label1"/>
+  					</View>
+  				</ItemTemplate>
+  			</Templates>
+  			<ListSection/>
+  		</ListView>
   </Window>
 </Alloy>

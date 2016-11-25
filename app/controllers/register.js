@@ -2,6 +2,7 @@ $.header.__views.tital.text = "Register";
 $.header.__views.back.addEventListener('click', function(e) {
     $.win.close();
 });
+
 function clickMale() {
     $.male.text = "\uf111";
     $.female.text = "\uf1db";
@@ -91,9 +92,59 @@ function check_Register(e) {
         $.viewphone_no.backgroundColor = "transprent";
         $.viewGender.backgroundColor = "transprent";
         $.viewcheck.backgroundColor = "transprent";
-        alert("Congradulations Your Registration is Successful !");
-        var HomeScreen=Alloy.createController('HomeScreen').getView();
-        HomeScreen.open();
+        // alert("Congradulations Your Registration is Successful !");
+        GoToAPI();
+
     }
 
+}
+
+function GoToAPI() {
+
+
+
+
+
+
+
+    // HomeScreen.open();
+
+
+    var data = {
+        first_name: $.first_name.value,
+        last_name: $.last_name.value,
+        email: $.email_id.value,
+        password: $.password.value,
+        confirm_password: $.conform_password.value,
+        gender: "male",
+        phone_no: $.phone_no.value
+    }
+
+    Ti.API.info(data);
+
+
+    var xhr = Ti.Network.createHTTPClient();
+    xhr.onload = function(e) {
+        //handle response, which at minimum will be an HTTP status code
+        Ti.API.info(JSON.stringify(e));
+        Ti.API.info(e);
+        Ti.API.info("xhr.load");
+        Ti.API.info(xhr.responseData);
+    };
+    xhr.onerror = function(e) {
+        //handle response, which at minimum will be an HTTP status code
+        Ti.API.info(JSON.stringify(e));
+        Ti.API.info("xhr.responseData");
+        Ti.API.info(xhr.responseData);
+
+    };
+
+    xhr.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/register');
+    // xhr.setRequestHeader("Content-Type", "application/json")
+    //multipart/form-data
+    xhr.send(data);
+
+    Ti.API.info("rhjhfhf" + xhr.responseData);
+    // var HomeScreen = Alloy.createController('HomeScreen').getView();
+    // HomeScreen.open();
 }
