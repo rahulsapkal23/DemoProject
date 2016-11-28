@@ -41,48 +41,86 @@ function ListViewofProduct(Productdata) {
   Ti.API.info(Productdata);
   Ti.API.info("imageraj"+JSON.parse(Productdata).data.length);
   //Ti.API.info("imageraj"+JSON.stringify(Productdata).status);
-// for(var i=0;i<JSON.parse(Productdata).data.length;i++){
-  var items = [{
-      "label": {
-          text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
-      },
-      "image": {
-          image: "JSON.parse(Productdata).data[0].product_images",
-          url: "https://en.wikipedia.org/wiki/Aamir_Khan"
-      },
-
-      "template": "image_title"
-  // }];
-
-},
-
-  {
-      "label": {
-          text: "born 28 September 1982 is an Indian actor and producer"
-      },
-      "image": {
-          image: "http://customerkart.com/wp-content/uploads/2016/01/ranbir-kapoor-wallpapers-300x215.jpg",
-
-          url: "https://en.wikipedia.org/wiki/Ranbir_Kapoor"
-      },
-
-      "template": "image_title"
-  }, {
-      "label": {
-          text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
-      },
-      "image": {
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Salmanrampwalk.png/220px-Salmanrampwalk.png",
-          url: "https://en.wikipedia.org/wiki/Salman_Khan"
-      },
-
-      "template": "image_title"
-
-  }];
 
 
-
+/*var data = [];
+for (var i = 0; i < tasks.length; i++) {
+    data.push({
+        // Maps to the title component in the template
+        // Sets the text property of the Label component
+        title : { text: tasks[i].name },
+        // Maps to the subtitle component in the template
+        // Sets the text property of the Label component
+        subtitle : { text : tasks[i].person },
+        // Maps to the pic component in the template
+        // Sets the image property of the ImageView component
+        pic : { image : tasks[i].icon },
+        // Sets the regular list data properties
+        properties : {
+            itemId: tasks[i].id,
+            accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE,
+        }
+    });
 }
+
+var section = Ti.UI.createListSection();
+section.setItems(data);
+listView.sections = [section];*/
+
+
+
+
+
+var items=[];
+
+ for(var i=0;i<JSON.parse(Productdata).data.length;i++){
+items.push({"label": {
+    text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
+},"image": {
+    image: JSON.parse(Productdata).data[i].product_images,
+    url: "https://en.wikipedia.org/wiki/Aamir_Khan"
+ },"template": "image_title"}) ;
+ }
+ $.dynamicListView.sections[0].setItems(items, {
+     animated: "false"
+ });
+ }
+ // = [{
+//
+//
+//
+//
+//   // }];
+//
+// },
+//
+//   {
+//       "label": {
+//           text: "born 28 September 1982 is an Indian actor and producer"
+//       },
+//       "image": {
+//           image: "http://customerkart.com/wp-content/uploads/2016/01/ranbir-kapoor-wallpapers-300x215.jpg",
+//
+//           url: "https://en.wikipedia.org/wiki/Ranbir_Kapoor"
+//       },
+//
+//       "template": "image_title"
+//   }, {
+//       "label": {
+//           text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
+//       },
+//       "image": {
+//           image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Salmanrampwalk.png/220px-Salmanrampwalk.png",
+//           url: "https://en.wikipedia.org/wiki/Salman_Khan"
+//       },
+//
+//       "template": "image_title"
+//
+//   }];
+
+
+
+
 
 
 //$.aamir.image = data.image[0];
@@ -93,9 +131,7 @@ function WebView(e) {
 
 }
 
-$.dynamicListView.sections[0].setItems(items, {
-    animated: "false"
-});
+
 
 
 $.win.open();
