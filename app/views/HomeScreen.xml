@@ -1,35 +1,71 @@
 <Alloy>
-    <Window id="HomeScreenwin" class="container" layout="vertical">
-        <Widget id="header" src="header"/>
-        <View class="HomeScreenScrollable"></View>
-        <View class="HomeScreenItemContainer">
-            <View class="HomeScreenItem">
-                <Label onClick="ListProduct" productcategoryid="1">Table</Label>
-            </View>
-            <View class="HomeScreenItem">
-                <Label onClick="ListProduct" productcategoryid="2">Sofas</Label>
-            </View>
-        </View>
-        <View class="HomeScreenItemContainer" backgroundColor="lime">
-            <View class="HomeScreenItem">
-                <Label onClick="ListProduct" productcategoryid="3">Chairs</Label>
-            </View>
-            <View class="HomeScreenItem">
-                <Label onClick="ListProduct" productcategoryid="4">Cupbords</Label>
-            </View>
-        </View>
+    <Window id="HomeScreenwin" class="container" >
 
-        <!--
-<ListView  height="970px">
-  <ListSection  >
-                 <ListItem height="485px"  backgroundColor="pink">
-</ListItem>
-             </ListSection>
-             <ListSection >
-                            <ListItem height="485px"  backgroundColor="blue">
-           </ListItem>
-                        </ListSection>
-</ListView> -->
+      <ScrollableView id="scrollableView"  >
+          <View id="view1"  layout="vertical">
+            <Widget id="header" src="header"/>
+            <View class="HomeScreenScrollable" layout="horizontal">
+
+
+
+                      <ScrollableView id="scrollableView1" showPagingControl="true">
+                          <View id="view11" backgroundColor="#123">
+                             <Label>View 1</Label>
+                          </View>
+                          <View id="view21" backgroundColor="#246">
+                           <Label>View 2</Label>
+
+                           </View>
+                          <View id="view31" backgroundColor="#48b">
+                           <Label>View 3</Label>
+                           </View>
+                           <View id="view41" backgroundColor="#48b">
+                            <Label>View 4</Label>
+                            </View>
+                      </ScrollableView>
+
+
+
+            </View>
+            <View layout="vertical">
+            <View class="HomeScreenItemContainer">
+                <View class="HomeScreenItem">
+                    <Label onClick="ListProduct" productcategoryid="1">Table</Label>
+                </View>
+                <View class="HomeScreenItem">
+                    <Label onClick="ListProduct" productcategoryid="2">Sofas</Label>
+                </View>
+            </View>
+            <View class="HomeScreenItemContainer" backgroundColor="lime">
+                <View class="HomeScreenItem">
+                    <Label onClick="ListProduct" productcategoryid="3">Chairs</Label>
+                </View>
+                <View class="HomeScreenItem">
+                    <Label onClick="ListProduct" productcategoryid="4">Cupbords</Label>
+                </View>
+            </View></View>
+          </View>
+
+
+
+
+
+
+        <View id="view2" backgroundColor="#246">
+
+              <View backgroundColor="lime" height="300"></View>
+            	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+
+              	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+                	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+                  	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+                    	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+
+
+
+         </View>
+
+      </ScrollableView>
 
     </Window>
 </Alloy>

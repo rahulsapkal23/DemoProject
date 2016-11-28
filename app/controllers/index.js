@@ -63,6 +63,6 @@ function GoToLoginAPI() {
 
 }
 
-$.index.open();
-// var window = Alloy.createController('MyProfile').getView();
-// window.open();
+// $.index.open();
+var window = Alloy.createController('HomeScreen').getView();
+window.open();
