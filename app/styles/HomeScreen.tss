@@ -3,49 +3,65 @@
     width: "695px",
     left: "40px",
     top: "40px",
-    backgroundColor: "gray"
+    backgroundColor: "red"
 }
 ".HomeScreenItem[platform=android ]" : {
     height: "80%",
     width: "40%",
-    left: "15px",
-    top: "15px",
-    backgroundColor: "gray"
+    left: "35px",
+    top: "35px",
+    backgroundColor: "red"
 }
 ".HomeScreenItemContainer[platform=android]" : {
-    height: "25%",
-    backgroundColor: "pink",
+    height: "45%",
+    backgroundColor: "white",
     layout: "horizontal"
 }
 ".HomeScreenItemContainer[platform=ios formFactor=tablet]" : {
     height: "540px",
-    backgroundColor: "pink",
-    layout: "horizontal",
-    borderColor: "navy"
+    backgroundColor: "white",
+    layout: "horizontal"
 }
 ".HomeScreenScrollable[platform=ios formFactor=tablet]" : {
-    backgroundColor: "lime",
+    backgroundColor: "white",
     height: "684px"
 }
 ".HomeScreenScrollable[platform=android]" : {
-    backgroundColor: "lime",
+    backgroundColor: "white",
     height: "686px"
 }
-".ListItem": {
-	height: Ti.UI.FILL,
-	color: "navy",
-top:2,
-	backgroundColor: "#ffffff",
+".ListItem" : {
+    height: Ti.UI.FILL,
+    color: "navy",
+    top: 2,
+    backgroundColor: "#ffffff"
 }
-
-".ViewItem": {
-	height: "135px",
-	backgroundColor: "black"
+".ViewItem" : {
+    height: "135px",
+    backgroundColor: "black"
 }
-
-".LabelText": {
-	color: "white",
-	font: {
-		fontSize: "40"
-	}
+".LabelText[platform=ios formFactor=tablet]" : {
+    color: "white",
+    font: {
+        fontSize: "30"
+    }
+}
+".LabelText[platform=android]" : {
+    color: "white",
+    font: {
+        fontSize: "30"
+    }
+}
+"#labicon" : {
+    color: "navy",
+    font: {
+        fontFamily: "neostores"
+    }
+}
+".iconmoon" : {
+    color: "white",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "75%"
+    }
 }
