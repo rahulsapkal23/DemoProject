@@ -17,8 +17,7 @@ var client = Ti.Network.createHTTPClient({
       var response = JSON.parse(client.getResponseText());
       Ti.API.info("json stringfy load" + JSON.stringify(e));
       Ti.API.info("client.responseText onload" + client.getResponseText());
-      Ti.API.info(response.message);
-      alert(response.message);
+      ListViewofProduct(client.getResponseText())
     },
     // function called when an error occurs, including a timeout
     onerror : function(e) {
@@ -34,47 +33,56 @@ var client = Ti.Network.createHTTPClient({
 });
 // Prepare the connection.
 //client.open("GET", url,product_category_id);
-client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/products/getList?product_category_id=1");
+client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/products/getList?product_category_id="+args);
 // Send the request.
 client.send();
 
-var items = [{
-    "label": {
-        text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
-    },
-    "image": {
-        image: "http://www.showbizbites.com/wp-content/uploads/2013/07/Aamir-Khan-Showbiz-Bites.jpg",
-        url: "https://en.wikipedia.org/wiki/Aamir_Khan"
-    },
+function ListViewofProduct(Productdata) {
+  Ti.API.info(Productdata);
+  Ti.API.info("imageraj"+JSON.parse(Productdata).data.length);
+  //Ti.API.info("imageraj"+JSON.stringify(Productdata).status);
+// for(var i=0;i<JSON.parse(Productdata).data.length;i++){
+  var items = [{
+      "label": {
+          text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
+      },
+      "image": {
+          image: "JSON.parse(Productdata).data[0].product_images",
+          url: "https://en.wikipedia.org/wiki/Aamir_Khan"
+      },
 
-    "template": "image_title"
-}, {
-    "label": {
-        text: "born 28 September 1982 is an Indian actor and producer"
-    },
-    "image": {
-        image: "http://customerkart.com/wp-content/uploads/2016/01/ranbir-kapoor-wallpapers-300x215.jpg",
+      "template": "image_title"
+  // }];
 
-        url: "https://en.wikipedia.org/wiki/Ranbir_Kapoor"
-    },
+},
 
-    "template": "image_title"
-}, {
-    "label": {
-        text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
-    },
-    "image": {
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Salmanrampwalk.png/220px-Salmanrampwalk.png",
-        url: "https://en.wikipedia.org/wiki/Salman_Khan"
-    },
+  {
+      "label": {
+          text: "born 28 September 1982 is an Indian actor and producer"
+      },
+      "image": {
+          image: "http://customerkart.com/wp-content/uploads/2016/01/ranbir-kapoor-wallpapers-300x215.jpg",
 
-    "template": "image_title"
+          url: "https://en.wikipedia.org/wiki/Ranbir_Kapoor"
+      },
 
-}];
-$.dynamicListView.sections[0].setItems(items, {
-    animated: "false"
-});
+      "template": "image_title"
+  }, {
+      "label": {
+          text: "born on 14 March 1965 is an Indian film actor, director and producer. Through his career in "
+      },
+      "image": {
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Salmanrampwalk.png/220px-Salmanrampwalk.png",
+          url: "https://en.wikipedia.org/wiki/Salman_Khan"
+      },
 
+      "template": "image_title"
+
+  }];
+
+
+
+}
 
 
 //$.aamir.image = data.image[0];
@@ -85,7 +93,9 @@ function WebView(e) {
 
 }
 
-
+$.dynamicListView.sections[0].setItems(items, {
+    animated: "false"
+});
 
 
 $.win.open();
