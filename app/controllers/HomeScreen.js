@@ -4,7 +4,10 @@ $.header.__views.back.addEventListener('click', function(e) {
     $.win.close();
 });
 
-function ListProduct(e){
-  var ListProduct=Alloy.createController('ListProduct').getView();
+// Label.addEventListener("click",function () {
+//
+// })
+ function ListProduct(e){
+  var ListProduct=Alloy.createController('ListProduct','1').getView();
   ListProduct.open();
-}
+ }

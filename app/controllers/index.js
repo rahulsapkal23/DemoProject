@@ -16,7 +16,25 @@ if (Ti.Platform.osname == "android") {
 
 function GoToForgotPwd(e) {
     Ti.API.info("inside GotoforgotPwd");
+    $.passview.visible = false;
+    $.forgotgetpwd.text = "Get Password";
+    $.email_id.hintText = "Email";
+    $.button.title = "Send";
+    $.button.addEventListener('click',function(e)
+{
+   Titanium.API.info("You clicked the button");
+   $.index.open();
+});
+
+    // $.button.fireEvent()(click, function(e) {
+    //     $.index.open();
+    // });
+
+
+
 }
+
+
 
 function GoToRegister(e) {
     Ti.API.info("inside Register");

@@ -4,18 +4,18 @@
         <View class="HomeScreenScrollable"></View>
         <View class="HomeScreenItemContainer">
             <View class="HomeScreenItem">
-                <Label onClick="ListProduct">Table</Label>
+                <Label onClick="ListProduct" productcategoryid="1">Table</Label>
             </View>
             <View class="HomeScreenItem">
-                <Label onClick="ListProduct">Sofas</Label>
+                <Label onClick="ListProduct" productcategoryid="2">Sofas</Label>
             </View>
         </View>
         <View class="HomeScreenItemContainer" backgroundColor="lime">
             <View class="HomeScreenItem">
-                <Label onClick="ListProduct">Table</Label>
+                <Label onClick="ListProduct" productcategoryid="3">Chairs</Label>
             </View>
             <View class="HomeScreenItem">
-                <Label onClick="ListProduct">Sofas</Label>
+                <Label onClick="ListProduct" productcategoryid="4">Cupbords</Label>
             </View>
         </View>
 

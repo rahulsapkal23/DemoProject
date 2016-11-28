@@ -7,15 +7,16 @@
 			<Label class="falabel" text="\uf007"></Label>
 			<TextField class="textField123" id="email_id" hintText="UserName"/>
 		</View>
-		<View class="view123">
+		<View class="view123" id="passview">
 			<Label class="falabel" text="\uf0b1"></Label>
 			<TextField class="textField123" id="password" passwordMask="true" hintText="PassWord"/>
 		</View>
 		<View class="buttonContainer" top="100px">
-			<Button onClick="check_Login" class="button">LOGIN</Button>
+			<Button id="button" onClick="check_Login" class="button" title="LOGIN"></Button>
 		</View>
 
-		<Label top="21" class="forgotPwd" onClick="GoToForgotPwd">Forgot Password ?</Label>
+		<Label top="21" id="forgotgetpwd" class="forgotPwd" onClick="GoToForgotPwd">Forgot Password ?</Label>
+
 		<View id="bottom" height="30">
 			<Label class="dont_Acc">DONT HAVE AN ACCOUNT?</Label>
 			<Label class="falabelPlus" onClick="GoToRegister" text="\uf067"></Label>
