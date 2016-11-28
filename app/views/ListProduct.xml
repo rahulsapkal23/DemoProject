@@ -1,5 +1,5 @@
 <Alloy>
-  <Window id="win" class="container" layout="vertical" >
+  <Window id="ListProductwin" class="container" layout="vertical" >
     <Widget id="header" src="header"/>
 
 

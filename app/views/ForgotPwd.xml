@@ -1,0 +1,19 @@
+<Alloy>
+	<Window id="ForgotPwdWin"class="container" layout="vertical">
+		<Widget id="header" src="header"/>
+		<Label id="NeoSTORE" class="NeoSTORE" top="100"></Label>
+
+		<View class="view123" top="50">
+			<Label class="falabel" text="\uf007"></Label>
+			<TextField class="textField123" id="email_id" hintText="Email"/>
+		</View>
+
+		<View class="buttonContainer" top="100px">
+			<Button id="button" onClick="Send_Pwd" class="button" title="SEND"></Button>
+		</View>
+
+	
+
+
+	</Window>
+</Alloy>

@@ -1,49 +1,37 @@
-
-
+// ######################################### Setting Header #########################################
 $.header.__views.tital.text = "Home";
 $.header.__views.back.text = " ";
 
+// ######################################### checking login with API #########################################
 function check_Login(e) {
     Ti.API.info("inside check_Login");
+  // ############# function call of HTTP post req for API #################
     GoToLoginAPI();
-
 }
 
-
+// ######################################### platform spacific code #########################################
 if (Ti.Platform.osname == "android") {
     $.bottom.top = "15%";
 } else {
     $.bottom.top = "40%";
 }
 
-function GoToForgotPwd(e) {
-    Ti.API.info("inside GotoforgotPwd");
-    $.passview.visible = false;
-    $.forgotgetpwd.text = "Get Password";
-    $.email_id.hintText = "Email";
-    $.button.title = "Send";
-    $.button.addEventListener('click',function(e)
-{
-   Titanium.API.info("You clicked the button");
-   $.index.open();
-});
-
-    // $.button.fireEvent()(click, function(e) {
-    //     $.index.open();
-    // });
-
-
-
+// ######################################### forgot Password function call #########################################
+function ram(e) {
+    Ti.API.info("inside GoToRegister");
+    var ram = Alloy.createController('ForgotPwd').getView();
+    ram.open();
 }
 
 
 
 function GoToRegister(e) {
     Ti.API.info("inside Register");
-    var w = Alloy.createController('register').getView();
-    w.open();
+    var register = Alloy.createController('register').getView();
+    register.open();
 }
 
+// ######################################### making  HTTP POST request for API #########################################
 function GoToLoginAPI() {
     var data = {
         email: $.email_id.value,
@@ -76,3 +64,5 @@ function GoToLoginAPI() {
 }
 
 $.index.open();
+// var window = Alloy.createController('MyProfile').getView();
+// window.open();

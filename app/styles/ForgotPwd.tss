@@ -1,0 +1,28 @@
+".forgotPwd" : {
+	color: "#FFFFFF",
+	font: {
+		fontSize: "18"
+	}
+}
+".dont_Acc[platform=ios formFactor=tablet]" : {
+
+	color: "#FFFFFF",
+	font: {
+		fontSize: "16"
+	}
+}
+".dont_Acc[platform=android ]" : {
+	left: "40px",
+	color: "#FFFFFF",
+	font: {
+		fontSize: "16"
+	}
+}
+".falabelPlus" : {
+	font: {
+		fontFamily: 'FontAwesome',
+		fontSize: "16"
+	},
+	right: "40px",
+	color: "#FFFFFF"
+}

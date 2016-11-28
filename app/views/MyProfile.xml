@@ -1,0 +1,12 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+    <View backgroundColor="lime" height="300"></View>
+  	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+
+    	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+      	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+        	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+          	<View class="ViewItem" ><Label class="LabelText">My Profile</Label></View>
+
+	</Window>
+</Alloy>

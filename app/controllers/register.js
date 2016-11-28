@@ -1,6 +1,7 @@
+// ######################################### Setting Header #########################################
 $.header.__views.tital.text = "Register";
 $.header.__views.back.addEventListener('click', function(e) {
-    $.win.close();
+    $.Registerwin.close();
 });
 
 function clickMale() {
@@ -97,6 +98,7 @@ function check_Register(e) {
     }
 }
 
+// ######################################### making  HTTP POST request for API #########################################
 function GoToRegisterAPI() {
     var data = {
         first_name: $.first_name.value,
