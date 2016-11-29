@@ -49,12 +49,15 @@ client.send();
 
 function HomeScreenDetails(LoginDetails) {
 
+
     Ti.API.info("sfdds5523" + LoginDetails);
     Ti.API.info("565545" + JSON.parse(LoginDetails).data.product_categories[0].icon_image);
-    $.view11.backgroundImage = JSON.parse(LoginDetails).data.product_categories[0].icon_image;
-    $.view21.backgroundImage = JSON.parse(LoginDetails).data.product_categories[1].icon_image;
-    $.view31.backgroundImage = JSON.parse(LoginDetails).data.product_categories[2].icon_image;
-    $.view41.backgroundImage = JSON.parse(LoginDetails).data.product_categories[3].icon_image;
+    Ti.API.info(JSON.stringify($.view11.backgroundColor));
+    //$.view11.setBackgroundImage(LoginDetails.data.product_categories[1].icon_image);
+    $.view11.image = (JSON.parse(LoginDetails)).data.product_categories[0].icon_image;
+    $.view21.image = (JSON.parse(LoginDetails)).data.product_categories[1].icon_image;
+    $.view31.image = JSON.parse(LoginDetails).data.product_categories[2].icon_image;
+    $.view41.image = JSON.parse(LoginDetails).data.product_categories[3].icon_image;
 
 
 }

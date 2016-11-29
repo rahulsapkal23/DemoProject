@@ -7,10 +7,11 @@
                 <View class="HomeScreenScrollable" layout="horizontal">
 
                     <ScrollableView id="scrollableView1" showPagingControl="true" pageIndicatorColor="red" pagingControlTimeout="3000">
-                        <View id="view11" backgroundColor="#123"></View>
-                        <View id="view21" backgroundColor="#246"></View>
-                        <View id="view31" backgroundColor="#48b"></View>
-                        <View id="view41" backgroundColor="#48b"></View>
+                        <!-- <View id="view11"  backgroundColor="#123"></View> -->
+                        <ImageView id="view11" width="Ti.UI.FILL"></ImageView>
+                        <ImageView id="view21" width="Ti.UI.FILL"></ImageView>
+                        <ImageView id="view31" width="Ti.UI.FILL"></ImageView>
+                        <ImageView id="view41" width="Ti.UI.FILL"></ImageView>
                     </ScrollableView>
 
                 </View>
