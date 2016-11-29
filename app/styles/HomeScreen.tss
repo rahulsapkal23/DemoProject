@@ -6,8 +6,8 @@
     backgroundColor: "red"
 }
 ".HomeScreenItem[platform=android ]" : {
-    height: "80%",
-    width: "40%",
+    height: "100%",
+    width: "45%",
     left: "35px",
     top: "35px",
     backgroundColor: "red"
@@ -40,16 +40,68 @@
     height: "135px",
     backgroundColor: "black"
 }
-".LabelText[platform=ios formFactor=tablet]" : {
+".TableText[platform=ios formFactor=tablet]" : {
     color: "white",
+    top: "50px",
+    right: "50px",
     font: {
         fontSize: "30"
     }
 }
-".LabelText[platform=android]" : {
+".TableText[platform=android]" : {
     color: "white",
+    top: "35px",
+    right: "35px",
+    font: {
+        fontSize: "23"
+    }
+}
+".SofasText[platform=ios formFactor=tablet]" : {
+    color: "white",
+    left: "50px",
+    bottom: "50px",
     font: {
         fontSize: "30"
+    }
+}
+".SofasText[platform=android]" : {
+    color: "white",
+    left: "35px",
+    bottom: "35px",
+    font: {
+        fontSize: "23"
+    }
+}
+".ChairsText[platform=ios formFactor=tablet]" : {
+    color: "white",
+    top: "50px",
+    left: "50px",
+    font: {
+        fontSize: "30"
+    }
+}
+".ChairsText[platform=android]" : {
+    color: "white",
+    top: "35px",
+    left: "35px",
+    font: {
+        fontSize: "20"
+    }
+}
+".CupbordsText[platform=ios formFactor=tablet]" : {
+    color: "white",
+    bottom: "50px",
+    right: "50px",
+    font: {
+        fontSize: "30"
+    }
+}
+".CupbordsText[platform=android]" : {
+    color: "white",
+    bottom: "35px",
+    right: "35px",
+    font: {
+        fontSize: "23"
     }
 }
 "#labicon" : {
@@ -58,10 +110,75 @@
         fontFamily: "neostores"
     }
 }
-".iconmoon" : {
+".Tacleiconmoon[platform=ios formFactor=tablet]" : {
     color: "white",
+    left: "50px",
+    bottom: "50px",
     font: {
         fontFamily: "icomoon",
-        fontSize: "75%"
+        fontSize: "150"
+    }
+}
+".Tacleiconmoon[platform=android]" : {
+    color: "white",
+    left: "35px",
+    bottom: "35px",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "70%"
+    }
+}
+".Sofasiconmoon[platform=ios formFactor=tablet]" : {
+    color: "white",
+    top: "50px",
+    right: "50px",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "150"
+    }
+}
+".Sofasiconmoon[platform=android]" : {
+    color: "white",
+    top: "35px",
+    right: "35px",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "70%"
+    }
+}
+".Chairsiconmoon[platform=ios formFactor=tablet]" : {
+    color: "white",
+    bottom: "50px",
+    right: "50px",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "150"
+    }
+}
+".Chairsiconmoon[platform=android]" : {
+    color: "white",
+    bottom: "35px",
+    right: "35px",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "70%"
+    }
+}
+".Cupbordsiconmoon[platform=ios formFactor=tablet]" : {
+    color: "white",
+    left: "50px",
+    top: "50px",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "150"
+    }
+}
+".Cupbordsiconmoon[platform=android]" : {
+    color: "white",
+    left: "35px",
+    top: "35px",
+    font: {
+        fontFamily: "icomoon",
+        fontSize: "70%"
     }
 }

@@ -5,7 +5,7 @@ $.header.__views.back.text = " ";
 // ######################################### checking login with API #########################################
 function check_Login(e) {
     Ti.API.info("inside check_Login");
-  // ############# function call of HTTP post req for API #################
+    // ############# function call of HTTP post req for API #################
     GoToLoginAPI();
 }
 
@@ -39,30 +39,39 @@ function GoToLoginAPI() {
 
     }
     Ti.API.info(data);
-    var xhr = Ti.Network.createHTTPClient();
-    xhr.onload = function(e) {
-        var response = JSON.parse(xhr.getResponseText());
+    var client = Ti.Network.createHTTPClient();
+    client.onload = function(e) {
+        var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
-        Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
-        Ti.API.info(response.message);
+        Ti.API.info("client.responseText onload" + client.getResponseText());
+
         alert(response.message);
-        var HomeScreen = Alloy.createController('HomeScreen').getView();
-        HomeScreen.open();
+        GoToHomescreen(client.getResponseText());
+
 
     };
-    xhr.onerror = function(e) {
-        var response = JSON.parse(xhr.getResponseText());
+    client.onerror = function(e) {
+        var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
-        Ti.API.info("xhr.responseText onerror" + xhr.getResponseText());
+        Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
         alert(response.message);
 
     };
-    xhr.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/login');
-    xhr.send(data);
+    client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/login');
+    client.send(data);
 
 }
 
-// $.index.open();
-var window = Alloy.createController('HomeScreen').getView();
-window.open();
+
+function GoToHomescreen(e) {
+    Ti.API.info("inside GoToHomescreen" + e);
+    Ti.API.info("21212" + JSON.stringify(e));
+    Ti.API.info("inside GoToHomescreen1111" + JSON.parse(e).data.access_token);
+    var HomeScreen = Alloy.createController('HomeScreen', JSON.parse(e).data.access_token).getView();
+    HomeScreen.open();
+}
+
+$.index.open();
+// var window = Alloy.createController('HomeScreen').getView();
+// window.open();
