@@ -25,14 +25,14 @@
 	font: {
 		fontFamily: 'Medium',
 		fontWeight: 'bold',
-		fontSize: '35px'
+		fontSize: '45px'
 	}
 }
 ".falabelRate[platform=android ]" : {
 	font: {
 		fontFamily: 'FontAwesome',
-		height: "16",
-		width: "16"
+		height: "33",
+		width: "35"
 	},
 	right: "10",
 	//color: "#FFFFFF"
@@ -40,8 +40,7 @@
 ".falabelRate[platform=ios formFactor=tablet]" : {
 	font: {
 		fontFamily: 'FontAwesome',
-		height: "28",
-		width: "28"
+		fontSize: '40px'
 	},
 	right: "10",
 	//color: "#FFFFFF"
@@ -52,7 +51,7 @@
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
-		fontSize: '35px'
+		fontSize: '45px'
 	}
 }
 ".ListImageContainer[platform=ios formFactor=tablet]" : {
@@ -67,7 +66,7 @@
 	top: "40px",
 	left: "40px"
 }
-".LabelProducercontainer" : {
+".LabelProducercontainer[platform=ios formFactor=tablet]" : {
 	color: '#4f4f4f',
 	left: "262px",
 	font: {
@@ -76,12 +75,30 @@
 		fontSize: '20px'
 	}
 }
-".LabelPricecontainer" : {
+".LabelProducercontainer[platform=android]" : {
+	color: '#4f4f4f',
+	left: "262px",
+	font: {
+		fontFamily: 'Arial',
+		fontWeight: 'bold',
+		fontSize: '30px'
+	}
+}
+".LabelPricecontainer[platform=ios formFactor=tablet]" : {
 	color: '#fe4040',
 	left: "262px",
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
 		fontSize: '40px'
+	}
+}
+".LabelPricecontainer[platform=android ]" : {
+	color: '#fe4040',
+	left: "262px",
+	font: {
+		fontFamily: 'Arial',
+		fontWeight: 'bold',
+		fontSize: '60px'
 	}
 }

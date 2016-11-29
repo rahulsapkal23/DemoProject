@@ -43,84 +43,7 @@ function ListViewofProduct(Productdata) {
 
         var rating = JSON.parse(Productdata).data[i].rating;
         Ti.API.info("rating for" + rating);
-        //  Ti.API.info($.rating1.color);
-        // items.push({
-        //     "name": {
-        //         text: JSON.parse(Productdata).data[i].name
-        //     },
-        //     "image": {
-        //         image: JSON.parse(Productdata).data[i].product_images,
-        //     },
-        //     "producer": {
-        //         text: JSON.parse(Productdata).data[i].producer
-        //     },
-        //     "price": {
-        //         text: JSON.parse(Productdata).data[i].cost,
-        //         color: "green"
-        //     },
-        // "rate1": {
-        //     //text: JSON.parse(Productdata).data[i].cost,
-        //     color: "green"
-        // },
-        // "rate2": {
-        //     //text: JSON.parse(Productdata).data[i].cost,
-        //     color: "green"
-        // },
-        // "rate3": {
-        //     //  text: JSON.parse(Productdata).data[i].cost,
-        //     color: "green"
-        // },
-        // "rate4": {
-        //     //  text: JSON.parse(Productdata).data[i].cost,
-        //     color: "green"
-        // },
-        // "rate5": {
-        //     //  text: JSON.parse(Productdata).data[i].cost,
-        //     color: "green"
-        // },
-        //
-        //         "template": "image_title"
-        //     });
-        // }
-
         switch (rating) {
-            //
-            //     case 1:
-            //         Ti.API.info("inside case 1");
-            //         $.rating1.setColor('#efefef');
-            //         break;
-            //     case 2:
-            //         Ti.API.info("inside case 2");
-            //         $.rating1.setColor("lime");
-            //         $.rating2.setColor("lime");
-            //         break;
-            //     case 3:
-            //         Ti.API.info("inside case 3");
-            //         $.rating1.setColor("lime");
-            //         $.rating2.setColor("lime");
-            //         $.rating3.setColor("lime");
-            //
-            //         break;
-            //     case 4:
-            //         Ti.API.info("inside case 4");
-            //         $.rating1.setColor("lime");
-            //         $.rating2.setColor("lime");
-            //         $.rating3.setColor("lime");
-            //         $.rating4.setColor("lime");
-            //         break;
-            //     case 5:
-            //         Ti.API.info("inside case 5");
-            //         $.rating1.setColor("lime");
-            //         $.rating2.setColor("lime");
-            //         $.rating3.setColor("lime");
-            //         $.rating4.setColor("lime");
-            //         $.rating5.setColor("lime");
-            //         break;
-            //
-            // }
-
-
-
 
             case 1:
                 items.push({
@@ -138,20 +61,20 @@ function ListViewofProduct(Productdata) {
                         color: "green"
                     },
                     "rate1": {
-
                         color: "yellow"
                     },
+
                     "rate2": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "rate3": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "rate4": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "rate5": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "template": "image_title"
                 });
@@ -181,13 +104,13 @@ function ListViewofProduct(Productdata) {
                         color: "yellow"
                     },
                     "rate3": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "rate4": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "rate5": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "template": "image_title"
                 });
@@ -221,10 +144,10 @@ function ListViewofProduct(Productdata) {
                         color: "yellow"
                     },
                     "rate4": {
-                        color: "blue"
+                        color: "grey"
                     },
-                    "rate1": {
-                        color: "blue"
+                    "rate5": {
+                        color: "grey"
                     },
                     "template": "image_title"
                 });
@@ -254,7 +177,7 @@ function ListViewofProduct(Productdata) {
                         color: "yellow"
                     },
                     "rate3": {
-                        text: "\uf005",
+
                         color: "yellow"
                     },
                     "rate4": {
@@ -262,7 +185,7 @@ function ListViewofProduct(Productdata) {
                         color: "yellow"
                     },
                     "rate5": {
-                        color: "blue"
+                        color: "grey"
                     },
                     "template": "image_title"
                 });
