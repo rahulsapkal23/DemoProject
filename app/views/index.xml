@@ -15,7 +15,7 @@
 			<Button id="button" onClick="check_Login" class="button" title="LOGIN"></Button>
 		</View>
 
-		<Label top="21" id="forgotgetpwd" class="forgotPwd" onClick="ram">Forgot Password ?</Label>
+		<Label top="21" id="forgotgetpwd" class="forgotPwd" onClick="ForgotPwd">Forgot Password ?</Label>
 
 		<View id="bottom" height="30">
 			<Label class="dont_Acc">DONT HAVE AN ACCOUNT?</Label>

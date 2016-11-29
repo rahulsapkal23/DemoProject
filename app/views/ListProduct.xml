@@ -1,18 +1,28 @@
 <Alloy>
-  <Window id="ListProductwin" class="container" layout="vertical" >
-    <Widget id="header" src="header"/>
+    <Window id="ListProductwin" class="container" layout="vertical">
+        <Widget id="header" src="header"/>
 
-
-    <ListView id="dynamicListView">
-  			<Templates>
-  				<ItemTemplate name="image_title" height="100">
-  					<View layout="horizontal" left="15">
-  						<ImageView bindId="image" height="70" width="70" onClick="WebView" id="image"/>
-  						<Label bindId="label" class="Labelcontainer" id="label1"/>
-  					</View>
-  				</ItemTemplate>
-  			</Templates>
-  			<ListSection/>
-  		</ListView>
-  </Window>
+        <ListView id="dynamicListView">
+            <Templates>
+                <ItemTemplate name="image_title" height="280px">
+                    <View layout="composite" left="15" backgroundColor="white">
+                        <ImageView bindId="image" class="ListImageContainer" onClick="WebView" id="image"/>
+                        <View layout="vertical">
+                            <Label bindId="name" class="LabelNamecontainer"/>
+                            <Label bindId="producer" class="LabelProducercontainer"/>
+                            <View layout="horizontal">
+                                <Label bindId="price" class="LabelPricecontainer"/>
+                                <Label id="rating1" bindId="rate1" class="falabelRate" text="\uf005"></Label>
+                                <Label id="rating2" bindId="rate2" class="falabelRate" text="\uf005"></Label>
+                                <Label id="rating3" bindId="rate3" class="falabelRate" text="\uf005"></Label>
+                                <Label id="rating4" bindId="rate4" class="falabelRate" text="\uf005"></Label>
+                                <Label id="rating5" bindId="rate5" class="falabelRate" text="\uf005"></Label>
+                            </View>
+                        </View>
+                    </View>
+                </ItemTemplate>
+            </Templates>
+            <ListSection/>
+        </ListView>
+    </Window>
 </Alloy>

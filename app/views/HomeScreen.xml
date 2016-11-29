@@ -19,23 +19,23 @@
                     <View class="HomeScreenItemContainer" top="45px">
                         <View class="HomeScreenItem" productcategoryid="1" onClick="ListProduct">
                             <!-- <Label id="labicon">ABCDEFGHIJKLM NOPQRSTUVWXYZ abcdefghijklm nopqrstuvwxyz 1234567890</Label> -->
-                            <Label class="Tacleiconmoon" text="\ue903"></Label>
-                            <Label class="TableText">Table</Label>
+                            <Label class="Tacleiconmoon" touchEnabled="false" text="\ue903"></Label>
+                            <Label class="TableText" touchEnabled="false">Table</Label>
                         </View>
 
                         <View class="HomeScreenItem" productcategoryid="3" onClick="ListProduct">
-                            <Label class="Sofasiconmoon" text="\ue902"></Label>
-                            <Label class="SofasText">Sofas</Label>
+                            <Label class="Sofasiconmoon" touchEnabled="false" text="\ue902"></Label>
+                            <Label class="SofasText" touchEnabled="false">Sofas</Label>
                         </View>
                     </View>
                     <View class="HomeScreenItemContainer">
                         <View class="HomeScreenItem" productcategoryid="2" onClick="ListProduct">
-                            <Label class="Chairsiconmoon" text="\ue900"></Label>
-                            <Label class="ChairsText">Chairs</Label>
+                            <Label class="Chairsiconmoon" touchEnabled="false" text="\ue900"></Label>
+                            <Label class="ChairsText" touchEnabled="false">Chairs</Label>
                         </View>
                         <View class="HomeScreenItem" productcategoryid="4" onClick="ListProduct">
-                            <Label class="Cupbordsiconmoon" text="\ue901"></Label>
-                            <Label class="CupbordsText">Cupbords</Label>
+                            <Label class="Cupbordsiconmoon" touchEnabled="false" text="\ue901"></Label>
+                            <Label class="CupbordsText" touchEnabled="false">Cupbords</Label>
                         </View>
                     </View>
                 </View>

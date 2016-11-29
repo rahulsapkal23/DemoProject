@@ -17,10 +17,10 @@ if (Ti.Platform.osname == "android") {
 }
 
 // ######################################### forgot Password function call #########################################
-function ram(e) {
+function ForgotPwd(e) {
     Ti.API.info("inside GoToRegister");
-    var ram = Alloy.createController('ForgotPwd').getView();
-    ram.open();
+    var ForgotPwd = Alloy.createController('ForgotPwd').getView();
+    ForgotPwd.open();
 }
 
 
@@ -72,6 +72,6 @@ function GoToHomescreen(e) {
     HomeScreen.open();
 }
 
-$.index.open();
-// var window = Alloy.createController('HomeScreen').getView();
-// window.open();
+// $.index.open();
+var window = Alloy.createController('HomeScreen').getView();
+window.open();
