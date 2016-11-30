@@ -1,11 +1,27 @@
 // ######################################### Setting Header #########################################
-$.header.__views.tital.text = "List Product";
+
 $.header.__views.back.addEventListener('click', function(e) {
     $.ListProductwin.close();
 });
 
 // ################################# get argument from previous controllew ###################################
 var args = arguments[0] || {};
+switch (args) {
+  case 1:
+    $.header.__views.tital.text = "Table";
+    break;
+    case 2:
+      $.header.__views.tital.text = "Chairs";
+      break;
+      case 3:
+        $.header.__views.tital.text = "Sofas";
+        break;
+        case 4:
+          $.header.__views.tital.text = "Cupbords";
+          break;
+  default:
+
+}
 Ti.API.info("Inside Listview and id is" + args);
 Ti.API.info(JSON.stringify(args));
 
@@ -60,8 +76,8 @@ function ListViewofProduct(Productdata) {
                         text: JSON.parse(Productdata).data[i].producer
                     },
                     "price": {
-                        text: JSON.parse(Productdata).data[i].cost,
-                        color: "green"
+                        text: "Rs. "+JSON.parse(Productdata).data[i].cost,
+                        color: "red"
                     },
                     "rate1": {
                         color: "yellow",
@@ -108,8 +124,8 @@ function ListViewofProduct(Productdata) {
 
                     },
                     "price": {
-                        text: JSON.parse(Productdata).data[i].cost,
-                        color: "green"
+                        text: "Rs. "+JSON.parse(Productdata).data[i].cost,
+                        color: "red"
                     },
                     "rate1": {
 
@@ -155,8 +171,8 @@ function ListViewofProduct(Productdata) {
                         text: JSON.parse(Productdata).data[i].producer
                     },
                     "price": {
-                        text: JSON.parse(Productdata).data[i].cost,
-                        color: "green"
+                        text: "Rs. "+JSON.parse(Productdata).data[i].cost,
+                        color: "red"
                     },
                     "rate1": {
 
@@ -203,8 +219,8 @@ function ListViewofProduct(Productdata) {
                         text: JSON.parse(Productdata).data[i].producer
                     },
                     "price": {
-                        text: JSON.parse(Productdata).data[i].cost,
-                        color: "green"
+                        text: "Rs. "+JSON.parse(Productdata).data[i].cost,
+                        color: "red"
                     },
                     "rate1": {
 
@@ -246,8 +262,8 @@ function ListViewofProduct(Productdata) {
                         text: JSON.parse(Productdata).data[i].producer
                     },
                     "price": {
-                        text: JSON.parse(Productdata).data[i].cost,
-                        color: "green"
+                        text: "Rs. "+JSON.parse(Productdata).data[i].cost,
+                        color: "red"
                     },
                     "rate1": {
 
@@ -297,39 +313,12 @@ function GoToProductDetail(e){
   Ti.API.info("inside GoToProductDetails");
   Ti.API.info("on click"+e);
   Ti.API.info("on click stringify"+JSON.stringify(e));
-  Ti.API.info(e.section.getItemAt(e.Mid));
-  // var item = e.section.getItemAt(e.itemIndex);
-  //   if (item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {
-  //       item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;
-  //   }
-  //   else {
-  //       item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;
-  //   }
-  //   e.section.updateItemAt(e.itemIndex, item);
-  //   alert(
-  //       "ItemId: " + e.itemId + "\n" +
-  //       "BindId: " + e.bindId + "\n" +
-  //       "Section Index: " + e.sectionIndex + ", Item Index: " + e.itemIndex
-  //   );
-  // var GoToProductDetail=
+  Ti.API.info(e.section.getItemAt(e.itemIndex));
+  Ti.API.info(e.section.getItemAt(e.itemIndex).properties.Mid);
+  var ProductDetail = Alloy.createController('ProductDetail',e.section.getItemAt(e.itemIndex).properties.Mid).getView();
+  ProductDetail.open();
+
 }
 
-
-// listView.addEventListener('itemclick', function(e){
-//   Ti.API.info("inside click event");
-//     // var item = e.section.getItemAt(e.itemIndex);
-//     // if (item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {
-//     //     item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;
-//     // }
-//     // else {
-//     //     item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;
-//     // }
-//     // e.section.updateItemAt(e.itemIndex, item);
-//     // alert(
-//     //     "ItemId: " + e.itemId + "\n" +
-//     //     "BindId: " + e.bindId + "\n" +
-//     //     "Section Index: " + e.sectionIndex + ", Item Index: " + e.itemIndex
-//     // );
-// });
 
 $.ListProductwin.open();
