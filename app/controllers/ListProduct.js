@@ -34,6 +34,9 @@ client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/products/getL
 // Send the request.
 client.send();
 
+
+// ################################# function of setting data from API ###################################
+
 function ListViewofProduct(Productdata) {
     Ti.API.info(Productdata);
     Ti.API.info("imageraj" + JSON.parse(Productdata).data.length);
@@ -61,22 +64,33 @@ function ListViewofProduct(Productdata) {
                         color: "green"
                     },
                     "rate1": {
-                        color: "yellow"
+                        color: "yellow",
+
                     },
 
                     "rate2": {
-                        color: "grey"
+                        color: "grey",
+
                     },
                     "rate3": {
-                        color: "grey"
+                        color: "grey",
+
                     },
                     "rate4": {
-                        color: "grey"
+                        color: "grey",
+
                     },
                     "rate5": {
-                        color: "grey"
+                        color: "grey",
+
                     },
-                    "template": "image_title"
+
+                    "template": "image_title",
+                    "properties": {
+                        Mid:JSON.parse(Productdata).data[i].id,
+
+
+                  }
                 });
 
                 break;
@@ -87,9 +101,11 @@ function ListViewofProduct(Productdata) {
                     },
                     "image": {
                         image: JSON.parse(Productdata).data[i].product_images,
+
                     },
                     "producer": {
-                        text: JSON.parse(Productdata).data[i].producer
+                        text: JSON.parse(Productdata).data[i].producer,
+
                     },
                     "price": {
                         text: JSON.parse(Productdata).data[i].cost,
@@ -97,22 +113,33 @@ function ListViewofProduct(Productdata) {
                     },
                     "rate1": {
 
-                        color: "yellow"
+                        color: "yellow",
+
                     },
                     "rate2": {
 
-                        color: "yellow"
+                        color: "yellow",
+
                     },
                     "rate3": {
-                        color: "grey"
+                        color: "grey",
+
                     },
                     "rate4": {
-                        color: "grey"
+                        color: "grey",
+
                     },
                     "rate5": {
-                        color: "grey"
+                        color: "grey",
+
                     },
-                    "template": "image_title"
+
+                    "template": "image_title",
+                    "properties": {
+                        Mid:JSON.parse(Productdata).data[i].id,
+
+
+                    }
                 });
 
                 break;
@@ -133,23 +160,34 @@ function ListViewofProduct(Productdata) {
                     },
                     "rate1": {
 
-                        color: "yellow"
+                        color: "yellow",
+
                     },
                     "rate2": {
 
-                        color: "yellow"
+                        color: "yellow",
+
                     },
                     "rate3": {
 
-                        color: "yellow"
+                        color: "yellow",
+
                     },
                     "rate4": {
-                        color: "grey"
+                        color: "grey",
+
                     },
                     "rate5": {
-                        color: "grey"
+                        color: "grey",
+
                     },
-                    "template": "image_title"
+
+                    "template": "image_title",
+                    "properties": {
+                        Mid:JSON.parse(Productdata).data[i].id,
+
+
+                    }
                 });
 
                 break;
@@ -187,7 +225,12 @@ function ListViewofProduct(Productdata) {
                     "rate5": {
                         color: "grey"
                     },
-                    "template": "image_title"
+
+                    "template": "image_title",
+                    "properties": {
+                        Mid:JSON.parse(Productdata).data[i].id,
+
+                    }
                 });
 
                 break;
@@ -222,11 +265,18 @@ function ListViewofProduct(Productdata) {
 
                         color: "yellow"
                     },
-                    "rate1": {
+                    "rate5": {
 
-                        color: "yellow"
+                        color: "yellow",
+
                     },
-                    "template": "image_title"
+
+                    "template": "image_title",
+                    "properties": {
+                        Mid:JSON.parse(Productdata).data[i].id,
+
+
+                    }
                 });
 
                 break;
@@ -235,13 +285,51 @@ function ListViewofProduct(Productdata) {
         }
 
         $.dynamicListView.sections[0].setItems(items, {
-            animated: "false"
+            animated: "false",
+
         });
     }
 }
 
-function WebView(e) {
 
+// ################################# function call on click of list ###################################
+function GoToProductDetail(e){
+  Ti.API.info("inside GoToProductDetails");
+  Ti.API.info("on click"+e);
+  Ti.API.info("on click stringify"+JSON.stringify(e));
+  Ti.API.info(e.section.getItemAt(e.Mid));
+  // var item = e.section.getItemAt(e.itemIndex);
+  //   if (item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {
+  //       item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;
+  //   }
+  //   else {
+  //       item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;
+  //   }
+  //   e.section.updateItemAt(e.itemIndex, item);
+  //   alert(
+  //       "ItemId: " + e.itemId + "\n" +
+  //       "BindId: " + e.bindId + "\n" +
+  //       "Section Index: " + e.sectionIndex + ", Item Index: " + e.itemIndex
+  //   );
+  // var GoToProductDetail=
 }
+
+
+// listView.addEventListener('itemclick', function(e){
+//   Ti.API.info("inside click event");
+//     // var item = e.section.getItemAt(e.itemIndex);
+//     // if (item.properties.accessoryType == Ti.UI.LIST_ACCESSORY_TYPE_NONE) {
+//     //     item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_CHECKMARK;
+//     // }
+//     // else {
+//     //     item.properties.accessoryType = Ti.UI.LIST_ACCESSORY_TYPE_NONE;
+//     // }
+//     // e.section.updateItemAt(e.itemIndex, item);
+//     // alert(
+//     //     "ItemId: " + e.itemId + "\n" +
+//     //     "BindId: " + e.bindId + "\n" +
+//     //     "Section Index: " + e.sectionIndex + ", Item Index: " + e.itemIndex
+//     // );
+// });
 
 $.ListProductwin.open();

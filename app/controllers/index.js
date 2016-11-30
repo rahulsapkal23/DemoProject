@@ -72,6 +72,6 @@ function GoToHomescreen(e) {
     HomeScreen.open();
 }
 
-// $.index.open();
+ //$.index.open();
 var window = Alloy.createController('HomeScreen').getView();
 window.open();

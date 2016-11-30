@@ -2,11 +2,11 @@
     <Window id="ListProductwin" class="container" layout="vertical">
         <Widget id="header" src="header"/>
 
-        <ListView id="dynamicListView">
+        <ListView id="dynamicListView" onItemclick="GoToProductDetail">
             <Templates>
-                <ItemTemplate name="image_title" height="280px">
-                    <View layout="composite" left="15" backgroundColor="white">
-                        <ImageView bindId="image" class="ListImageContainer" onClick="WebView" id="image"/>
+                <ItemTemplate name="image_title" height="280px" >
+                    <View  layout="composite" left="15" backgroundColor="white" >
+                        <ImageView bindId="image" class="ListImageContainer"  id="image"/>
                         <View layout="vertical">
                             <Label bindId="name" class="LabelNamecontainer"/>
                             <Label bindId="producer" class="LabelProducercontainer"/>
