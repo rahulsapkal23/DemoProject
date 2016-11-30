@@ -66,8 +66,13 @@ overrode the settings with other TSS, XML, or JS settings:
     },
     text: "NeoSTORE"
 }
-".container" : {
-	backgroundImage: "imgpsh_fullsize.png"
+".container[platform=android ]" : {
+	backgroundImage: "imgpsh_fullsize.png",
+  top: "0"
+}
+".container[platform=ios formFactor=tablet]" : {
+	backgroundImage: "imgpsh_fullsize.png",
+  top: "25"
 }
 ".falabel[platform=android ]" : {
     font: {

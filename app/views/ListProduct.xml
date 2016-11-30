@@ -5,7 +5,7 @@
         <ListView id="dynamicListView" onItemclick="GoToProductDetail">
             <Templates>
                 <ItemTemplate name="image_title" height="280px" >
-                    <View  layout="composite" left="15" backgroundColor="white" >
+                    <View  layout="composite"  backgroundColor="white" >
                         <ImageView bindId="image" class="ListImageContainer"  id="image"/>
                         <View layout="vertical">
                             <Label bindId="name" class="LabelNamecontainer"/>

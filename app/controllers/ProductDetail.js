@@ -1,4 +1,4 @@
-  $.header.__views.tital.text = "Table";
+
 
 $.header.__views.back.addEventListener('click', function(e) {
     $.ProductDetailwin.close();
@@ -40,9 +40,100 @@ client.send();
 
 
 
-function ViewofProductDetails(e) {
+function ViewofProductDetails(product) {
+    $.header.__views.tital.text = JSON.parse(product).data.name;
   Ti.API.info("in side ViewofProductDetails");
-  Ti.API.info(e);
-  Ti.API.info("hero" + JSON.parse(e).data.length);
+  Ti.API.info(product);
+  Ti.API.info("hero" + JSON.parse(product).data.length);
+  var items = [];
 
-}
+
+      var rating = JSON.parse(product).data.rating;
+      Ti.API.info("rating for" + rating);
+
+
+        // name
+        //
+        // producer
+        // rate1
+        // rate2
+        // rate3
+        // rate4
+        // rate5
+        // price
+        //
+        // image1
+        // image2
+        // image3
+        //
+
+              items.push({
+                  "name": {
+                      text: JSON.parse(product).data.name
+                  },
+                  "catagory": {
+                      text: "table",
+                  },
+                  "Description": {
+                      text: "skjfsjfkjsjfsdjfjsdkj",
+                  },
+                  "imagemain": {
+                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                  },
+                  "image1": {
+                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                  },
+                  "image2": {
+                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                  },
+                  "image3": {
+                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                  },
+                  "producer": {
+                      text: JSON.parse(product).data.producer
+                  },
+                  "price": {
+                      text: "Rs. "+JSON.parse(product).data.cost,
+                      color: "red"
+                  },
+
+                  "rate1": {
+                    color: rating>=1? "#ffba00": "#7f7f7f"
+
+
+                  },
+                  "rate2": {
+                      color: rating>=2? "#ffba00": "#7f7f7f"
+
+                  },
+                  "rate3": {
+                      color: rating>=3? "#ffba00": "#7f7f7f"
+
+                  },
+                  "rate4": {
+                    color: rating>=4? "#ffba00": "#7f7f7f"
+
+                  },
+                  "rate5": {
+                      color: rating>=5? "#ffba00": "#7f7f7f"
+
+                  },
+
+                  "template": "image_title",
+                  "properties": {
+
+                      Mid:JSON.parse(product).data.id,
+                      
+
+
+                }
+              });
+
+
+
+
+      $.dynamicListView.sections[0].setItems(items, {
+          animated: "false",
+
+      });
+    }

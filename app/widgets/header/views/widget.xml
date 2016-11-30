@@ -6,6 +6,6 @@
 
     <View id="WidView" class="viewhead">
         <Label class="falabel" id="back" text="\uf053"></Label>
-        <Label id="tital" color="white"></Label>
+        <Label id="tital" color="white" ></Label>
     </View>
 </Alloy>

@@ -1,0 +1,21 @@
+".container" : {
+	backgroundColor: 'green',
+	top: 20
+}
+".falabelRate[platform=android ]" : {
+	font: {
+		fontFamily: 'FontAwesome',
+		height: "33",
+		width: "35"
+	},
+	right: "10",
+	//color: "#FFFFFF"
+}
+".falabelRate[platform=ios formFactor=tablet]" : {
+	font: {
+		fontFamily: 'FontAwesome',
+		fontSize: '40px'
+	},
+	right: "10",
+	//color: "#FFFFFF"
+}

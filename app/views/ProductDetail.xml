@@ -2,6 +2,41 @@
     <Window id="ProductDetailwin" class="container" layout="vertical">
         <Widget id="header" src="header"/>
 
+        <ListView id="dynamicListView" >
+            <Templates>
+                <ItemTemplate name="image_title" height="Ti.UI.SIZE">
+                    <View  layout="composite"  backgroundColor="white" >
 
+
+                            <Label bindId="name" class="LabelNamecontainer"/>
+                            <Label bindId="catagory" class="LabelProducercontainer"/>
+
+                            <View layout="horizontal">
+                              <Label bindId="producer" class="LabelProducercontainer"/>
+
+                                <Label  bindId="rate1" class="falabelRate" text="\uf005"></Label>
+                                <Label  bindId="rate2" class="falabelRate" text="\uf005"></Label>
+                                <Label  bindId="rate3" class="falabelRate" text="\uf005"></Label>
+                                <Label  bindId="rate4" class="falabelRate" text="\uf005"></Label>
+                                <Label  bindId="rate5" class="falabelRate" text="\uf005"></Label>
+                            </View>
+  <View layout="vertical">
+                                <Label bindId="price" class="LabelPricecontainer"/>
+                                  <ImageView bindId="imagemain" class="ListImageContainer" height="100" id="image"/>
+                                  <View layout="horizontal">
+                                      <ImageView bindId="image1" class="ListImageContainer" height="100" width="100" id="image"/>
+                                        <ImageView bindId="image2" class="ListImageContainer" height="100" width="100" id="image"/>
+                                          <ImageView bindId="image3" class="ListImageContainer" height="100" width="100" id="image"/>
+                                  </View>
+                                  <Label>Description
+                                  </Label>
+                                  <Label bindId="Description"></Label>
+                            </View>
+
+</View>
+                </ItemTemplate>
+            </Templates>
+            <ListSection/>
+        </ListView>
     </Window>
 </Alloy>
