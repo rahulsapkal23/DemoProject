@@ -124,12 +124,12 @@ function ViewofProductDetails(product) {
     }
 
     function openPopover() {
-    if (Ti.Platform.osname === 'ipad') {
-      Ti.API.info("inside open popover");
-        var popover = Alloy.createController('popover').getView();
-        popover.show({view:$.button1});
 
-    } else {
-        alert('Popover only supported on iPad');
-    }
+      Ti.API.info("inside open popover");
+      //  $.ProductDetailwin.color="white"
+      $.dynamicListView.opacity="0.5"
+        var popover = Alloy.createController('popover').getView();
+        popover.open();
+
+
 }
