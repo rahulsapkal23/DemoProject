@@ -11,26 +11,29 @@
                             <Label bindId="name" class="LabelNamecontainer"/>
                             <Label bindId="catagory" class="Labelcatagorycontainer"/>
 
-                            <View layout="horizontal" height="100" backgroundColor="lime">
-                              <Label bindId="producer" class="LabelProducercontainer"/>
-
+                            <View layout="horizontal" height="Ti.UI.SIZE" right="40px">
+                              <Label bindId="producer" left="40px" class="LabelProducercontainer"/>
+<View  left="60%" layout="horizontal" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
                                 <Label  bindId="rate1" class="falabelRate" text="\uf005"></Label>
                                 <Label  bindId="rate2" class="falabelRate" text="\uf005"></Label>
                                 <Label  bindId="rate3" class="falabelRate" text="\uf005"></Label>
                                 <Label  bindId="rate4" class="falabelRate" text="\uf005"></Label>
                                 <Label  bindId="rate5" class="falabelRate" text="\uf005"></Label>
                             </View>
-
-                                <Label bindId="price" />
-                                  <ImageView bindId="imagemain" top="200px" height="100" />
-                                  <View layout="horizontal">
-                                      <ImageView bindId="image1" top="400px" height="100" width="100" />
-                                        <ImageView bindId="image2" top="400px"  height="100" width="100" />
-                                          <ImageView bindId="image3" top="400px"  height="100" width="100" />
+</View>
+                                <Label bindId="price" class="LabelPricecontainer"/>
+                                  <ImageView bindId="imagemain" class="imagemaincontainer" />
+                                  <View layout="horizontal" top="20px" height="Ti.UI.SIZE">
+                                      <ImageView bindId="image1" class="imagecontainer"  />
+                                        <ImageView bindId="image2" class="imagecontainer"  />
+                                          <ImageView bindId="image3"  class="imagecontainer" />
                                   </View>
-                                  <Label>Description
-                                  </Label>
-                                  <Label bindId="Description"></Label>
+                                  <Label color="#111111" fontSize="30px">Description</Label>
+                                  <Label bindId="Description" class="Labeldescription"></Label>
+<View top="10px" layout="horizontal">
+<Button class="buttonBUY" id="button1" width="40%" left="10px" onClick="openPopover" title="BUY Now"></Button>
+<Button class="buttonBUY" width="40%" left="10px" onClick="openPopover" title="Rate"></Button>
+</View>
                             </View>
 
 

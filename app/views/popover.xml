@@ -1,0 +1,19 @@
+<Alloy>
+  <View>
+  <Popover title="popover" height="300" width="250">
+    <ContentView>
+      <NavigationWindow id="navWindow">
+        <Window>
+          <LeftNavButton>
+            <Button >left</Button>
+          </LeftNavButton>
+          <RightNavButton>
+            <Button >right</Button>
+          </RightNavButton>
+          <Label>I'm a popover</Label>
+        </Window>
+      </NavigationWindow>
+    </ContentView>
+  </Popover>
+  </View>
+</Alloy>

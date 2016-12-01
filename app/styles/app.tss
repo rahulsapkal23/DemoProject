@@ -68,7 +68,8 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 ".container[platform=android ]" : {
 	backgroundImage: "imgpsh_fullsize.png",
-  top: "0"
+  top: "0",
+  orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
 }
 ".container[platform=ios formFactor=tablet]" : {
 	backgroundImage: "imgpsh_fullsize.png",

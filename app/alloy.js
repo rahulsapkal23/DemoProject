@@ -9,3 +9,35 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+
+// 
+// function HttpRequest(Request_Type,Url,Header_Argument) {
+// Ti.API.info("inside Alloy");
+//   var client = Ti.Network.createHTTPClient({
+//       onload: function(e) {
+//           var response = JSON.parse(client.getResponseText());
+//           Ti.API.info("json stringfy load" + JSON.stringify(e));
+//           Ti.API.info("client.responseTextinsudefun onload" + client.getResponseText());
+//           // function called fir list view according to Product id
+//           return client.getResponseText();
+//       },
+//       // function called when an error occurs, including a timeout
+//       onerror: function(e) {
+//           var response = JSON.parse(client.getResponseText());
+//           Ti.API.info(" onerror" + JSON.stringify(e));
+//           Ti.API.info("client.responseText onerror" + client.getResponseText());
+//           Ti.API.info(response.message);
+//           alert(response.message);
+//       },
+//       //  timeout : 5000  // in milliseconds
+//   });
+//   // Prepare the connection.
+//
+//   client.open(Request_Type, );
+//   // Send the request.
+//   client.setRequestHeader("access_token", Header_Argument);
+//   //xhr.setRequestHeader("cache-control", "no-cache");
+//   //xhr.setRequestHeader("postman-token", "1b1fe29f-2ff0-324e-aff5-547aed18e442");
+//   client.send();
+//
+// }

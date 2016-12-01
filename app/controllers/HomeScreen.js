@@ -4,7 +4,7 @@ $.header.__views.back.addEventListener('click', function(e) {
     $.HomeScreenwin.close();
 });
 
-
+// $.HomeScreenwin.orientationModes = [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
 // ################################# get argument from previous controllew ###################################
 var access_token = arguments[0] || {};
 Ti.API.info("Inside Listview and id is" + access_token);
@@ -34,7 +34,7 @@ var client = Ti.Network.createHTTPClient({
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
-        alert(response.message);
+        alert(response.message); 
     },
     //  timeout : 5000  // in milliseconds
 });

@@ -52,30 +52,15 @@ function ViewofProductDetails(product) {
       Ti.API.info("rating for" + rating);
 
 
-        // name
-        //
-        // producer
-        // rate1
-        // rate2
-        // rate3
-        // rate4
-        // rate5
-        // price
-        //
-        // image1
-        // image2
-        // image3
-        //
-
               items.push({
                   "name": {
                       text: JSON.parse(product).data.name
                   },
                   "catagory": {
-                      text: "table",
+                      text: "Catagory - Table",
                   },
                   "Description": {
-                      text: "skjfsjfkjsjfsdjfjsdkj",
+                      text: JSON.parse(product).data.description,
                   },
                   "imagemain": {
                       image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
@@ -123,7 +108,7 @@ function ViewofProductDetails(product) {
                   "properties": {
 
                       Mid:JSON.parse(product).data.id,
-                      
+
 
 
                 }
@@ -137,3 +122,14 @@ function ViewofProductDetails(product) {
 
       });
     }
+
+    function openPopover() {
+    if (Ti.Platform.osname === 'ipad') {
+      Ti.API.info("inside open popover");
+        var popover = Alloy.createController('popover').getView();
+        popover.show({view:$.button1});
+
+    } else {
+        alert('Popover only supported on iPad');
+    }
+}

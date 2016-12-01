@@ -1,8 +1,16 @@
 // ######################################### Setting Header #########################################
 
 $.header.__views.back.addEventListener('click', function(e) {
+    clearMemory();
     $.ListProductwin.close();
 });
+
+// ################################# function for clear Memory ###################################
+function clearMemory() {
+  Ti.API.info("Inside Clear Memory");
+  
+}
+
 
 // ################################# get argument from previous controllew ###################################
 var args = arguments[0] || {};
@@ -80,24 +88,24 @@ function ListViewofProduct(Productdata) {
                         color: "red"
                     },
                     "rate1": {
-                        color: "yellow",
+                        color: "#ffba00",
 
                     },
 
                     "rate2": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
                     "rate3": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
                     "rate4": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
                     "rate5": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
 
@@ -129,24 +137,24 @@ function ListViewofProduct(Productdata) {
                     },
                     "rate1": {
 
-                        color: "yellow",
+                        color: "#ffba00",
 
                     },
                     "rate2": {
 
-                        color: "yellow",
+                        color: "#ffba00",
 
                     },
                     "rate3": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
                     "rate4": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
                     "rate5": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
 
@@ -176,25 +184,25 @@ function ListViewofProduct(Productdata) {
                     },
                     "rate1": {
 
-                        color: "yellow",
+                        color: "#ffba00",
 
                     },
                     "rate2": {
 
-                        color: "yellow",
+                        color: "#ffba00",
 
                     },
                     "rate3": {
 
-                        color: "yellow",
+                        color: "#ffba00",
 
                     },
                     "rate4": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
                     "rate5": {
-                        color: "grey",
+                        color: "#7f7f7f",
 
                     },
 
@@ -224,22 +232,22 @@ function ListViewofProduct(Productdata) {
                     },
                     "rate1": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate2": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate3": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate4": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate5": {
-                        color: "grey"
+                        color: "#7f7f7f"
                     },
 
                     "template": "image_title",
@@ -267,23 +275,23 @@ function ListViewofProduct(Productdata) {
                     },
                     "rate1": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate2": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate3": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate4": {
 
-                        color: "yellow"
+                        color: "#ffba00"
                     },
                     "rate5": {
 
-                        color: "yellow",
+                        color: "#ffba00",
 
                     },
 

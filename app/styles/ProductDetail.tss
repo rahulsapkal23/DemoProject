@@ -20,21 +20,23 @@
 	height: 50
 }
 ".LabelNamecontainer[platform=ios formFactor=tablet]" : {
-	color: '#4f4f4f',
-	left: "262px",
+	color: '#262626',
+	left: "40px",
 	font: {
 		fontFamily: 'Medium',
 		fontWeight: 'bold',
-		fontSize: '45px'
+		fontSize: '58px'
 	}
 }
 ".falabelRate[platform=android ]" : {
 	font: {
 		fontFamily: 'FontAwesome',
-		height: "33",
-		width: "35"
+		height: "32px",
+		width: "36",
+
 	},
-	right: "10",
+
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 	//color: "#FFFFFF"
 }
 ".falabelRate[platform=ios formFactor=tablet]" : {
@@ -42,16 +44,16 @@
 		fontFamily: 'FontAwesome',
 		fontSize: '40px'
 	},
-	right: "10",
+
 	//color: "#FFFFFF"
 }
 ".LabelNamecontainer[platform=android]" : {
-	color: '#4f4f4f',
-	left: "262px",
+	color: '#262626',
+	left: "40px",
 	font: {
-		fontFamily: 'Arial',
+		fontFamily: 'Medium',
 		fontWeight: 'bold',
-		fontSize: '45px'
+		fontSize: '58px'
 	}
 }
 ".ListImageContainer[platform=ios formFactor=tablet]" : {
@@ -81,13 +83,13 @@
 	left: "262px",
 	font: {
 		fontFamily: 'Arial',
-		fontWeight: 'bold',
+
 		fontSize: '30px'
 	}
 }
 ".LabelPricecontainer[platform=ios formFactor=tablet]" : {
 	color: '#fe4040',
-	left: "262px",
+
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
@@ -96,7 +98,7 @@
 }
 ".LabelPricecontainer[platform=android ]" : {
 	color: '#fe4040',
-	left: "262px",
+
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
@@ -105,12 +107,34 @@
 }
 
 ".Labelcatagorycontainer": {
-  color: '#fe4040',
-  
-  left: "262px",
+  color: '#4f4f4f',
+
+  left: "40px",
   font: {
-    fontFamily: 'Arial',
-    fontWeight: 'bold',
-    fontSize: '60px'
+    fontFamily: 'book',
+
+    fontSize: '48px'
   }
+}
+
+".imagemaincontainer": {
+	height: "534px",
+	width: "771px",
+}
+
+".imagecontainer": {
+	left: "20px",
+	height: "207px",
+	width: "235px"
+}
+
+".Labeldescription": {
+	color: "#333333",
+	fontSize: "30px"
+}
+
+".buttonBUY": {
+	backgroundColor: "#db1514",
+	fontSize: "75px",
+	color: "#ffffff"
 }
