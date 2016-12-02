@@ -1,19 +1,11 @@
 <Alloy>
-  <View>
-  <Popover title="popover" height="300" width="250">
-    <ContentView>
-      <NavigationWindow id="navWindow">
-        <Window>
-          <LeftNavButton>
-            <Button >left</Button>
-          </LeftNavButton>
-          <RightNavButton>
-            <Button >right</Button>
-          </RightNavButton>
-          <Label>I'm a popover</Label>
-        </Window>
-      </NavigationWindow>
-    </ContentView>
-  </Popover>
-  </View>
+<Window id="popoverwin" onClick="closeWindow" backgroundColor="transparent" >
+  <View layout="vertical" class="Popcontainer">
+  <Label id="Name"  class="PopName"></Label>
+<ImageView id="Image" class="PopImage"></ImageView>
+<Label   class="PopQty" >Enter Qty </Label>
+<TextField   class="PopTextField"></TextField>
+<Button  onClick="Submit" class="PopButton"></Button>
+</View>
+</Window>
 </Alloy>

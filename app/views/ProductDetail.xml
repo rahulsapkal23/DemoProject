@@ -31,8 +31,8 @@
                                   <Label color="#111111" fontSize="30px">Description</Label>
                                   <Label bindId="Description" class="Labeldescription"></Label>
 <View top="10px" layout="horizontal">
-<Button class="buttonBUY" id="button1" width="40%" left="10px" onClick="openPopover" title="BUY Now"></Button>
-<Button class="buttonBUY" width="40%" left="10px" onClick="openPopover" title="Rate"></Button>
+<Button class="buttonBUY" id="button1" bindId="buy" width="40%" left="10px" onClick="openBuy" title="BUY Now"></Button>
+<Button class="buttonBUY" bindId="rate" width="40%" left="10px" onClick="openBuy" title="Rate"></Button>
 </View>
                             </View>
 

@@ -63,16 +63,16 @@ function ViewofProductDetails(product) {
                       text: JSON.parse(product).data.description,
                   },
                   "imagemain": {
-                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                      image: JSON.parse(product).data.product_images[0].image,
                   },
                   "image1": {
-                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                      image: JSON.parse(product).data.product_images[1].image,
                   },
                   "image2": {
-                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                      image: JSON.parse(product).data.product_images[1].image,
                   },
                   "image3": {
-                      image: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/da6f8d00dd9f009a543e06312.jpeg",
+                      image: JSON.parse(product).data.product_images[1].image,
                   },
                   "producer": {
                       text: JSON.parse(product).data.producer
@@ -103,8 +103,17 @@ function ViewofProductDetails(product) {
                       color: rating>=5? "#ffba00": "#7f7f7f"
 
                   },
+                  "buy": {
+                      properties:JSON.parse(product)
+
+                  },
+                  "rate": {
+                        properties:JSON.parse(product)
+
+                  },
 
                   "template": "image_title",
+
                   "properties": {
 
                       Mid:JSON.parse(product).data.id,
@@ -123,13 +132,62 @@ function ViewofProductDetails(product) {
       });
     }
 
-    function openPopover() {
-    if (Ti.Platform.osname === 'ipad') {
-      Ti.API.info("inside open popover");
-        var popover = Alloy.createController('popover').getView();
-        popover.show({view:$.button1});
+    function openBuy(e) {
 
-    } else {
-        alert('Popover only supported on iPad');
-    }
+      Ti.API.info("inside open popover"+args);
+            Ti.API.info("inside open popover"+JSON.stringify(e));
+      //  $.dynamicListView.opacity="0.5";
+       var view = Titanium.UI.createView({
+         top: "50",
+       right: "100",
+       bottom: "50",
+       left: "100",
+       backgroundColor: "white",
+       layout:"vertical"
+});
+var Name = Ti.UI.createLabel({
+  top: "100px",
+
+  font: {
+    fontSize: "50px",
+  },
+  color:"#2C2B2B",
+  text:e.source.properties.data.name,
+});
+var image = Ti.UI.createImageView({
+  image:e.source.properties.data.product_images[0].image,
+});
+var textField = Ti.UI.createTextField({
+  width:"336px",
+   height:"129px",
+    top:"66px",
+  borderColor: "gray",
+});
+var Qty = Ti.UI.createLabel({
+  top: "100px",
+
+  font: {
+    fontSize: "50px",
+  },
+  color:"#2C2B2B",
+  text:"Enter Qty",
+});
+var button = Titanium.UI.createButton({
+  top: "66px",
+  title: "Submit",
+  width: "595px",
+  height: "142px"
+});
+button.addEventListener('click',function(e)
+{
+   Titanium.API.info("You clicked the button");
+   $.dynamicListView.remove(view);
+});
+ $.dynamicListView.add(view);
+ view.add(Name,image,Qty,textField,button);
+        // var popover = Alloy.createController('popover',e).getView();
+        // popover.open();
+        // $.dynamicListView.opacity="1";
+
+
 }
