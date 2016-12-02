@@ -1,10 +1,10 @@
 <Alloy>
-    <Window id="HomeScreenwin" class="container">
+    <Window id="HomeScreenwin" class="container" >
 
-        <ScrollableView id="scrollableView">
-            <View id="view1" layout="vertical">
+        <!-- <ScrollableView id="scrollableView"> -->
+            <View id="view1" layout="vertical" >
                 <Widget id="header" src="header"/>
-                <View class="HomeScreenScrollable" layout="horizontal">
+                <View class="HomeScreenScrollable"  layout="horizontal">
 
                     <ScrollableView id="scrollableView1" showPagingControl="true" pageIndicatorColor="red" pagingControlTimeout="3000">
                         <!-- <View id="view11"  backgroundColor="#123"></View> -->
@@ -20,7 +20,7 @@
                         <View class="HomeScreenItem" productcategoryid="1" onClick="ListProduct">
                             <!-- <Label id="labicon">ABCDEFGHIJKLM NOPQRSTUVWXYZ abcdefghijklm nopqrstuvwxyz 1234567890</Label> -->
                             <Label class="Tacleiconmoon" touchEnabled="false" text="\ue903"></Label>
-                            <Label class="TableText" touchEnabled="false">Table</Label>
+                            <Label class="TableText"  touchEnabled="false">Table</Label>
                         </View>
 
                         <View class="HomeScreenItem" productcategoryid="3" onClick="ListProduct">
@@ -41,9 +41,9 @@
                 </View>
             </View>
 
-            <View id="view2" backgroundColor="#246">
+            <View id="view2" class="slidingview" backgroundColor="#246" layout="vertical">
 
-                <View backgroundColor="lime" height="300"></View>
+                <!-- <View backgroundColor="lime" height="300"></View>
                 <View class="ViewItem">
                     <Label class="LabelText">My Profile</Label>
                 </View>
@@ -59,11 +59,11 @@
                 </View>
                 <View class="ViewItem">
                     <Label class="LabelText">My Profile</Label>
-                </View>
+                </View> -->
 
             </View>
 
-        </ScrollableView>
+
 
     </Window>
 </Alloy>

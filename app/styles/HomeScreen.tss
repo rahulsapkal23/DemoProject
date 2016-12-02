@@ -30,6 +30,17 @@
     backgroundColor: "white",
     height: "686px"
 }
+".slidingview[platform=ios formFactor=tablet]" : {
+  /*left: "-200",*/
+    backgroundColor: "blue",
+    left: "-500",
+    width:"500"
+}
+".slidingview[platform=android]" : {
+    left: "-200",
+    backgroundColor: "blue",
+
+}
 ".ListItem" : {
     height: Ti.UI.FILL,
     color: "navy",
@@ -181,4 +192,7 @@
         fontFamily: "icomoon",
         fontSize: "70%"
     }
+}
+
+".slidingview": {
 }
