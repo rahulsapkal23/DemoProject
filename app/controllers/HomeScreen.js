@@ -7,60 +7,51 @@ $.header.__views.back.addEventListener('click', function(e) {
     SlideToMyProfile(e);
 });
 
+function SlideToMyProfile(e)
+{
+        Ti.API.info("inside slider");
+         // If the slidding menu isn't opened
+        if(e.source.toggle == true)
+        {
+            Ti.API.info("inside if ");
+            $.view1.animate
+            ({
+                    left:0,
+                      height:"100%",
+                    duration:400,
+                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+            });
+            $.view2.animate
+            ({
+                    left:"-75%",
 
+                    duration:400,
+                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+            });
+            e.source.toggle = false ;
+      }
 
-function SlideToMyProfile(e) {
-  Ti.API.info("inside slider");
+   // If the slidding menu is already opened then close the slidding view
 
+      else
+      {
+            $.view1.animate
+            ({
+                    left:"75%",
+                    width:"100%",
+                    height:"90%",
+                    duration:400,
+                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+            });
+            $.view2.animate
+            ({
+                    left:"0",
+                    duration:400,
+                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+            });
+            e.source.toggle  = true;
 
- //// ---- Menu window, positioned on the left
- // var menuWindow = Ti.UI.createWindow({
- //     top:0,
- //     left:0,
- //     width:"550",
- //     backgroundColor:"green"
- // });
-
-
- // menuWindow.open();
-
- if(e.source.toggle == true){
-Ti.API.info("inside if");
-// menuWindow.close();
-       $.view1.animate({
-           left:0,
-           duration:400,
-           curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-       });
-       $.view2.animate({
-           left:"-500",
-           duration:400,
-           curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-       });
-       e.source.toggle = false;
-   }
-   // If the menu isn't opened
-   else{
-      // menuWindow.open();
-     Ti.API.info("inside else");
-
-       $.view1.animate({
-           left:"500",
-           duration:400,
-           curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-       });
-       $.view2.animate({
-           left:"0",
-           duration:400,
-           curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-       });
-      // menuWindow.animate({
-      //      left:"-85",
-      //      duration:400,
-      //      curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-      //  });
-       e.source.toggle  = true;
-   }
+      }
 }
 $.view1.addEventListener('swipe',function(e){
 
@@ -182,3 +173,32 @@ function HomeScreenDetails(LoginDetails) {
 //         $.header.__views.back.toggle = false;
 //     }
 // });
+
+
+var items = [];
+items.push({
+  "MyCart":{text:"MyCart"},
+"Tables":{text:"Tables"},
+"Sofas":{text:"Sofas"},
+"Chairs":{text:"Chairs"},
+"Cupbords":{text:"Cupbords"},
+"MyAccount":{text:"MyAccount"},
+"Store":{text:"Store"},
+"MyOrders":{text:"MyOrders"},
+"Logout":{text:"Logout"},
+  "template": "Label",
+
+
+
+
+
+
+
+
+});
+
+
+        $.MyprofileListView.sections[0].setItems(items, {
+            animated: "false",
+
+        });

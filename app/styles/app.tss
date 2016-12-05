@@ -75,9 +75,6 @@ overrode the settings with other TSS, XML, or JS settings:
 ".container[platform=ios formFactor=tablet]" : {
 	backgroundImage: "imgpsh_fullsize.png",
   top: "25",
-
-  
-
 }
 ".falabel[platform=android ]" : {
     font: {

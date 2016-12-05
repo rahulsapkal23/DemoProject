@@ -1,5 +1,6 @@
+
 <Alloy>
-    <Window id="HomeScreenwin" class="container" >
+    <Window id="HomeScreenwin" class="Homescreencontainer" >
 
         <!-- <ScrollableView id="scrollableView"> -->
             <View id="view1" layout="vertical" >
@@ -41,25 +42,66 @@
                 </View>
             </View>
 
-            <View id="view2" class="slidingview" backgroundColor="#246" layout="vertical">
+            <View id="view2" class="slidingview"  layout="vertical">
 
-                <!-- <View backgroundColor="lime" height="300"></View>
-                <View class="ViewItem">
-                    <Label class="LabelText">My Profile</Label>
-                </View>
 
-                <View class="ViewItem">
-                    <Label class="LabelText">My Profile</Label>
-                </View>
-                <View class="ViewItem">
-                    <Label class="LabelText">My Profile</Label>
-                </View>
-                <View class="ViewItem">
-                    <Label class="LabelText">My Profile</Label>
-                </View>
-                <View class="ViewItem">
-                    <Label class="LabelText">My Profile</Label>
-                </View> -->
+              <ListView id="MyprofileListView" backgroundColor="#333333" layout="vertical" >
+                  <Templates>
+                      <ItemTemplate name="Label" height="100px" >
+                          <View  layout="vertical"  backgroundColor="red" >
+                              <!-- <ImageView bindId="image" class="ListImageContainer"  id="image"/> -->
+
+                                 <!-- <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label> -->
+
+                                    <Label bindId="MyCart" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Tables" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Sofas" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Chairs" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Cupbords" class="ListItemLabel"></Label>
+
+                                    <Label bindId="MyAccount" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Store" class="ListItemLabel"></Label>
+
+                                    <Label bindId="MyOrders" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Logout" class="ListItemLabel">Logout</Label>
+                              </View>
+
+                      </ItemTemplate>
+                      <ItemTemplate name="Label" height="100px" >
+                          <View  layout="vertical"  backgroundColor="blue" width="Ti.UI.SIZE">
+                              <!-- <ImageView bindId="image" class="ListImageContainer"  id="image"/> -->
+
+                                 <!-- <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label> -->
+
+                                    <Label bindId="MyCart" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Tables" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Sofas" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Chairs" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Cupbords" class="ListItemLabel"></Label>
+
+                                    <Label bindId="MyAccount" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Store" class="ListItemLabel"></Label>
+
+                                    <Label bindId="MyOrders" class="ListItemLabel"></Label>
+
+                                    <Label bindId="Logout" class="ListItemLabel">Logout</Label>
+                              </View>
+
+                      </ItemTemplate>
+                  </Templates>
+                  <ListSection/>
+              </ListView>
 
             </View>
 
