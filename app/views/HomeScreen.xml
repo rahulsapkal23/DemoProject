@@ -20,7 +20,7 @@
                     <View class="HomeScreenItemContainer" top="45px">
                         <View class="HomeScreenItem" productcategoryid="1" onClick="ListProduct">
                             <!-- <Label id="labicon">ABCDEFGHIJKLM NOPQRSTUVWXYZ abcdefghijklm nopqrstuvwxyz 1234567890</Label> -->
-                            <Label class="Tacleiconmoon" touchEnabled="false" text="\ue903"></Label>
+                            <Label class="Tableiconmoon" touchEnabled="false" text="\ue903"></Label>
                             <Label class="TableText"  touchEnabled="false">Table</Label>
                         </View>
 

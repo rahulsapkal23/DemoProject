@@ -112,7 +112,7 @@
         fontFamily: "neostores"
     }
 }
-".Tacleiconmoon[platform=ios formFactor=tablet]" : {
+".Tableiconmoon[platform=ios formFactor=tablet]" : {
     color: "white",
     left: "50px",
     bottom: "50px",
@@ -121,7 +121,7 @@
         fontSize: "150"
     }
 }
-".Tacleiconmoon[platform=android]" : {
+".Tableiconmoon[platform=android]" : {
     color: "white",
     left: "35px",
     bottom: "35px",
@@ -152,13 +152,27 @@ left: "40px",
     height: "84px",
     width: "84px"
 }
+".Listicon_font[platform=android ]" : {
+    color: "white",
+left: "40px",
+    font: {
+        fontFamily: "fontawesome",
+        fontSize: "25",
+        fontWeight: "20",
+    },
+    height: "84px",
+    width: "84px"
+}
 ".Listicon_moon[platform=android]" : {
     color: "white",
-
+left: "40px",
     font: {
         fontFamily: "icomoon",
-        fontSize: "10"
-    }
+        fontSize: "25",
+        fontWeight: "20",
+    },
+    height: "84px",
+    width: "84px"
 }
 
 ".Homescreencontainer[platform=android ]" : {
@@ -232,7 +246,7 @@ backgroundColor: "#333333",
   width:"75%",
 }
 
-".ListItemLabel": {
+".ListItemLabel[platform=ios formFactor=tablet]": {
 left: "40px",
   font: {
     fontSize: "35",
@@ -240,7 +254,14 @@ left: "40px",
   },
   color: "#ffffff",
 
-
+}
+".ListItemLabel[platform=android ]": {
+left: "40px",
+  font: {
+    fontSize: "20",
+    fontWeight: "2",
+  },
+  color: "#ffffff",
 
 }
 

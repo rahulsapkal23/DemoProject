@@ -49,7 +49,8 @@ function ViewofProductDetails(product) {
 
 
       var rating = JSON.parse(product).data.rating;
-      Ti.API.info("rating for" + rating);
+      var imagelength = JSON.parse(product).data.product_images.length;
+      Ti.API.info("rating for" + rating+imagelength);
 
 
               items.push({
@@ -66,13 +67,18 @@ function ViewofProductDetails(product) {
                       image: JSON.parse(product).data.product_images[0].image,
                   },
                   "image1": {
-                      image: JSON.parse(product).data.product_images[1].image,
+                  visible: imagelength>=1? true: false,
+                  image:imagelength>=1? JSON.parse(product).data.product_images[0].image: JSON.parse(product).data.product_images[0].image,
+
+
                   },
                   "image2": {
-                      image: JSON.parse(product).data.product_images[1].image,
+                       visible: imagelength>=2? true: false,
+                      image:imagelength>=2? JSON.parse(product).data.product_images[1].image: JSON.parse(product).data.product_images[0].image,
                   },
                   "image3": {
-                      image: JSON.parse(product).data.product_images[1].image,
+                       visible: imagelength>=3? true: false,
+                      image:imagelength>=3? JSON.parse(product).data.product_images[2].image: JSON.parse(product).data.product_images[0].image,
                   },
                   "producer": {
                       text: JSON.parse(product).data.producer
@@ -133,61 +139,130 @@ function ViewofProductDetails(product) {
     }
 
     function openBuy(e) {
-
-      Ti.API.info("inside open popover"+args);
-            Ti.API.info("inside open popover"+JSON.stringify(e));
-      //  $.dynamicListView.opacity="0.5";
-       var view = Titanium.UI.createView({
-         top: "50",
-       right: "100",
-       bottom: "50",
-       left: "100",
-       backgroundColor: "white",
-       layout:"vertical"
+if(Ti.Platform.osname=="android" || Ti.Platform.osname=="Android")
+{
+Ti.API.info(e);
+  Ti.API.info("inside open popover"+JSON.stringify(e));
+  Ti.API.info(e.section);
+//  $.dynamicListView.opacity="0.5";
+var view = Titanium.UI.createView({
+top: "50px",
+right: "10px",
+bottom: "50px",
+left: "10px",
+backgroundColor: "white",
+layout:"vertical",
+height:"200",
 });
 var Name = Ti.UI.createLabel({
-  top: "100px",
+top: "25px",
+font: {
+fontSize: "20px",
+},
+color:"#2C2B2B",
+ text:e.section.items[0].rate.properties.data.name,
+});
+var image = Ti.UI.createImageView({
+ image:e.section.items[0].rate.properties.data.product_images[0].image,
 
+});
+var textField = Ti.UI.createTextField({
+width:"100px",
+height:"50px",
+// top:"30px",
+borderColor: "gray",
+});
+var Qty = Ti.UI.createLabel({
+// top: "30px",
+
+font: {
+fontSize: "25px",
+},
+color:"#2C2B2B",
+text:"Enter Qty",
+});
+var button = Titanium.UI.createButton({
+// top: "30px",
+title: "Submit",
+width: "200px",
+height: "70px"
+});
+button.addEventListener('click',function(e)
+{
+Titanium.API.info("You clicked the button");
+$.dynamicListView.remove(view);
+});
+view.add(Name,image,Qty,textField,button);
+$.dynamicListView.add(view);
+
+// var popover = Alloy.createController('popover',e).getView();
+// popover.open();
+// $.dynamicListView.opacity="1";
+
+}
+else {
+
+
+
+  Ti.API.info("inside open popover"+JSON.stringify(e));
+  //  $.dynamicListView.opacity="0.5";
+  var view = Titanium.UI.createView({
+  top: "10%",
+  right: "5%",
+  bottom: "10%",
+  left: "5%",
+  backgroundColor: "white",
+  layout:"vertical"
+  });
+  var Name = Ti.UI.createLabel({
+  top: "100px",
   font: {
-    fontSize: "50px",
+  fontSize: "50px",
   },
   color:"#2C2B2B",
   text:e.source.properties.data.name,
-});
-var image = Ti.UI.createImageView({
+  });
+  var image = Ti.UI.createImageView({
   image:e.source.properties.data.product_images[0].image,
-});
-var textField = Ti.UI.createTextField({
+  });
+  var textField = Ti.UI.createTextField({
   width:"336px",
-   height:"129px",
-    top:"66px",
+  height:"129px",
+  top:"66px",
   borderColor: "gray",
-});
-var Qty = Ti.UI.createLabel({
+  });
+  var Qty = Ti.UI.createLabel({
   top: "100px",
 
   font: {
-    fontSize: "50px",
+  fontSize: "50px",
   },
   color:"#2C2B2B",
   text:"Enter Qty",
-});
-var button = Titanium.UI.createButton({
+  });
+  var button = Titanium.UI.createButton({
   top: "66px",
   title: "Submit",
   width: "595px",
   height: "142px"
-});
-button.addEventListener('click',function(e)
-{
-   Titanium.API.info("You clicked the button");
-   $.dynamicListView.remove(view);
-});
- $.dynamicListView.add(view);
- view.add(Name,image,Qty,textField,button);
-        // var popover = Alloy.createController('popover',e).getView();
-        // popover.open();
-        // $.dynamicListView.opacity="1";
+  });
+  button.addEventListener('click',function(e)
+  {
+  Titanium.API.info("You clicked the button");
+  $.dynamicListView.remove(view);
+  });
+  $.dynamicListView.add(view);
+  view.add(Name,image,Qty,textField,button);
+  // var popover = Alloy.createController('popover',e).getView();
+  // popover.open();
+  // $.dynamicListView.opacity="1";
+
+
+
+
+}
+
+      Ti.API.info("inside open popover"+args);
 
 
 }

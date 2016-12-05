@@ -24,9 +24,9 @@
                                 <Label bindId="price" class="LabelPricecontainer"/>
                                   <ImageView bindId="imagemain" class="imagemaincontainer" />
                                   <View layout="horizontal" top="20px" height="Ti.UI.SIZE">
-                                      <ImageView bindId="image1" class="imagecontainer"  />
-                                        <ImageView bindId="image2" class="imagecontainer"  />
-                                          <ImageView bindId="image3"  class="imagecontainer" />
+                                      <ImageView visible="false" bindId="image1" class="imagecontainer"  />
+                                        <ImageView visible="false" bindId="image2" class="imagecontainer"  />
+                                          <ImageView visible="false" bindId="image3"  class="imagecontainer" />
                                   </View>
                                   <Label color="#111111" fontSize="30px">Description</Label>
                                   <Label bindId="Description" class="Labeldescription"></Label>
@@ -35,8 +35,6 @@
 <Button class="buttonBUY" bindId="rate" width="40%" left="10px" onClick="openBuy" title="Rate"></Button>
 </View>
                             </View>
-
-
                 </ItemTemplate>
             </Templates>
             <ListSection/>
