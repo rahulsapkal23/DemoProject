@@ -43,65 +43,51 @@
             </View>
 
             <View id="view2" class="slidingview"  layout="vertical">
+                  <View top="5%"  layout="vertical"><ImageView class="MyDP"></ImageView>
+                  <Label class="Name" id="name" >NAME</Label>
+                    <Label class="Email" id="email_id" >email.id.com</Label>
 
 
-              <ListView id="MyprofileListView" backgroundColor="#333333" layout="vertical" >
-                  <Templates>
-                      <ItemTemplate name="Label" height="100px" >
-                          <View  layout="vertical"  backgroundColor="red" >
-                              <!-- <ImageView bindId="image" class="ListImageContainer"  id="image"/> -->
+              <View  class="list_view" top="40px" >
+                	<Label class="Listicon_font" text="\uf007"></Label>
+                 <Label class="ListItemLabel">My Cart</Label>
+              </View>
+                <View class="list_view" productcategoryid="1" onClick="ListProduct" >
+                  <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label>
+                          <Label  class="ListItemLabel" touchEnabled="false">Tables</Label>
+                  </View>
+                  <View class="list_view" onClick="ListProduct" productcategoryid="3">
+                    <Label class="Listicon_moon" touchEnabled="false" text="\ue902"></Label>
+                         <Label  class="ListItemLabel" touchEnabled="false">Sofas</Label>
+                    </View>
+                    <View class="list_view" onClick="ListProduct" productcategoryid="2" >
+                      <Label class="Listicon_moon" touchEnabled="false" text="\ue900"></Label>
+                          <Label class="ListItemLabel" touchEnabled="false">Chairs</Label>
+                      </View>
+                      <View class="list_view" onClick="ListProduct" productcategoryid="4">
+                        <Label class="Listicon_moon" touchEnabled="false" text="\ue901"></Label>
+                         <Label class="ListItemLabel" touchEnabled="false">Cupbords</Label>
+                       </View>
+                        <View class="list_view" onClick="GoToMyAccount">
+                          	<Label class="Listicon_font" text="\uf007"></Label>
+                              <Label class="ListItemLabel">My Account</Label>
+                          </View>
+                          <View class="list_view"  >
+                                	<Label class="Listicon_font" text="\uf041"></Label>
+                                <Label class="ListItemLabel">Store Locator</Label>
+                          </View>
+                            <View class="list_view"  >
+                                  	<Label class="Listicon_font" text="\uf007"></Label>
+                              <Label class="ListItemLabel">My Orders</Label>
+                          </View>
+                          <View class="list_view">
+                                	<Label class="Listicon_font" text="\uf090"></Label>
+                                <Label class="ListItemLabel" >Logout</Label>
+                          </View>
 
-                                 <!-- <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label> -->
 
-                                    <Label bindId="MyCart" class="ListItemLabel"></Label>
 
-                                    <Label bindId="Tables" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Sofas" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Chairs" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Cupbords" class="ListItemLabel"></Label>
-
-                                    <Label bindId="MyAccount" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Store" class="ListItemLabel"></Label>
-
-                                    <Label bindId="MyOrders" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Logout" class="ListItemLabel">Logout</Label>
-                              </View>
-
-                      </ItemTemplate>
-                      <ItemTemplate name="Label" height="100px" >
-                          <View  layout="vertical"  backgroundColor="blue" width="Ti.UI.SIZE">
-                              <!-- <ImageView bindId="image" class="ListImageContainer"  id="image"/> -->
-
-                                 <!-- <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label> -->
-
-                                    <Label bindId="MyCart" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Tables" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Sofas" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Chairs" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Cupbords" class="ListItemLabel"></Label>
-
-                                    <Label bindId="MyAccount" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Store" class="ListItemLabel"></Label>
-
-                                    <Label bindId="MyOrders" class="ListItemLabel"></Label>
-
-                                    <Label bindId="Logout" class="ListItemLabel">Logout</Label>
-                              </View>
-
-                      </ItemTemplate>
-                  </Templates>
-                  <ListSection/>
-              </ListView>
+ </View>
 
             </View>
 

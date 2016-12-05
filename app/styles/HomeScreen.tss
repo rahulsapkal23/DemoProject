@@ -132,11 +132,25 @@
 }
 ".Listicon_moon[platform=ios formFactor=tablet]" : {
     color: "white",
-
+left: "40px",
     font: {
         fontFamily: "icomoon",
-        fontSize: "20"
-    }
+        fontSize: "25",
+        fontWeight: "20",
+    },
+    height: "84px",
+    width: "84px"
+}
+".Listicon_font[platform=ios formFactor=tablet]" : {
+    color: "white",
+left: "40px",
+    font: {
+        fontFamily: "fontawesome",
+        fontSize: "25",
+        fontWeight: "20",
+    },
+    height: "84px",
+    width: "84px"
 }
 ".Listicon_moon[platform=android]" : {
     color: "white",
@@ -219,9 +233,44 @@ backgroundColor: "#333333",
 }
 
 ".ListItemLabel": {
-  height: Ti.UI.SIZE,
-  backgroundColor: "green",
-  color: "white",
-  height: "12"
+left: "40px",
+  font: {
+    fontSize: "35",
+    fontWeight: "2",
+  },
+  color: "#ffffff",
+
+
 
 }
+
+".list_view": {
+  height: "135px",
+  layout: "horizontal",
+
+}
+
+".MyDP": {
+  borderColor: "white",
+  borderRadius: "60",
+  borderWidth: "3",
+  height: "250px",
+  width: "250px",
+
+}
+
+".Name": {
+  top:"54px",
+  font: {
+    fontSize: "23"
+  },
+  color: "#ffffff"
+}
+
+".Email": {
+  top:"40px",
+  font: {
+    fontSize: "13"
+  },
+  color: "#ffffff"
+  }
