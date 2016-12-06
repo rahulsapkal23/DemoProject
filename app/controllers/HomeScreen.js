@@ -79,7 +79,7 @@ function SlideToMyProfile(e)
 function ListProduct(e) {
     Ti.API.info("click on which block" + e);
     Ti.API.info("click on next block" + JSON.stringify(e));
-    var ListProduct = Alloy.createController('ListProduct', e.source.productcategoryid).getView();
+    var ListProduct = Alloy.createController('ListProduct', e.source.productcategoryid,JSON.stringify(access_token)).getView();
     ListProduct.open();
 }
 
@@ -99,7 +99,7 @@ var client = Ti.Network.createHTTPClient({
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
-        alert(response.message);
+        // alert(response.message);
     },
     //  timeout : 5000  // in milliseconds
 });

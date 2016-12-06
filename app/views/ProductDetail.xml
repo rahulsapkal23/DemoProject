@@ -1,11 +1,11 @@
 <Alloy>
-    <Window id="ProductDetailwin" class="container" layout="vertical">
-        <Widget id="header" src="header"/>
+    <Window id="ProductDetailwin" class="container" layout="composite">
+        <Widget id="header" top="0" src="header"/>
 
-        <ListView id="dynamicListView" >
+        <ListView top="40" id="dynamicListView">
             <Templates>
                 <ItemTemplate name="image_title" height="Ti.UI.SIZE">
-                    <View  layout="vertical"  backgroundColor="white" >
+                    <View   layout="vertical"  backgroundColor="white" >
 
 
                             <Label bindId="name" class="LabelNamecontainer"/>
@@ -31,13 +31,16 @@
                                   <Label color="#111111" fontSize="30px">Description</Label>
                                   <Label bindId="Description" class="Labeldescription"></Label>
 <View top="10px" layout="horizontal">
-<Button class="buttonBUY" id="button1" bindId="buy" width="40%" left="10px" onClick="openBuy" title="BUY Now"></Button>
-<Button class="buttonBUY" bindId="rate" width="40%" left="10px" onClick="openBuy" title="Rate"></Button>
+<Button class="buttonBUY" id="button1" bindId="buy" width="40%" left="10px"  title="BUY Now"></Button>
+<Button class="buttonBUY" id="rate" width="40%" left="10px"  title="Rate"></Button>
 </View>
+
                             </View>
                 </ItemTemplate>
             </Templates>
+
             <ListSection/>
         </ListView>
+
     </Window>
 </Alloy>

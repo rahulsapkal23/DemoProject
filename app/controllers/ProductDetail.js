@@ -7,7 +7,8 @@ $.header.__views.back.addEventListener('click', function(e) {
 
 // ################################# get argument from previous controllew ###################################
 var args = arguments[0] || {};
-Ti.API.info("Inside ProductDetail and id is" + args);
+var access_token = arguments[1] || {};
+Ti.API.info("Inside ProductDetail and id is" + args+JSON.stringify(access_token));
 Ti.API.info(JSON.stringify(args));
 
 
@@ -138,26 +139,26 @@ function ViewofProductDetails(product) {
       });
     }
 
-    function openBuy(e) {
+    $.button1.addEventListener('click',function (e) {
+
 if(Ti.Platform.osname=="android" || Ti.Platform.osname=="Android")
 {
-Ti.API.info(e);
-  Ti.API.info("inside open popover"+JSON.stringify(e));
-  Ti.API.info(e.section);
-//  $.dynamicListView.opacity="0.5";
+
+var viewBody = Titanium.UI.createView({
+backgroundColor: "#ededed",
+});
 var view = Titanium.UI.createView({
-top: "50px",
-right: "10px",
-bottom: "50px",
-left: "10px",
+top: "10%",
+right: "5%",
+bottom: "10%",
+left: "5%",
 backgroundColor: "white",
-layout:"vertical",
-height:"200",
+  layout:"vertical"
 });
 var Name = Ti.UI.createLabel({
-top: "25px",
+top: "100px",
 font: {
-fontSize: "20px",
+fontSize: "50px",
 },
 color:"#2C2B2B",
  text:e.section.items[0].rate.properties.data.name,
@@ -165,47 +166,74 @@ color:"#2C2B2B",
 var image = Ti.UI.createImageView({
  image:e.section.items[0].rate.properties.data.product_images[0].image,
 
+ borderColor:"black",
+
 });
 var textField = Ti.UI.createTextField({
-width:"100px",
-height:"50px",
-// top:"30px",
+  id:"Tf1",
+width:"336px",
+height:"129px",
+top:"66px",
 borderColor: "gray",
 });
 var Qty = Ti.UI.createLabel({
-// top: "30px",
-
+top: "100px",
 font: {
-fontSize: "25px",
-},
+        fontSize: "50px",
+      },
 color:"#2C2B2B",
 text:"Enter Qty",
 });
 var button = Titanium.UI.createButton({
-// top: "30px",
+top: "66px",
 title: "Submit",
-width: "200px",
-height: "70px"
+width: "595px",
+height: "142px"
 });
 button.addEventListener('click',function(e)
 {
 Titanium.API.info("You clicked the button");
-$.dynamicListView.remove(view);
-});
-view.add(Name,image,Qty,textField,button);
-$.dynamicListView.add(view);
+var data = {
+    Quentity: $.Tf1.value,
+    product_id:e.section.items[0].rate.properties.data.id,
+}
+var client = Ti.Network.createHTTPClient();
+client.onload = function(e) {
+    var response = JSON.parse(client.getResponseText());
+    Ti.API.info("json stringfy load" + JSON.stringify(e));
+    Ti.API.info("client.responseText onload" + client.getResponseText());
 
-// var popover = Alloy.createController('popover',e).getView();
-// popover.open();
-// $.dynamicListView.opacity="1";
+};
+client.onerror = function(e) {
+    var response = JSON.parse(client.getResponseText());
+    Ti.API.info(" onerror" + JSON.stringify(e));
+    Ti.API.info("client.responseText onerror" + client.getResponseText());
+    Ti.API.info(response.message);
+    // alert(response.message);
+
+};
+client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
+client.setRequestHeader("access_token", access_token);
+client.send(data);
+ $.ProductDetailwin.remove(viewBody);
+});
+view.add(Name);
+view.add(image);
+view.add(Qty);
+view.add(textField);
+view.add(button);
+viewBody.add(view);
+$.ProductDetailwin.add(viewBody);
 
 }
 else {
-
-
-
-  Ti.API.info("inside open popover"+JSON.stringify(e));
+  var viewBody = Titanium.UI.createView({
+  backgroundColor: "#282727",
+  backgroundColor: "#ededed",
+  });
+  Ti.API.info("inside open popover IOS"+JSON.stringify(e));
   //  $.dynamicListView.opacity="0.5";
+  Ti.API.info();
   var view = Titanium.UI.createView({
   top: "10%",
   right: "5%",
@@ -226,6 +254,7 @@ else {
   image:e.source.properties.data.product_images[0].image,
   });
   var textField = Ti.UI.createTextField({
+    id:"Tf1",
   width:"336px",
   height:"129px",
   top:"66px",
@@ -246,23 +275,193 @@ else {
   width: "595px",
   height: "142px"
   });
+  button.addEventListener('click',function(m)
+  {
+  Titanium.API.info("You clicked the button"+JSON.stringify(e));
+  var data = {
+      quantity: textField.value,
+      product_id:args,
+  }
+  var client = Ti.Network.createHTTPClient();
+  client.onload = function(e) {
+      var response = JSON.parse(client.getResponseText());
+      Ti.API.info("json stringfy load" + JSON.stringify(e));
+      Ti.API.info("client.responseText onload" + client.getResponseText());
+      // alert(response.message)
+  };
+  client.onerror = function(e) {
+      var response = JSON.parse(client.getResponseText());
+      Ti.API.info(" onerror" + JSON.stringify(e));
+      Ti.API.info("client.responseText onerror" + client.getResponseText());
+      Ti.API.info(response.message);
+      // alert(response.message);
+
+  };
+  client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
+  client.setRequestHeader("access_token", access_token);
+  client.send(data);
+  $.ProductDetailwin.remove(viewBody);
+  });
+  view.add(Name,image,Qty,textField,button);
+  viewBody.add(view);
+  $.ProductDetailwin.add(viewBody);
+}
+      Ti.API.info("inside open popover"+args);
+  });
+
+$.rate.addEventListener('click',function(e)
+{
+
+
+  if(Ti.Platform.osname=="android" || Ti.Platform.osname=="Android")
+  {
+
+  var viewBody = Titanium.UI.createView({
+  backgroundColor: "#ededed",
+  });
+  var view = Titanium.UI.createView({
+  top: "10%",
+  right: "5%",
+  bottom: "10%",
+  left: "5%",
+  backgroundColor: "white",
+    layout:"vertical"
+  });
+  var Name = Ti.UI.createLabel({
+  top: "100px",
+  font: {
+  fontSize: "50px",
+  },
+  color:"#2C2B2B",
+   text:e.section.items[0].rate.properties.data.name,
+  });
+  var image = Ti.UI.createImageView({
+   image:e.section.items[0].rate.properties.data.product_images[0].image,
+
+   borderColor:"black",
+
+  });
+for(var i=0;i<5;i++)
+{}
+  var button = Titanium.UI.createButton({
+  top: "66px",
+  title: "Rate Now",
+  width: "595px",
+  height: "142px"
+  });
   button.addEventListener('click',function(e)
   {
   Titanium.API.info("You clicked the button");
-  $.dynamicListView.remove(view);
+  var data = {
+      product_id:e.section.items[0].rate.properties.data.id,
+  }
+  var client = Ti.Network.createHTTPClient();
+  client.onload = function(e) {
+      var response = JSON.parse(client.getResponseText());
+      Ti.API.info("json stringfy load" + JSON.stringify(e));
+      Ti.API.info("client.responseText onload" + client.getResponseText());
+
+  };
+  client.onerror = function(e) {
+      var response = JSON.parse(client.getResponseText());
+      Ti.API.info(" onerror" + JSON.stringify(e));
+      Ti.API.info("client.responseText onerror" + client.getResponseText());
+      Ti.API.info(response.message);
+      // alert(response.message);
+
+  };
+  client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/products/setRating');
+  client.send(data);
+   $.ProductDetailwin.remove(viewBody);
   });
-  $.dynamicListView.add(view);
-  view.add(Name,image,Qty,textField,button);
-  // var popover = Alloy.createController('popover',e).getView();
-  // popover.open();
-  // $.dynamicListView.opacity="1";
+  view.add(Name);
+  view.add(image);
+  view.add(Qty);
+  view.add(textField);
+  view.add(button);
+  viewBody.add(view);
+  $.ProductDetailwin.add(viewBody);
 
+  }
+  else {
+    var viewBody = Titanium.UI.createView({
+    backgroundColor: "#282727",
+    backgroundColor: "#ededed",
+    });
+    Ti.API.info("inside open popover IOS"+JSON.stringify(e));
+    //  $.dynamicListView.opacity="0.5";
+    Ti.API.info();
+    var view = Titanium.UI.createView({
+    top: "10%",
+    right: "5%",
+    bottom: "10%",
+    left: "5%",
+    backgroundColor: "white",
+    layout:"vertical"
+    });
+    var Name = Ti.UI.createLabel({
+    top: "100px",
+    font: {
+    fontSize: "50px",
+    },
+    color:"#2C2B2B",
+    text:e.source.properties.data.name,
+    });
+    var image = Ti.UI.createImageView({
+    image:e.source.properties.data.product_images[0].image,
+    });
+    var textField = Ti.UI.createTextField({
+      id:"Tf1",
+    width:"336px",
+    height:"129px",
+    top:"66px",
+    borderColor: "gray",
+    });
+    var Qty = Ti.UI.createLabel({
+    top: "100px",
 
+    font: {
+    fontSize: "50px",
+    },
+    color:"#2C2B2B",
+    text:"Enter Qty",
+    });
+    var button = Titanium.UI.createButton({
+    top: "66px",
+    title: "Submit",
+    width: "595px",
+    height: "142px"
+    });
+    button.addEventListener('click',function(m)
+    {
+    Titanium.API.info("You clicked the button"+JSON.stringify(e));
+    var data = {
+        quantity: textField.value,
+        product_id:args,
+    }
+    var client = Ti.Network.createHTTPClient();
+    client.onload = function(e) {
+        var response = JSON.parse(client.getResponseText());
+        Ti.API.info("json stringfy load" + JSON.stringify(e));
+        Ti.API.info("client.responseText onload" + client.getResponseText());
+        // alert(response.message)
+    };
+    client.onerror = function(e) {
+        var response = JSON.parse(client.getResponseText());
+        Ti.API.info(" onerror" + JSON.stringify(e));
+        Ti.API.info("client.responseText onerror" + client.getResponseText());
+        Ti.API.info(response.message);
+        // alert(response.message);
 
-
-}
-
-      Ti.API.info("inside open popover"+args);
-
-
-}
+    };
+    client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
+    client.setRequestHeader("access_token", access_token);
+    client.send(data);
+    $.ProductDetailwin.remove(viewBody);
+    });
+    view.add(Name,image,Qty,textField,button);
+    viewBody.add(view);
+    $.ProductDetailwin.add(viewBody);
+  }
+        Ti.API.info("inside open popover"+args);
+    });

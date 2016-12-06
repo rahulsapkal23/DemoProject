@@ -8,12 +8,13 @@ $.header.__views.back.addEventListener('click', function(e) {
 // ################################# function for clear Memory ###################################
 function clearMemory() {
   Ti.API.info("Inside Clear Memory");
-  
+
 }
 
 
 // ################################# get argument from previous controllew ###################################
 var args = arguments[0] || {};
+var access_token = arguments[1] || {};
 switch (args) {
   case 1:
     $.header.__views.tital.text = "Table";
@@ -48,7 +49,7 @@ var client = Ti.Network.createHTTPClient({
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
-        alert(response.message);
+        // alert(response.message);
     },
     //  timeout : 5000  // in milliseconds
 });
@@ -112,6 +113,7 @@ function ListViewofProduct(Productdata) {
                     "template": "image_title",
                     "properties": {
                         Mid:JSON.parse(Productdata).data[i].id,
+
 
 
                   }
@@ -323,7 +325,7 @@ function GoToProductDetail(e){
   Ti.API.info("on click stringify"+JSON.stringify(e));
   Ti.API.info(e.section.getItemAt(e.itemIndex));
   Ti.API.info(e.section.getItemAt(e.itemIndex).properties.Mid);
-  var ProductDetail = Alloy.createController('ProductDetail',e.section.getItemAt(e.itemIndex).properties.Mid).getView();
+  var ProductDetail = Alloy.createController('ProductDetail',e.section.getItemAt(e.itemIndex).properties.Mid,access_token).getView();
   ProductDetail.open();
 
 }
