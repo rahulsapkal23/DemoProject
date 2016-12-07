@@ -90,7 +90,7 @@
 }
 ".LabelPricecontainer[platform=ios formFactor=tablet]" : {
 	color: '#fe4040',
-
+left: "40px",
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
@@ -99,7 +99,7 @@
 }
 ".LabelPricecontainer[platform=android ]" : {
 	color: '#fe4040',
-
+left: "40px",
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
@@ -130,6 +130,8 @@
 }
 
 ".Labeldescription": {
+	top: "40px",
+	left: "40px",
 	color: "#333333",
 	fontSize: "30px"
 }
@@ -137,5 +139,54 @@
 ".buttonBUY": {
 	backgroundColor: "#db1514",
 	fontSize: "75px",
-	color: "#ffffff"
+	color: "#ffffff",
+	width: "48%",
+	height: "50",
+	top: "20"
+
+}
+
+".viewhead": {
+layout:"vertical",
+	 backgroundColor:"#ffffff",
+
+	 borderRadius: "10"
+}
+".share[platform=android ]" : {
+    font: {
+        fontFamily: 'FontAwesome',
+        height: "70px",
+        width: "70px",
+				fontSize: "70px"
+    },
+    left: "50%",
+    color: "#7f7f7f"
+}
+".share[platform=ios formFactor=tablet]" : {
+	font: {
+			fontFamily: 'FontAwesome',
+			height: "70px",
+			width: "70px",
+			fontSize: "50px",
+			/*fontWeight: "0.5"*/
+	},
+	left: "50%",
+	color: "#7f7f7f"
+}
+".viewimg": {
+	backgroundColor:"#ffffff",
+	top:"50px",
+	layout:"vertical",
+	left: "40px",
+	right: "40px",
+	 borderRadius: "15"
+}
+
+".desc": {
+	top: "50px",
+	left: "40px",
+	font: {
+		fontSize: "30px",
+	},
+	color: "#111111",
 }

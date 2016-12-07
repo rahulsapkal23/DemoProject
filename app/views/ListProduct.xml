@@ -1,5 +1,5 @@
 <Alloy>
-    <Window id="ListProductwin" class="container" layout="vertical">
+    <Window id="ListProductwin" class="container1" layout="vertical">
         <Widget id="header" src="header"/>
 
         <ListView id="dynamicListView" onItemclick="GoToProductDetail">
@@ -10,9 +10,10 @@
                         <View layout="vertical">
                             <Label bindId="name" class="LabelNamecontainer"/>
                             <Label bindId="producer" class="LabelProducercontainer"/>
-                            <View layout="horizontal">
-                                <Label bindId="price" class="LabelPricecontainer"/>
-                                <Label id="rating1" bindId="rate1" class="falabelRate" text="\uf005"></Label>
+                            <View layout="horizontal" >
+                                <Label bindId="price" class="LabelPricecontainer" />
+
+                                <Label id="rating1" left="25%" bindId="rate1" class="falabelRate" text="\uf005"></Label>
                                 <Label id="rating2" bindId="rate2" class="falabelRate" text="\uf005"></Label>
                                 <Label id="rating3" bindId="rate3" class="falabelRate" text="\uf005"></Label>
                                 <Label id="rating4" bindId="rate4" class="falabelRate" text="\uf005"></Label>

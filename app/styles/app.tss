@@ -76,6 +76,18 @@ overrode the settings with other TSS, XML, or JS settings:
 	backgroundImage: "imgpsh_fullsize.png",
   top: "25",
 }
+
+".container1[platform=android ]" : {
+
+  top: "0",
+backgroundColor: "white",
+  orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
+}
+".container1[platform=ios formFactor=tablet]" : {
+backgroundColor: "white",
+  top: "25",
+}
+
 ".falabel[platform=android ]" : {
     font: {
         fontFamily: 'FontAwesome',

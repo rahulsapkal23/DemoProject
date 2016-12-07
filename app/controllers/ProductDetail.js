@@ -11,7 +11,7 @@ var access_token = arguments[1] || {};
 Ti.API.info("Inside ProductDetail and id is" + args+JSON.stringify(access_token));
 Ti.API.info(JSON.stringify(args));
 
-Ti.API.info("hhhhhh"+Alloy.Globals.Maccess_token);
+Ti.API.info("Global variable access_token"+Alloy.Globals.Maccess_token);
 
 // ################################# making  HTTP GET request for API ###################################
 var client = Ti.Network.createHTTPClient({
@@ -46,97 +46,54 @@ function ViewofProductDetails(product) {
   Ti.API.info("in side ViewofProductDetails");
   Ti.API.info(product);
   Ti.API.info("hero" + JSON.parse(product).data.length);
-  var items = [];
+
 
 
       var rating = JSON.parse(product).data.rating;
       var imagelength = JSON.parse(product).data.product_images.length;
       Ti.API.info("rating for" + rating+imagelength);
 
+                      $.name.text= JSON.parse(product).data.name;
+switch (JSON.parse(product).data.product_category_id) {
+  case 1:
+      $.catagory.text="Catagory - Table";
+    break;
+    case 2:
+        $.catagory.text="Catagory - Chair";
+      break;
+      case 3:
+          $.catagory.text="Catagory - Sofa";
+        break;
+        case 4:
+            $.catagory.text="Catagory - Bed";
+          break;
 
-              items.push({
-                  "name": {
-                      text: JSON.parse(product).data.name
-                  },
-                  "catagory": {
-                      text: "Catagory - Table",
-                  },
-                  "Description": {
-                      text: JSON.parse(product).data.description,
-                  },
-                  "imagemain": {
-                      image: JSON.parse(product).data.product_images[0].image,
-                  },
-                  "image1": {
-                  visible: imagelength>=1? true: false,
-                  image:imagelength>=1? JSON.parse(product).data.product_images[0].image: JSON.parse(product).data.product_images[0].image,
+  default:
 
-
-                  },
-                  "image2": {
-                       visible: imagelength>=2? true: false,
-                      image:imagelength>=2? JSON.parse(product).data.product_images[1].image: JSON.parse(product).data.product_images[0].image,
-                  },
-                  "image3": {
-                       visible: imagelength>=3? true: false,
-                      image:imagelength>=3? JSON.parse(product).data.product_images[2].image: JSON.parse(product).data.product_images[0].image,
-                  },
-                  "producer": {
-                      text: JSON.parse(product).data.producer
-                  },
-                  "price": {
-                      text: "Rs. "+JSON.parse(product).data.cost,
-                      color: "red"
-                  },
-
-                  "rate1": {
-                    color: rating>=1? "#ffba00": "#7f7f7f"
-
-
-                  },
-                  "rate2": {
-                      color: rating>=2? "#ffba00": "#7f7f7f"
-
-                  },
-                  "rate3": {
-                      color: rating>=3? "#ffba00": "#7f7f7f"
-
-                  },
-                  "rate4": {
-                    color: rating>=4? "#ffba00": "#7f7f7f"
-
-                  },
-                  "rate5": {
-                      color: rating>=5? "#ffba00": "#7f7f7f"
-
-                  },
-                  "buy": {
-                      properties:JSON.parse(product)
-
-                  },
-                  "rate": {
-                        properties:JSON.parse(product)
-
-                  },
-
-                  "template": "image_title",
-
-                  "properties": {
-
-                      Mid:JSON.parse(product).data.id,
-                      Maccess_token:JSON.stringify(access_token),
-
-
-                }
-              });
+}
 
 
 
 
-      $.dynamicListView.sections[0].setItems(items, {
-          animated: "false",
+                      $.Description.text= JSON.parse(product).data.description;
+                      $.imagemain.image= JSON.parse(product).data.product_images[0].image;
+                      $.image1.visible= imagelength>=1? true: false,
+                      $.image1.image=imagelength>=1? JSON.parse(product).data.product_images[0].image: JSON.parse(product).data.product_images[0].image;
+                      $.image2.visible= imagelength>=2? true: false;
+                      $.image2.image=imagelength>=2? JSON.parse(product).data.product_images[1].image: JSON.parse(product).data.product_images[0].image;
+                      $.image3.visible= imagelength>=3? true: false,
+                      $.image3.image=imagelength>=3? JSON.parse(product).data.product_images[2].image: JSON.parse(product).data.product_images[0].image;
+                      $.producer.text= JSON.parse(product).data.producer;
+                      $.price.text= "Rs. "+JSON.parse(product).data.cost;
+                      $.price.color= "red";
+                      $.rate1.color= rating>=1? "#ffba00": "#7f7f7f";
+                      $.rate2.color= rating>=2? "#ffba00": "#7f7f7f";
+                      $.rate3.color= rating>=3? "#ffba00": "#7f7f7f";
+                      $.rate4.color= rating>=4? "#ffba00": "#7f7f7f";
+                      $.rate5.color= rating>=5? "#ffba00": "#7f7f7f";
+                      $.buy.properties=JSON.parse(product);
+                      $.rate.properties=JSON.parse(product);
 
-      });
     }
 
     // $.dynamicListView.addEventListener('itemclick',function(e){
@@ -174,10 +131,10 @@ font: {
 fontSize: "50px",
 },
 color:"#2C2B2B",
- text:e.section.items[0].rate.properties.data.name,
+ text:e.source.properties.data.name,
 });
 var image = Ti.UI.createImageView({
- image:e.section.items[0].rate.properties.data.product_images[0].image,
+ image:e.source.properties.data.product_images[0].image,
 
  borderColor:"black",
 
@@ -188,6 +145,7 @@ width:"336px",
 height:"129px",
 top:"66px",
 borderColor: "gray",
+color:"black",
 });
 var Qty = Ti.UI.createLabel({
 top: "100px",
@@ -198,8 +156,11 @@ color:"#2C2B2B",
 text:"Enter Qty",
 });
 var button = Titanium.UI.createButton({
-top: "66px",
-title: "Submit",
+  backgroundColor: "#db1514",
+  fontSize: "75px",
+  color: "#ffffff",
+  top: "66px",
+  title: "Submit",
 width: "595px",
 height: "142px"
 });
@@ -207,7 +168,7 @@ button.addEventListener('click',function(e)
 {
 Titanium.API.info("You clicked the button");
 var data = {
-    // quentity: $.Tf1.value,
+
       quantity: textField.value,
     product_id:args,
 }
@@ -216,14 +177,15 @@ client.onload = function(e) {
     var response = JSON.parse(client.getResponseText());
     Ti.API.info("json stringfy load" + JSON.stringify(e));
     Ti.API.info("client.responseText onload" + client.getResponseText());
-
+    Ti.API.info(response.message);
+     alert(response.message);
 };
 client.onerror = function(e) {
     var response = JSON.parse(client.getResponseText());
     Ti.API.info(" onerror" + JSON.stringify(e));
     Ti.API.info("client.responseText onerror" + client.getResponseText());
     Ti.API.info(response.message);
-    // alert(response.message);
+     alert(response.message);
 
 };
 client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
@@ -284,6 +246,10 @@ else {
   text:"Enter Qty",
   });
   var button = Titanium.UI.createButton({
+    backgroundColor: "#db1514",
+    fontSize: "75px",
+    color: "#ffffff",
+
   top: "66px",
   title: "Submit",
   width: "595px",
@@ -301,14 +267,14 @@ else {
       var response = JSON.parse(client.getResponseText());
       Ti.API.info("json stringfy load" + JSON.stringify(e));
       Ti.API.info("client.responseText onload" + client.getResponseText());
-      // alert(response.message)
+       alert(response.message)
   };
   client.onerror = function(e) {
       var response = JSON.parse(client.getResponseText());
       Ti.API.info(" onerror" + JSON.stringify(e));
       Ti.API.info("client.responseText onerror" + client.getResponseText());
       Ti.API.info(response.message);
-      // alert(response.message);
+       alert(response.message);
 
   };
   client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
@@ -324,6 +290,10 @@ else {
   };
 
 // $.rate.addEventListener('click',function(e)
+
+
+
+
 function openRate(e)
 {
 Ti.API.info("njkvdxhkjvndxk"+JSON.stringify(e));
@@ -348,10 +318,10 @@ Ti.API.info("njkvdxhkjvndxk"+JSON.stringify(e));
   fontSize: "50px",
   },
   color:"#2C2B2B",
-   text:e.section.items[0].rate.properties.data.name,
+  text:e.source.properties.data.name,
   });
   var image = Ti.UI.createImageView({
-   image:e.section.items[0].rate.properties.data.product_images[0].image,
+  image:e.source.properties.data.product_images[0].image,
 
    borderColor:"black",
 
@@ -393,6 +363,10 @@ Ti.API.info("njkvdxhkjvndxk"+JSON.stringify(e));
 
   })
   var button = Titanium.UI.createButton({
+    backgroundColor: "#db1514",
+    fontSize: "75px",
+    color: "#ffffff",
+
   top: "66px",
   title: "Submit",
   width: "595px",
@@ -410,14 +384,14 @@ Ti.API.info("njkvdxhkjvndxk"+JSON.stringify(e));
       var response = JSON.parse(client.getResponseText());
       Ti.API.info("json stringfy load" + JSON.stringify(e));
       Ti.API.info("client.responseText onload" + client.getResponseText());
-
+ alert(response.message);
   };
   client.onerror = function(e) {
       var response = JSON.parse(client.getResponseText());
       Ti.API.info(" onerror" + JSON.stringify(e));
       Ti.API.info("client.responseText onerror" + client.getResponseText());
       Ti.API.info(response.message);
-      // alert(response.message);
+       alert(response.message);
 
   };
   client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/products/setRating');
@@ -499,6 +473,10 @@ e.source.color="#7f7f7f";
 
   })
     var button = Titanium.UI.createButton({
+      backgroundColor: "#db1514",
+      fontSize: "75px",
+      color: "#ffffff",
+
     top: "66px",
     title: "Submit",
     width: "595px",
@@ -542,5 +520,7 @@ e.source.color="#7f7f7f";
 function goToMyCart() {
   Ti.API.info("inside Go to my cart");
 
+var goToMyCart = Alloy.createController('AddToCart').getView();
+goToMyCart.open();
 
 };
