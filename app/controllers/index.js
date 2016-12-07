@@ -68,6 +68,7 @@ function GoToHomescreen(e) {
     Ti.API.info("inside GoToHomescreen" + e);
     Ti.API.info("21212" + JSON.stringify(e));
     Ti.API.info("inside GoToHomescreen1111" + JSON.parse(e).data.access_token);
+    Alloy.Globals.Maccess_token=JSON.parse(e).data.access_token;
     var HomeScreen = Alloy.createController('HomeScreen', (JSON.parse(e)).data.access_token).getView();
     HomeScreen.open();
 }

@@ -33,6 +33,9 @@ switch (args) {
 }
 Ti.API.info("Inside Listview and id is" + args);
 Ti.API.info(JSON.stringify(args));
+Ti.API.info("rahhhhhuuulll"+access_token);
+Ti.API.info("rahhhhhuuulll"+JSON.stringify(access_token));
+
 
 // ################################# making  HTTP GET request for API ###################################
 var client = Ti.Network.createHTTPClient({
@@ -113,7 +116,7 @@ function ListViewofProduct(Productdata) {
                     "template": "image_title",
                     "properties": {
                         Mid:JSON.parse(Productdata).data[i].id,
-
+                        access_token:JSON.stringify(access_token),
 
 
                   }
@@ -163,7 +166,7 @@ function ListViewofProduct(Productdata) {
                     "template": "image_title",
                     "properties": {
                         Mid:JSON.parse(Productdata).data[i].id,
-
+                        access_token:JSON.stringify(access_token),
 
                     }
                 });
@@ -211,7 +214,7 @@ function ListViewofProduct(Productdata) {
                     "template": "image_title",
                     "properties": {
                         Mid:JSON.parse(Productdata).data[i].id,
-
+                        access_token:JSON.stringify(access_token),
 
                     }
                 });
@@ -255,7 +258,7 @@ function ListViewofProduct(Productdata) {
                     "template": "image_title",
                     "properties": {
                         Mid:JSON.parse(Productdata).data[i].id,
-
+                        access_token:JSON.stringify(access_token),
                     }
                 });
 
@@ -300,7 +303,7 @@ function ListViewofProduct(Productdata) {
                     "template": "image_title",
                     "properties": {
                         Mid:JSON.parse(Productdata).data[i].id,
-
+                        access_token:JSON.stringify(access_token),
 
                     }
                 });

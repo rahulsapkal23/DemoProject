@@ -1,6 +1,6 @@
 // ################################# get argument from previous controllew ###################################
 var access_token = arguments[0] || {};
-Ti.API.info("Inside Listview and id is" + access_token);
+Ti.API.info("Inside Homescreen and access_token is" + access_token);
 Ti.API.info(JSON.stringify(access_token));
 
 

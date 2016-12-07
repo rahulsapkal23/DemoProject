@@ -10,7 +10,7 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
-// 
+//
 // function HttpRequest(Request_Type,Url,Header_Argument) {
 // Ti.API.info("inside Alloy");
 //   var client = Ti.Network.createHTTPClient({

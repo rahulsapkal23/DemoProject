@@ -11,7 +11,7 @@ var access_token = arguments[1] || {};
 Ti.API.info("Inside ProductDetail and id is" + args+JSON.stringify(access_token));
 Ti.API.info(JSON.stringify(args));
 
-
+Ti.API.info("hhhhhh"+Alloy.Globals.Maccess_token);
 
 // ################################# making  HTTP GET request for API ###################################
 var client = Ti.Network.createHTTPClient({
@@ -124,7 +124,7 @@ function ViewofProductDetails(product) {
                   "properties": {
 
                       Mid:JSON.parse(product).data.id,
-
+                      Maccess_token:JSON.stringify(access_token),
 
 
                 }
@@ -207,8 +207,9 @@ button.addEventListener('click',function(e)
 {
 Titanium.API.info("You clicked the button");
 var data = {
-    Quentity: $.Tf1.value,
-    product_id:e.section.items[0].rate.properties.data.id,
+    // quentity: $.Tf1.value,
+      quantity: textField.value,
+    product_id:args,
 }
 var client = Ti.Network.createHTTPClient();
 client.onload = function(e) {
@@ -226,7 +227,7 @@ client.onerror = function(e) {
 
 };
 client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
-client.setRequestHeader("access_token", access_token);
+client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
 client.send(data);
  $.ProductDetailwin.remove(viewBody);
 });
@@ -311,7 +312,7 @@ else {
 
   };
   client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
-  client.setRequestHeader("access_token", access_token);
+  client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
   client.send(data);
   $.ProductDetailwin.remove(viewBody);
   });
@@ -402,7 +403,7 @@ Ti.API.info("njkvdxhkjvndxk"+JSON.stringify(e));
   {
   Titanium.API.info("You clicked the button");
   var data = {
-      product_id:e.section.items[0].rate.properties.data.id,
+      product_id:args,
   }
   var client = Ti.Network.createHTTPClient();
   client.onload = function(e) {
@@ -515,14 +516,14 @@ e.source.color="#7f7f7f";
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
-        // alert(response.message)
+         alert(response.message)
     };
     client.onerror = function(e) {
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
-        // alert(response.message);
+         alert(response.message);
 
     };
 
@@ -538,3 +539,8 @@ e.source.color="#7f7f7f";
   }
         Ti.API.info("inside open popover"+args);
     };
+function goToMyCart() {
+  Ti.API.info("inside Go to my cart");
+
+
+};
