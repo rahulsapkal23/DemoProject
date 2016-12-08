@@ -93,7 +93,7 @@
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
 		fontSize: '40px'
-	},	
+	},
 }
 ".LabelPricecontainer[platform=android ]" : {
 	color: '#fe4040',

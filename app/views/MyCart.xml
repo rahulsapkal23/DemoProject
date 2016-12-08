@@ -1,31 +1,22 @@
 <Alloy>
 	<Window id="Mycartwin" class="container" layout="vertical">
 		<Widget id="header" src="header"/>
-		<ListView id="dynamicListView" >
+		<ListView id="dynamicListView" onItemclick="itemclick" >
 				<Templates>
 						<ItemTemplate name="image_title" height="270px" >
-								<View  layout="composite"  backgroundColor="white" >
+								<View  layout="horizontal" class="Viewmycart" backgroundColor="white" >
 										<ImageView bindId="image" class="ListImageContainer"  id="image"/>
-										<View layout="vertical">
-												<Label bindId="name" class="LabelNamecontainer"/>
-												<Label bindId="type" class="LabelProducercontainer"/>
-												</View>
+										<View layout="vertical" top="1px" width="Ti.UI.SIZE" left="20px">
+												<Label  bindId="name" class="LabelNamecontainer"/>
+												<Label  bindId="type" class="LabelTypecontainer"/>
+<View class="Viewprice" bindId="Viewprice" layout="horizontal">
+	<Label  id="QTY" left="5" bindId="QTY"></Label>
+<Label   class="falabelDown" text="\uf107"></Label>
+</View>		</View>
+<Label id="pr" bindId="price" class="LabelPricecontainer" />
 
-														<Label bindId="price" class="LabelPricecontainer" onClick="picker"/>
 
 
-<!--
-<View borderColor="lime">
-	<Picker id="picker" >
-             <PickerColumn id="column1">
-                 <PickerRow title="1"/>
-                 <PickerRow title="2"/>
-                 <PickerRow title="3"/>
-                 <PickerRow title="4"/>
-             </PickerColumn>
-             <!-- Picker shorthand notation -->
-
-         <!-- </Picker>-->
 
 
 								</View>

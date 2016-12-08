@@ -1,21 +1,81 @@
 ".LabelNamecontainer[platform=android]" : {
-	color: '#4f4f4f',
-	left: "262px",
+	color: '#1c1c1c',
+left: "10px",
+
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
-		fontSize: '45px'
+		fontSize: '30px'
 	}
 }
 ".ListImageContainer[platform=ios formFactor=tablet]" : {
 	height: "207px",
 	width: "235px",
-	top: "20px",
-	left: "20px"
+
+
 }
 ".ListImageContainer[platform=android]" : {
 	height: "200px",
 	width: "200px",
-	top: "40px",
-	left: "40px"
+
+}
+
+".viewtextfield": {
+
+}
+".LabelNamecontainer[platform=ios formFactor=tablet]" : {
+	color: '#1c1c1c',
+left: "10px",
+
+	font: {
+		fontFamily: 'Medium',
+		fontWeight: 'bold',
+		fontSize: '30px'
+	}
+}
+
+".falabelDown": {
+  left:"5",
+  font: {
+    fontFamily: 'FontAwesome',
+      fontSize: '32px',
+
+  },
+  color: "#1c1c1c",
+}
+
+".Viewprice": {
+left: "10px",
+top: "20px",
+   backgroundColor:"#ededed",
+   width: "100px",
+   height: "55px",
+}
+
+".LabelTypecontainer[platform=ios formFactor=tablet]" : {
+	color: '#6b6b6b',
+left: "10px",
+  top: "20px",
+	font: {
+		fontFamily: 'Medium',
+		fontWeight: 'bold',
+		fontSize: '20px'
+	}
+}
+".LabelTypecontainer[platform=android ]" : {
+	color: '#6b6b6b',
+left: "10px",
+  top: "20px",
+	font: {
+		fontFamily: 'Medium',
+		fontWeight: 'bold',
+		fontSize: '20px'
+	}
+}
+
+".Viewmycart": {
+  left: "40px",
+  top:"30px",
+  right: "40px",
+
 }

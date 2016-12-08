@@ -39,14 +39,14 @@ client.send();
 
 
 
-function ViewofMycart(e) {
-  Ti.API.info("inside function ViewofMycart"+e);
-  Ti.API.info("inside function ViewofMycart stringify"+JSON.stringify(e));
+function ViewofMycart(cardData) {
+  Ti.API.info("inside function ViewofMycart"+cardData);
+  Ti.API.info("inside function ViewofMycart stringify"+JSON.stringify(cardData));
 
 
   var items = [];
 
-for (var i = 0; i < JSON.parse(e).data.length; i++)
+for (var i = 0; i < JSON.parse(cardData).data.length; i++)
 {
 
 
@@ -54,18 +54,23 @@ for (var i = 0; i < JSON.parse(e).data.length; i++)
 
               items.push({
                   "name": {
-                      text: "rrr",
+                      text: JSON.parse(cardData).data[i].product.name,
                   },
                   "image": {
-                      image: "sss",
+                      image: JSON.parse(cardData).data[i].product.product_images,
                   },
                   "type": {
-                      text: "table",
+                      text: "("+JSON.parse(cardData).data[i].product.product_category+")",
                   },
                   "price": {
-                      text: "Rs. ",
+                      text: "Rs. "+JSON.parse(cardData).data[i].product.sub_total,
                       color: "red"
                   },
+                  "QTY": {
+                      text: +JSON.parse(cardData).data[i].quantity,
+                      color: "black",
+                  },
+
 
 
                   "template": "image_title",
@@ -84,40 +89,58 @@ for (var i = 0; i < JSON.parse(e).data.length; i++)
 
 
 }
-}
+
+};
+var checkFlag = true;
+var pickerView = Titanium.UI.createView({
+    borderRadius: 10,
+    top: 50,
+    backgroundColor: 'white',
+    width: 250,
+    height: 400
+});
+var picker = Ti.UI.createPicker({ width:30,top:10,height:50,color:"pink",backgroundColor:"gray"});
+var data = [];
+// for(var j=1;j<=$.QTY.value;j++)
+data.push(Titanium.UI.createPickerRow({title:'1',value:'1'}));
+data.push(Titanium.UI.createPickerRow({title:'2',value:'2'}));
+data.push(Titanium.UI.createPickerRow({title:'3',value:'3'}));
+data.push(Titanium.UI.createPickerRow({title:'4',value:'4'}));
+picker.add(data);
+picker.selectionIndicator = true;
+pickerView.add(picker);
+
 
 function picker(e){
 
 
-    var checkFlag = true;
-    var picker = Ti.UI.createPicker({ width:10});
-    var data = [];
 
-    data.push(Titanium.UI.createPickerRow({title:'1'}));
-    data.push(Titanium.UI.createPickerRow({title:'2'}));
-    data.push(Titanium.UI.createPickerRow({title:'3'}));
-    data.push(Titanium.UI.createPickerRow({title:'4'}));
-    picker.add(data);
-    $.dynamicListView.add(picker);
 
-    var resetbtn = Ti.UI.createButton({
-    top : '100',
-    width : '50',
-    height : '35',
-    title  : 'Reset'
-    });
-      $.dynamicListView.add(resetbtn);
-    resetbtn.addEventListener('click', function(){
-    Ti.API.info('checkFlag = ' + checkFlag);
-    if(checkFlag) {
-       picker.hide();
+  $.dynamicListView.add(pickerView);
 
-        checkFlag = false;
-    } else {
 
-       picker.show();
-    checkFlag = true;
-    }
-    });
 
 };
+
+function itemclick(e){
+  Ti.API.info(e.bindId);
+  if (e.bindId=="Viewprice") {
+
+    Ti.API.info('checkFlag = ' + checkFlag);
+    if(checkFlag) {
+      //  picker.hide();
+  Ti.API.info("inside if");
+        checkFlag = false;
+        Ti.API.info("you select"+Ti.UI.picker);
+        $.dynamicListView.remove(pickerView);
+    } else {
+      Ti.API.info("inside else");
+      checkFlag = true;
+        Ti.API.info("you select"+JSON.stringify(picker));
+    $.dynamicListView.add(pickerView);
+      //  picker.show();
+
+    }
+  }
+
+}
