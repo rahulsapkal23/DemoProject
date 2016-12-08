@@ -1,6 +1,7 @@
 <Alloy>
     <Window id="ProductDetailwin"  class="container1" layout="composite">
         <Widget id="header" top="0" src="header"/>
+
       <View top="40" id="dynamicListView" layout="vertical"  backgroundColor="#ededed" >
 
                     <View  class="viewhead"  height="Ti.UI.SIZE">

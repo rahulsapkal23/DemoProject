@@ -1,0 +1,37 @@
+<Alloy>
+	<Window id="Mycartwin" class="container" layout="vertical">
+		<Widget id="header" src="header"/>
+		<ListView id="dynamicListView" >
+				<Templates>
+						<ItemTemplate name="image_title" height="270px" >
+								<View  layout="composite"  backgroundColor="white" >
+										<ImageView bindId="image" class="ListImageContainer"  id="image"/>
+										<View layout="vertical">
+												<Label bindId="name" class="LabelNamecontainer"/>
+												<Label bindId="type" class="LabelProducercontainer"/>
+												</View>
+
+														<Label bindId="price" class="LabelPricecontainer" onClick="picker"/>
+
+
+<!--
+<View borderColor="lime">
+	<Picker id="picker" >
+             <PickerColumn id="column1">
+                 <PickerRow title="1"/>
+                 <PickerRow title="2"/>
+                 <PickerRow title="3"/>
+                 <PickerRow title="4"/>
+             </PickerColumn>
+             <!-- Picker shorthand notation -->
+
+         <!-- </Picker>-->
+
+
+								</View>
+						</ItemTemplate>
+				</Templates>
+				<ListSection/>
+		</ListView>
+	</Window>
+</Alloy>

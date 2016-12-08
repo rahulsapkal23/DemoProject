@@ -1,5 +1,4 @@
-
-
+// ######################################### Setting Header #########################################
 $.header.__views.back.addEventListener('click', function(e) {
     $.ProductDetailwin.close();
 });
@@ -520,7 +519,6 @@ e.source.color="#7f7f7f";
 function goToMyCart() {
   Ti.API.info("inside Go to my cart");
 
-var goToMyCart = Alloy.createController('AddToCart').getView();
-goToMyCart.open();
+
 
 };

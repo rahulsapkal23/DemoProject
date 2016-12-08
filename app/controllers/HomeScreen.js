@@ -6,6 +6,14 @@ Ti.API.info(JSON.stringify(access_token));
 
 
 
+
+ $.mycart.addEventListener('click',function (e) {
+  Ti.API.info("inside mycart function");
+  var MyCart = Alloy.createController('MyCart').getView();
+  MyCart.open();
+});
+
+
 // ######################################### Setting Header #########################################
 $.header.__views.tital.text = "Home Screen";
 $.header.__views.back.text="\uf0c9";

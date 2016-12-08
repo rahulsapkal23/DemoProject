@@ -1,0 +1,21 @@
+".LabelNamecontainer[platform=android]" : {
+	color: '#4f4f4f',
+	left: "262px",
+	font: {
+		fontFamily: 'Arial',
+		fontWeight: 'bold',
+		fontSize: '45px'
+	}
+}
+".ListImageContainer[platform=ios formFactor=tablet]" : {
+	height: "207px",
+	width: "235px",
+	top: "20px",
+	left: "20px"
+}
+".ListImageContainer[platform=android]" : {
+	height: "200px",
+	width: "200px",
+	top: "40px",
+	left: "40px"
+}

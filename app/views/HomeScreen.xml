@@ -48,9 +48,9 @@
                     <Label class="Email" id="email_id" >email.id.com</Label>
 
 
-              <View  class="list_view" top="40px" >
+              <View id="mycart"  class="list_view" top="40px" >
                 	<Label class="Listicon_font" text="\uf007"></Label>
-                 <Label class="ListItemLabel">My Cart</Label>
+                 <Label class="ListItemLabel" >My Cart</Label>
               </View>
                 <View class="list_view" productcategoryid="1" onClick="ListProduct" >
                   <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label>
