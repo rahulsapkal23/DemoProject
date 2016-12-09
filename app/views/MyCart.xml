@@ -6,7 +6,7 @@
 						<ItemTemplate name="image_title" height="270px" >
 								<View  layout="horizontal" class="Viewmycart" backgroundColor="white" >
 										<ImageView bindId="image" class="ListImageContainer"  id="image"/>
-										<View layout="vertical" top="1px" width="70%" backgroundColor="lime" left="20px">
+										<View layout="vertical" top="1px"  class="viewcontainer"   >
 												<Label  bindId="name" class="LabelNamecontainer"/>
 												<Label  bindId="type" class="LabelTypecontainer"/>
 <View class="Viewprice" bindId="Viewprice" layout="horizontal">
@@ -19,10 +19,12 @@
 				</Templates>
 				<ListSection/>
 		</ListView>
-		<View height="200px" layout="horizontal" backgroundColor="pink" class="Viewmycart" >
+		<View height="200px" layout="horizontal"  class="Viewmycart" >
 <Label left="40px" top="60px" class="LabelNamecontainer">Total</Label>
-<Label left="70%" top="60px" class="LabelNamecontainer" id="total"></Label>
+<Label left="65%" top="60px" class="LabelNamecontainer" id="total"></Label>
 		</View>
-		<View bottom="10px"> <Button class="buttonOrder">ORDER NOW</Button></View>
+		<View bottom="10px">
+			<Button id="order" class="buttonOrder">ORDER NOW</Button>
+		</View>
 	</Window>
 </Alloy>

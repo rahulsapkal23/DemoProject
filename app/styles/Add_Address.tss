@@ -1,0 +1,71 @@
+
+".Add_AddressView": {
+  backgroundColor: "#ededed",
+  left: "40px",
+  top: "100px",
+  right: "40px",
+  bottom: "40px",
+}
+
+".LabelAddress": {
+  color: "#333333",
+  font: {
+    fontSize: "35px",
+  },
+  left: "0px",
+}
+
+
+
+".buttonSave": {
+	backgroundColor: "#db1514",
+	fontSize: "75px",
+	color: "#ffffff",
+	width: "60%",
+	height: "50",
+  top:"80px",
+
+}
+
+
+".textareaAdd[platform=ios formFactor=tablet]": {
+
+   width:"100%",
+   top: "50px",
+height:"300px" ,
+font: {
+  fontSize: "40px",
+},
+color: "#333333",
+
+}
+".textareaAdd[platform=android ]": {
+
+   width:"100%",
+   top: "50px",
+height:"100px" ,
+font: {
+  fontSize: "30px",
+},
+color: "#333333",
+
+
+}
+
+".textareaCity[platform=ios formFactor=tablet]": {
+  height: "100px",
+  font: {
+    fontSize: "30px",
+  },
+  color: "#333333",
+
+
+}
+".textareaCity[platform=android]": {
+height: "30px",
+font: {
+  fontSize: "20px",
+},
+color: "#333333",
+
+}

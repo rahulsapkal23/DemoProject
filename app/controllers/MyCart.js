@@ -3,8 +3,14 @@ $.header.__views.back.addEventListener('click', function(e) {
     $.Mycartwin.close();
 });
 
+$.header.__views.tital.text = "My Cart";
 
+$.order.addEventListener('click',function (e) {
+    Ti.API.info("inside order click ");
 
+    var Add_Address = Alloy.createController('Add_Address').getView();
+    Add_Address.open();
+});
 
 
 Ti.API.info("inside Add to cart"+Alloy.Globals.Maccess_token);
@@ -132,15 +138,13 @@ function itemclick(e){
     backgroundColor: "#ededed",
     });
     var view = Titanium.UI.createView({
-    top: "10%",
-    right: "5%",
-    bottom: "10%",
-    left: "5%",
+    height:"100%",
+    width:"100%",
     backgroundColor: "white",
       layout:"vertical"
     });
     var Name = Ti.UI.createLabel({
-    top: "100px",
+    top: "30px",
     font: {
     fontSize: "50px",
     },
@@ -148,6 +152,7 @@ function itemclick(e){
     text:item.properties.current_product.product.name,
     });
     var image = Ti.UI.createImageView({
+      top:"20px",
       image:item.properties.current_product.product.product_images,
 
      borderColor:"black",
@@ -225,15 +230,12 @@ function itemclick(e){
       //  $.dynamicListView.opacity="0.5";
       Ti.API.info();
       var view = Titanium.UI.createView({
-      top: "10%",
-      right: "5%",
-      bottom: "10%",
-      left: "5%",
+
       backgroundColor: "white",
       layout:"vertical"
       });
       var Name = Ti.UI.createLabel({
-      top: "100px",
+      top: "30px",
       font: {
       fontSize: "50px",
       },
@@ -242,6 +244,8 @@ function itemclick(e){
       });
       var image = Ti.UI.createImageView({
       image:item.properties.current_product.product.product_images,
+      height:"600px",
+      width:"600px",
       });
       var textField = Ti.UI.createTextField({
         value:item.properties.current_product.quantity,

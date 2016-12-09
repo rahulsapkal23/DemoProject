@@ -1,0 +1,6 @@
+<Alloy>
+    <Window id="AddressListwin" backgroundColor="#ededed" class="container1" layout="composite">
+        <Widget id="header" top="0" src="header"/>
+
+  </Window>
+</Alloy>

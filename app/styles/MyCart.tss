@@ -102,3 +102,12 @@ width: Ti.UI.SIZE,
 	top: "10",
 	bottom: "10",
 }
+
+".viewcontainer[platform=ios formFactor=tablet]": {
+	left:"20px",
+	width: "65%",
+}
+".viewcontainer[platform=android]": {
+	left:"20px",
+	width: "50%",
+}
