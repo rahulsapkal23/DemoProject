@@ -37,78 +37,74 @@ client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
 // Send the request.
 client.send();
 
-
-
 function ViewofMycart(cardData) {
   Ti.API.info("inside function ViewofMycart"+cardData);
   Ti.API.info("inside function ViewofMycart stringify"+JSON.stringify(cardData));
-
-
   var items = [];
-
 for (var i = 0; i < JSON.parse(cardData).data.length; i++)
 {
-
-
-
-
               items.push({
                   "name": {
-                      text: JSON.parse(cardData).data[i].product.name,
-                  },
+                                text: JSON.parse(cardData).data[i].product.name,
+                          },
                   "image": {
-                      image: JSON.parse(cardData).data[i].product.product_images,
-                  },
+                                image: JSON.parse(cardData).data[i].product.product_images,
+                          },
                   "type": {
-                      text: "("+JSON.parse(cardData).data[i].product.product_category+")",
-                  },
+                                text: "("+JSON.parse(cardData).data[i].product.product_category+")",
+                          },
                   "price": {
-                      text: "Rs. "+JSON.parse(cardData).data[i].product.sub_total,
-                      color: "red"
-                  },
+                                text: "Rs. "+JSON.parse(cardData).data[i].product.sub_total,
+                                color: "red"
+                          },
                   "QTY": {
-                      text: +JSON.parse(cardData).data[i].quantity,
-                      color: "black",
+                                text: +JSON.parse(cardData).data[i].quantity,
+                                color: "black",
+                                current_product:JSON.parse(cardData).data[i],
                   },
+                  "Viewprice": {
+                                Mid:JSON.parse(cardData).data[i].id,
+                                access_token:Alloy.Globals.Maccess_token,
+                                current_product:JSON.parse(cardData).data[i],
 
-
-
+                              },
                   "template": "image_title",
                   "properties": {
-                      // Mid:JSON.parse(Productdata).data[i].id,
-                      // access_token:JSON.stringify(access_token),
-
-
+                                Mid:JSON.parse(cardData).data[i].id,
+                                access_token:Alloy.Globals.Maccess_token,
+                                current_product:JSON.parse(cardData).data[i],
                 }
               });
-
               $.dynamicListView.sections[0].setItems(items, {
-                  animated: "false",
-
+                                animated: "false",
               });
-
-
 }
-
+Ti.API.info(JSON.parse(cardData).total);
+$.total.text="Rs."+JSON.parse(cardData).total;
 };
-var checkFlag = true;
-var pickerView = Titanium.UI.createView({
-    borderRadius: 10,
-    top: 50,
-    backgroundColor: 'white',
-    width: 250,
-    height: 400
-});
-var picker = Ti.UI.createPicker({ width:30,top:10,height:50,color:"pink",backgroundColor:"gray"});
-var data = [];
-// for(var j=1;j<=$.QTY.value;j++)
-data.push(Titanium.UI.createPickerRow({title:'1',value:'1'}));
-data.push(Titanium.UI.createPickerRow({title:'2',value:'2'}));
-data.push(Titanium.UI.createPickerRow({title:'3',value:'3'}));
-data.push(Titanium.UI.createPickerRow({title:'4',value:'4'}));
-picker.add(data);
-picker.selectionIndicator = true;
-pickerView.add(picker);
+
+
+
+// var checkFlag = true;
+// var pickerView = Titanium.UI.createView({
+//     borderRadius: 10,
+//     top: 50,
+//     backgroundColor: 'white',
+//     width: 250,
+//     height: 400
+// });
+
+
+// var picker = Ti.UI.createPicker({ width:30,top:10,backgroundColor:"gray"});
+// var data = [];
+// // for(var j=1;j<=$.QTY.value;j++)
+// data.push(Titanium.UI.createPickerRow({title:'1',value:'1'}));
+// data.push(Titanium.UI.createPickerRow({title:'2',value:'2'}));
+// data.push(Titanium.UI.createPickerRow({title:'3',value:'3'}));
+// data.push(Titanium.UI.createPickerRow({title:'4',value:'4'}));
+// picker.add(data);
+// picker.selectionIndicator = true;
+// pickerView.add(picker);
 
 
 function picker(e){
@@ -124,23 +120,233 @@ function picker(e){
 
 function itemclick(e){
   Ti.API.info(e.bindId);
-  if (e.bindId=="Viewprice") {
+    Ti.API.info(JSON.stringify(e));
+    var item = e.section.items[e.itemIndex];
+	//	alert(item.properties.current_product);
+  Ti.API.info(item.properties.current_product);
+  if (e.bindId=="Viewprice" || e.bindId=="QTY") {
+    if(Ti.Platform.osname=="android" || Ti.Platform.osname=="Android")
+    {
 
-    Ti.API.info('checkFlag = ' + checkFlag);
-    if(checkFlag) {
-      //  picker.hide();
-  Ti.API.info("inside if");
-        checkFlag = false;
-        Ti.API.info("you select"+Ti.UI.picker);
-        $.dynamicListView.remove(pickerView);
-    } else {
-      Ti.API.info("inside else");
-      checkFlag = true;
-        Ti.API.info("you select"+JSON.stringify(picker));
-    $.dynamicListView.add(pickerView);
-      //  picker.show();
+    var viewBody = Titanium.UI.createView({
+    backgroundColor: "#ededed",
+    });
+    var view = Titanium.UI.createView({
+    top: "10%",
+    right: "5%",
+    bottom: "10%",
+    left: "5%",
+    backgroundColor: "white",
+      layout:"vertical"
+    });
+    var Name = Ti.UI.createLabel({
+    top: "100px",
+    font: {
+    fontSize: "50px",
+    },
+    color:"#2C2B2B",
+    text:item.properties.current_product.product.name,
+    });
+    var image = Ti.UI.createImageView({
+      image:item.properties.current_product.product.product_images,
+
+     borderColor:"black",
+
+    });
+    var textField = Ti.UI.createTextField({
+      value:item.properties.current_product.quantity,
+    width:"336px",
+    height:"129px",
+    top:"66px",
+    borderColor: "gray",
+    color:"black",
+    });
+    var Qty = Ti.UI.createLabel({
+    top: "100px",
+    font: {
+            fontSize: "50px",
+          },
+    color:"#2C2B2B",
+    text:"Enter Qty",
+    });
+    var button = Titanium.UI.createButton({
+      backgroundColor: "#db1514",
+      fontSize: "75px",
+      color: "#ffffff",
+      top: "66px",
+      title: "Submit",
+    width: "595px",
+    height: "142px"
+    });
+    button.addEventListener('click',function(e)
+    {
+    Titanium.API.info("You clicked the button");
+    var data = {
+
+        quantity: textField.value,
+        product_id:item.properties.current_product.product_id,
+    }
+    var client = Ti.Network.createHTTPClient();
+    client.onload = function(e) {
+        var response = JSON.parse(client.getResponseText());
+        Ti.API.info("json stringfy load" + JSON.stringify(e));
+        Ti.API.info("client.responseText onload" + client.getResponseText());
+        Ti.API.info(response.message);
+         alert(response.message);
+    };
+    client.onerror = function(e) {
+        var response = JSON.parse(client.getResponseText());
+        Ti.API.info(" onerror" + JSON.stringify(e));
+        Ti.API.info("client.responseText onerror" + client.getResponseText());
+        Ti.API.info(response.message);
+         alert(response.message);
+
+    };
+    client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
+    client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+    client.send(data);
+     $.dynamicListView.remove(viewBody);
+    });
+    view.add(Name);
+    view.add(image);
+    view.add(Qty);
+    view.add(textField);
+    view.add(button);
+    viewBody.add(view);
+    $.dynamicListView.add(viewBody);
 
     }
+    else {
+      var viewBody = Titanium.UI.createView({
+      backgroundColor: "#282727",
+      backgroundColor: "#ededed",
+      });
+      Ti.API.info("inside open popover IOS"+JSON.stringify(e));
+      //  $.dynamicListView.opacity="0.5";
+      Ti.API.info();
+      var view = Titanium.UI.createView({
+      top: "10%",
+      right: "5%",
+      bottom: "10%",
+      left: "5%",
+      backgroundColor: "white",
+      layout:"vertical"
+      });
+      var Name = Ti.UI.createLabel({
+      top: "100px",
+      font: {
+      fontSize: "50px",
+      },
+      color:"#2C2B2B",
+      text:item.properties.current_product.product.name,
+      });
+      var image = Ti.UI.createImageView({
+      image:item.properties.current_product.product.product_images,
+      });
+      var textField = Ti.UI.createTextField({
+        value:item.properties.current_product.quantity,
+
+      width:"336px",
+      height:"129px",
+      top:"66px",
+      borderColor: "gray",
+      });
+      var Qty = Ti.UI.createLabel({
+      top: "100px",
+
+      font: {
+      fontSize: "50px",
+      },
+      color:"#2C2B2B",
+      text:"Enter Qty",
+      });
+      var button = Titanium.UI.createButton({
+        backgroundColor: "#db1514",
+        fontSize: "75px",
+        color: "#ffffff",
+
+      top: "66px",
+      title: "Submit",
+      width: "595px",
+      height: "142px"
+      });
+      button.addEventListener('click',function(m)
+      {
+      Titanium.API.info("You clicked the button"+JSON.stringify(e));
+      var data = {
+          quantity: textField.value,
+          product_id:item.properties.current_product.product_id,
+      }
+      var client = Ti.Network.createHTTPClient();
+      client.onload = function(e) {
+          var response = JSON.parse(client.getResponseText());
+          Ti.API.info("json stringfy load" + JSON.stringify(e));
+          Ti.API.info("client.responseText onload" + client.getResponseText());
+           alert(response.message)
+      };
+      client.onerror = function(e) {
+          var response = JSON.parse(client.getResponseText());
+          Ti.API.info(" onerror" + JSON.stringify(e));
+          Ti.API.info("client.responseText onerror" + client.getResponseText());
+          Ti.API.info(response.message);
+           alert(response.message);
+
+      };
+      client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/editCart');
+      client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+      client.send(data);
+      $.dynamicListView.remove(viewBody);
+      });
+      view.add(Name,image,Qty,textField,button);
+      viewBody.add(view);
+      $.dynamicListView.add(viewBody);
+    }
+          Ti.API.info("inside open popover"+e);
+
+
+
+
+
+  //   var data = {
+  //
+  //       quantity: textField.value,
+  //       product_id:args,
+  //   }
+  //   var client = Ti.Network.createHTTPClient();
+  //   client.onload = function(e) {
+  //       var response = JSON.parse(client.getResponseText());
+  //       Ti.API.info("json stringfy load" + JSON.stringify(e));
+  //       Ti.API.info("client.responseText onload" + client.getResponseText());
+  //       Ti.API.info(response.message);
+  //        alert(response.message);
+  //   };
+  //   client.onerror = function(e) {
+  //       var response = JSON.parse(client.getResponseText());
+  //       Ti.API.info(" onerror" + JSON.stringify(e));
+  //       Ti.API.info("client.responseText onerror" + client.getResponseText());
+  //       Ti.API.info(response.message);
+  //        alert(response.message);
+  //
+  //   };
+  //   client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/editCart');
+  //   client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+  //   client.send(data);
+  //
+  //   Ti.API.info('checkFlag = ' + checkFlag);
+  //   if(checkFlag) {
+  //     //  picker.hide();
+  // Ti.API.info("inside if");
+  //       checkFlag = false;
+  //       Ti.API.info("you select"+Ti.UI.picker);
+  //       $.dynamicListView.remove(pickerView);
+  //   } else {
+  //     Ti.API.info("inside else");
+  //     checkFlag = true;
+  //       Ti.API.info("you select"+JSON.stringify(picker));
+  //   $.dynamicListView.add(pickerView);
+  //     //  picker.show();
+  //
+  //   }
   }
 
 }

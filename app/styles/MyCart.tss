@@ -77,5 +77,28 @@ left: "10px",
   left: "40px",
   top:"30px",
   right: "40px",
+width: Ti.UI.SIZE,
+}
 
+".total": {
+	top: "60px",
+
+	font: {
+		fontSize: 20,
+	},
+	color: "#333333",
+	height: Ti.UI.SIZE,
+}
+
+
+
+
+".buttonOrder": {
+	backgroundColor: "#db1514",
+	fontSize: "75px",
+	color: "#ffffff",
+	width: "60%",
+	height: "50",
+	top: "10",
+	bottom: "10",
 }
