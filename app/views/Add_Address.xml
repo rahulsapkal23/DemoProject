@@ -9,21 +9,21 @@
           <View height="Ti.UI.SIZE" top="80px"   layout="horizontal" >
               <View layout="vertical"  width="47%" height="Ti.UI.SIZE">
                       <Label class="LabelAddress">CITY</Label>
-                      <TextArea id="CITY" width="100%" class="textareaCity" ></TextArea>
+                      <TextArea top="10px" id="CITY" width="100%" class="textareaCity"  ></TextArea>
               </View>
               <View left="40px" layout="vertical"  width="47%" height="Ti.UI.SIZE">
                       <Label class="LabelAddress">STATE</Label>
-                      <TextArea  id="STATE" class="textareaCity"  width="100%"></TextArea>
+                      <TextArea top="10px"  id="STATE" class="textareaCity"  width="100%"></TextArea>
               </View>
           </View>
           <View height="Ti.UI.SIZE" top="80px"   layout="horizontal" >
                 <View layout="vertical"  width="47%"  height="Ti.UI.SIZE">
                         <Label class="LabelAddress">ZIP CODE</Label>
-                        <TextArea id="ZIP" class="textareaCity"width="100%"  ></TextArea>
+                        <TextArea top="10px" id="ZIP" class="textareaCity"width="100%"  ></TextArea>
                 </View>
                 <View left="40px" layout="vertical"  width="47%" height="Ti.UI.SIZE">
                         <Label class="LabelAddress">COUNTRY</Label>
-                        <TextArea  id="COUNTRY" class="textareaCity"  width="100%"></TextArea>
+                        <TextArea  top="10px" id="COUNTRY" class="textareaCity"  width="100%"></TextArea>
                 </View>
           </View>
           <View top="10px" >

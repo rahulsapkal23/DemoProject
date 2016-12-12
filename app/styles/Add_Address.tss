@@ -67,5 +67,5 @@ font: {
   fontSize: "20px",
 },
 color: "#333333",
-
+borderColor: "black",
 }

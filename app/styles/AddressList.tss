@@ -16,3 +16,39 @@
     left: "30px",
     color: "white"
 }
+
+".adressListView": {
+
+   height:"256px",
+    /*width:"906px",*/
+}
+
+".Addcontainer": {
+  top:"20px",
+  right: "20px",
+  bottom: "20px",
+   left:"20px",
+    borderColor:"black",
+}
+
+".Addcontainer[platform=android ]": {
+  top:"20px",
+  right: "20px",
+  bottom: "20px",
+   left:"20px",
+    borderColor:"black",
+    height: "256px",
+    width: "906px",
+}
+
+".close": {
+  font: {
+      fontFamily: 'FontAwesome',
+      height: "48px",
+      width: "48px",
+      fontSize: "15"
+  },
+  top: "5px",
+  right: "5px",
+  color: "white"
+}
