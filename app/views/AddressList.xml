@@ -1,6 +1,24 @@
 <Alloy>
     <Window id="AddressListwin" backgroundColor="#ededed" class="container1" layout="composite">
         <Widget id="header" top="0" src="header"/>
+        <View class="Add_AddressView" layout="vertical" >
+        <Label>Shipping Address</Label>
+        <ListView id="dynamicListView" onItemclick="GoToProductDetail">
+            <Templates>
+                <ItemTemplate name="image_title" height="256px" width="906px" >
+                    <View  layout="horizontal" height="256px" width="906px" backgroundColor="green" >
+                      <Label class="radio1" onClick="clickMale" id="male" text="\uf1db"></Label>
 
+                        <View  layout="vertical">
+                            <Label bindId="name" class="LabelNamecontainer"/>
+                            <Label bindId="Add" class="LabelProducercontainer"/>
+
+                        </View>
+                    </View>
+                </ItemTemplate>
+            </Templates>
+            <ListSection/>
+        </ListView>
+        </View>
   </Window>
 </Alloy>

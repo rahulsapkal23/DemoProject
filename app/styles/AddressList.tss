@@ -1,0 +1,18 @@
+".Add_AddressView": {
+  backgroundColor: "#ededed",
+  left: "40px",
+  top: "100px",
+  right: "40px",
+  bottom: "40px",
+},
+".radio1" : {
+    font: {
+        fontFamily: 'FontAwesome',
+        height: "48px",
+        width: "48px",
+        fontSize: "15"
+    },
+    top: "40px",
+    left: "30px",
+    color: "white"
+}

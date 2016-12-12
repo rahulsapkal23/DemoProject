@@ -41,3 +41,71 @@
 //   client.send();
 //
 // }
+// var db = Ti.Database.open('address');
+// db.execute('CREATE TABLE IF NOT EXISTS address ( address1 TEXT');
+ // db.execute('DELETE FROM address');
+
+// var thisName = 'Arthur';
+// var thisPhoneNo = '1-617-000-0000';
+// var thisCity = 'Mountain View';
+//  db.execute('INSERT INTO address (address1) VALUES ("kulgaon")');
+//
+//
+// var rows = db.execute('SELECT * FROM address');
+// Ti.API.info('Row count: ' + rows.rowCount);
+//
+// var fieldCount = rows.fieldCount;
+// Ti.API.info('Field count: ' + fieldCount);
+//
+// while (rows.isValidRow()){
+//   Ti.API.info('Person ---> ROWID: ' + rows.fieldByName('rowid') + ', name:' + rows.field(1) + ', phone_number: ' + rows.fieldByName('phone_number') + ', city: ' + rows.field(3));
+//   rows.next();
+// }
+// rows.close();
+// db.close();
+ // var db = Ti.Database.open('AddressDb');
+ // db.execute('CREATE TABLE IF NOT EXISTS Address (id NUMBER)');
+
+
+
+
+
+ //
+
+ // db.execute('DELETE FROM people');
+var db = Ti.Database.open('demo_DB');
+db.execute('CREATE TABLE IF NOT EXISTS address (ADDRESS TEXT,LANDMARK TEXT,CITY TEXT,STATE TEXT,ZIP TEXT,COUNTRY TEXT)');
+
+ // db1.execute('INSERT INTO address VALUES (1,"raja")' );
+// db1.execute('INSERT INTO address VALUES (2,"rani")' );
+//
+// var rows1 = db1.execute('SELECT * FROM address');
+// Ti.API.info('Row count: ' + rows1.rowCount);
+//
+// var fieldCount = rows1.fieldCount;
+// Ti.API.info('Field count: ' + fieldCount);
+//
+//
+// while (rows1.isValidRow()){
+//   Ti.API.info('Person ---> ROWID: '  + ', name:' + rows1.field(0) + ', phone_number: ' );
+//   rows1.next();
+// }
+ // var thisName = 'Arthur';
+ // // var thisPhoneNo = '1-617-000-0000';
+ // // var thisCity = 'Mountain View';
+ // db.execute('INSERT INTO addressData (name) VALUES (thisName)' );
+ //
+ //
+ //
+ // var rows = db.execute('SELECT rowid,name FROM addressData');
+ // Ti.API.info('Row count: ' + rows.rowCount);
+ //
+ // var fieldCount = rows.fieldCount;
+ // Ti.API.info('Field count: ' + fieldCount);
+ //
+ // while (rows.isValidRow()){
+ //   Ti.API.info('Person ---> ROWID: ' + rows.fieldByName('rowid') + ', name:' + rows.field(1) + ', phone_number: ' );
+ //   rows.next();
+ // }
+ // rows.close();
+ // db.close();

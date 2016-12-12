@@ -3,27 +3,27 @@
         <Widget id="header" top="0" src="header"/>
         <View class="Add_AddressView" layout="vertical" >
           <Label top="50px" class="LabelAddress">ADDRESS</Label>
-          <TextArea class="textareaAdd" ></TextArea>
+          <TextArea id="ADDRESS" class="textareaAdd" ></TextArea>
           <Label top="80px" class="LabelAddress">LANDMARK</Label>
-          <TextArea class="textareaCity" width="100%"></TextArea>
+          <TextArea id="LANDMARK" class="textareaCity" width="100%"></TextArea>
           <View height="Ti.UI.SIZE" top="80px"   layout="horizontal" >
               <View layout="vertical"  width="47%" height="Ti.UI.SIZE">
                       <Label class="LabelAddress">CITY</Label>
-                      <TextArea width="100%" class="textareaCity" ></TextArea>
+                      <TextArea id="CITY" width="100%" class="textareaCity" ></TextArea>
               </View>
               <View left="40px" layout="vertical"  width="47%" height="Ti.UI.SIZE">
                       <Label class="LabelAddress">STATE</Label>
-                      <TextArea  class="textareaCity"  width="100%"></TextArea>
+                      <TextArea  id="STATE" class="textareaCity"  width="100%"></TextArea>
               </View>
           </View>
           <View height="Ti.UI.SIZE" top="80px"   layout="horizontal" >
                 <View layout="vertical"  width="47%"  height="Ti.UI.SIZE">
                         <Label class="LabelAddress">ZIP CODE</Label>
-                        <TextArea class="textareaCity"width="100%"  ></TextArea>
+                        <TextArea id="ZIP" class="textareaCity"width="100%"  ></TextArea>
                 </View>
                 <View left="40px" layout="vertical"  width="47%" height="Ti.UI.SIZE">
                         <Label class="LabelAddress">COUNTRY</Label>
-                        <TextArea  class="textareaCity"  width="100%"></TextArea>
+                        <TextArea  id="COUNTRY" class="textareaCity"  width="100%"></TextArea>
                 </View>
           </View>
           <View top="10px" >
