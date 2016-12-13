@@ -1,50 +1,46 @@
 <Alloy>
-    <Window id="ProductDetailwin"  class="container1" layout="composite">
+    <Window id="ProductDetailwin" class="container1" layout="composite">
         <Widget id="header" top="0" src="header"/>
 
-      <View top="40" id="dynamicListView" layout="vertical"  backgroundColor="#ededed" >
+        <View top="40" id="dynamicListView" layout="vertical" backgroundColor="#ededed">
 
-                    <View  class="viewhead"  height="Ti.UI.SIZE">
+            <View class="viewhead" height="Ti.UI.SIZE">
 
+                <Label id="name" class="LabelNamecontainer"/>
+                <Label id="catagory" class="Labelcatagorycontainer"/>
 
-                            <Label id="name" class="LabelNamecontainer"/>
-                            <Label id="catagory" class="Labelcatagorycontainer"/>
+                <View layout="horizontal" height="Ti.UI.SIZE" right="40px">
+                    <Label id="producer" left="40px" class="LabelProducercontainer"/>
+                    <View left="60%" layout="horizontal" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+                        <Label id="rate1" class="falabelRate" text="\uf005"></Label>
+                        <Label id="rate2" class="falabelRate" text="\uf005"></Label>
+                        <Label id="rate3" class="falabelRate" text="\uf005"></Label>
+                        <Label id="rate4" class="falabelRate" text="\uf005"></Label>
+                        <Label id="rate5" class="falabelRate" text="\uf005"></Label>
+                    </View>
+                </View>
+            </View>
+            <View class="viewimg" height="Ti.UI.SIZE">
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label id="price" class="LabelPricecontainer"/>
+                    <Label class="share" text="\uf1e0"></Label>
+                </View>
 
-                            <View layout="horizontal" height="Ti.UI.SIZE" right="40px">
-                              <Label id="producer" left="40px" class="LabelProducercontainer"/>
-                              <View  left="60%" layout="horizontal" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
-                                <Label  id="rate1" class="falabelRate" text="\uf005"></Label>
-                                <Label  id="rate2" class="falabelRate" text="\uf005"></Label>
-                                <Label  id="rate3" class="falabelRate" text="\uf005"></Label>
-                                <Label  id="rate4" class="falabelRate" text="\uf005"></Label>
-                                <Label  id="rate5" class="falabelRate" text="\uf005"></Label>
-                            </View>
-</View>
-</View>
-<View class="viewimg" height="Ti.UI.SIZE" >
-  <View layout="horizontal" height="Ti.UI.SIZE">
-<Label id="price" class="LabelPricecontainer"/>
- 	<Label class="share" text="\uf1e0" ></Label>
-  </View>
-
-                                  <ImageView id="imagemain" class="imagemaincontainer" />
-                                  <View layout="horizontal" top="20px" height="Ti.UI.SIZE">
-                                      <ImageView visible="false" id="image1" class="imagecontainer"  />
-                                        <ImageView visible="false" id="image2" class="imagecontainer"  />
-                                          <ImageView visible="false" id="image3"  class="imagecontainer" />
-                                  </View>
-                                  <Label  class="desc">DESCRIPTION</Label>
-                                  <Label id="Description" class="Labeldescription"></Label>
-</View>
-<View top="52px" left="40px" right="40px" bottom="40px" layout="horizontal" backgroundColor="#ffffff" height="Ti.UI.FILL">
-<Button class="buttonBUY"  id="buy"  onClick="openBuy"  title="BUY Now"></Button>
-<Button class="buttonBUY" id="rate" left="2%" onClick="openRate" title="Rate"></Button>
-</View>
-
-
+                <ImageView id="imagemain" class="imagemaincontainer"/>
+                <View layout="horizontal" top="20px" backgroundColor="pink" height="235px">
+                    <ImageView visible="false" id="image1" class="imagecontainer"/>
+                    <ImageView visible="false" id="image2" class="imagecontainer"/>
+                    <ImageView visible="false" id="image3" class="imagecontainer"/>
+                </View>
+                <Label backgroundColor="navy" class="desc">DESCRIPTION</Label>
+                <Label id="Description" class="Labeldescription"></Label>
+            </View>
+            <View top="52px" left="40px" right="40px" bottom="40px" layout="horizontal" backgroundColor="#ffffff" height="Ti.UI.FILL">
+                <Button class="buttonBUY" id="buy" onClick="openBuy" title="BUY Now"></Button>
+                <Button class="buttonBUY" id="rate" left="2%" onClick="openRate" title="Rate"></Button>
+            </View>
 
         </View>
-
 
     </Window>
 </Alloy>

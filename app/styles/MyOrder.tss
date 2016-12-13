@@ -1,0 +1,24 @@
+
+".orderId": {
+  top: "60px",
+  font: {
+    fontSize: "35px",
+  },
+  color: "#1c1c1c",
+}
+
+".Price": {
+  top: "75px",
+  right: "30px",
+  font: {
+    fontSize: "40px",
+  },
+  color: "#333333",
+}
+
+".orderDate": {
+  font: {
+    fontSize: "25px",
+  },
+  color: "#4f4f4f",
+}

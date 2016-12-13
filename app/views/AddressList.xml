@@ -2,7 +2,7 @@
     <Window id="AddressListwin" backgroundColor="#ededed" class="container1" layout="composite">
         <Widget id="header" top="0" src="header"/>
         <View class="Add_AddressView" layout="vertical" >
-        <Label color="#333333">Shipping Address</Label>
+        <Label  class="LabelAddress">Shipping Address</Label>
         <ListView id="dynamicListView" onItemclick="GoToAddressList" height="Ti.UI.SIZE">
             <Templates>
                 <ItemTemplate name="image_title" height="Ti.UI.SIZE"  >

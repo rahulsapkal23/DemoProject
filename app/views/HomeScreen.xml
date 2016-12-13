@@ -76,7 +76,7 @@
                                 	<Label class="Listicon_font" text="\uf041"></Label>
                                 <Label class="ListItemLabel">Store Locator</Label>
                           </View>
-                            <View class="list_view"  >
+                            <View class="list_view" onClick="GoToMyOrder" >
                                   	<Label class="Listicon_font" text="\uf007"></Label>
                               <Label class="ListItemLabel">My Orders</Label>
                           </View>

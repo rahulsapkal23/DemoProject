@@ -68,6 +68,7 @@
     fontSize: "30px",
   },
   color: "#333333",
+  left: "0px",
 }
 
 ".Labeladdcontainer": {
@@ -75,4 +76,12 @@
     fontSize: "25px",
   },
   color: "#333333",
+}
+
+".LabelAddress": {
+  color: "#333333",
+  font: {
+    fontSize: "30px",
+  },
+  left: "0px",
 }
