@@ -2,17 +2,17 @@
     <Window id="AddressListwin" backgroundColor="#ededed" class="container1" layout="composite">
         <Widget id="header" top="0" src="header"/>
         <View class="Add_AddressView" layout="vertical" >
-        <Label>Shipping Address</Label>
-        <ListView id="dynamicListView" onItemclick="GoToAddressList">
+        <Label color="#333333">Shipping Address</Label>
+        <ListView id="dynamicListView" onItemclick="GoToAddressList" height="Ti.UI.SIZE">
             <Templates>
                 <ItemTemplate name="image_title" height="Ti.UI.SIZE"  >
-                    <View  layout="horizontal" class="adressListView" backgroundColor="green" >
-                      <Label  class="radio1" bindId="radio" id="radio" text="\uf1db"></Label>
+                    <View id="viewclose" layout="horizontal" class="adressListView"  >
+                      <Label  class="radio1" bindId="radio" ></Label>
 
                         <View class="Addcontainer" layout="vertical" >
                           <Label  class="close" bindId="close" id="close" text="\uf00d"></Label>
                             <Label bindId="name" class="LabelNamecontainer"/>
-                            <Label bindId="Add" class="LabelProducercontainer"/>
+                            <Label bindId="Add" class="Labeladdcontainer"/>
 
                         </View>
                     </View>
@@ -20,6 +20,9 @@
             </Templates>
             <ListSection/>
         </ListView>
+        <View top="10px" >
+                <Button id="place_add" class="buttonSave">PLACE ORDER</Button>
+        </View>
         </View>
   </Window>
 </Alloy>

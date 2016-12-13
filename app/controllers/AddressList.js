@@ -26,6 +26,10 @@ while (rows.isValidRow()){
 
 
       "template": "image_title",
+      "radio":{
+        text:"\uf10c",
+        color:"#BFBFBF",
+      }
 
   });
   rows.next();
@@ -38,12 +42,27 @@ $.dynamicListView.sections[0].setItems(items, {
 });
 
 function GoToAddressList(e){
-  Ti.API.info("inside go to products");
+  Ti.API.info(e.section.getItemAt(e.itemIndex));
+  Ti.API.info(e.section.getItemAt(e.itemIndex).radio.text);
+e.section.getItemAt(e.itemIndex).radio.text="raaa";
+  Ti.API.info("inside go to products"+JSON.stringify(e));
   if (e.bindId=="radio") {
-    if ($.radio.text == "\uf111") {
-      $.radio.text == "\uf1db"
+    var radio_elem= e.section.getItemAt(e.itemIndex)
+    if (radio_elem.radio.color == "#BFBFBF") {
+      Ti.API.info("inside if");
+      radio_elem.radio.text = "\uf111";
+      radio_elem.radio.color = "#8E8E8E";
+
     } else {
-      $.radio.text == "\uf111"
+      Ti.API.info("inside else");
+      radio_elem.radio.text = "\uf10c";
+      radio_elem.radio.color = "#BFBFBF";
     }
+     e.section.updateItemAt(e.itemIndex, radio_elem);
+     radio_elem=null;
+  }
+  if (e.bindId=="close") {
+    Ti.API.info(e.section.getItemAt(e.itemIndex));
+  e.section.deleteItemsAt( e.itemIndex, 1 );
   }
 };
