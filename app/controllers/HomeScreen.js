@@ -7,22 +7,26 @@ Ti.API.info(JSON.stringify(access_token));
 
 
 
- $.mycart.addEventListener('click',function (e) {
-  Ti.API.info("inside mycart function");
-  var MyCart = Alloy.createController('MyCart').getView();
-  MyCart.open();
+$.mycart.addEventListener('click', function(e) {
+    Ti.API.info("inside mycart function");
+    var MyCart = Alloy.createController('MyCart').getView();
+    MyCart.open();
 });
 
 
 // ######################################### Setting Header #########################################
 $.header.__views.tital.text = "Home Screen";
-$.header.__views.back.text="\uf0c9";
+$.header.__views.back.text = "\uf0c9";
 $.header.__views.back.addEventListener('click', function(e) {
     // $.HomeScreenwin.close();
 
     SlideToMyProfile(e);
 });
-
+$.header.__views.search.text = "\uf07a";
+$.header.__views.search.addEventListener('click', function(e) {
+    var MyCart = Alloy.createController('MyCart').getView();
+    MyCart.open();
+});
 // ######################################### My Profile Get Details #########################################
 
 
@@ -34,51 +38,43 @@ $.header.__views.back.addEventListener('click', function(e) {
 
 
 
-function SlideToMyProfile(e)
-{
-        Ti.API.info("inside slider");
-         // If the slidding menu isn't opened
-        if(e.source.toggle == true)
-        {
-            Ti.API.info("inside if ");
-            $.view1.animate
-            ({
-                    left:0,
-                      height:"100%",
-                    duration:400,
-                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-            });
-            $.view2.animate
-            ({
-                    left:"-75%",
+function SlideToMyProfile(e) {
+    Ti.API.info("inside slider");
+    // If the slidding menu isn't opened
+    if (e.source.toggle == true) {
+        Ti.API.info("inside if ");
+        $.view1.animate({
+            left: 0,
+            height: "100%",
+            duration: 400,
+            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+        });
+        $.view2.animate({
+            left: "-75%",
 
-                    duration:400,
-                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-            });
-            e.source.toggle = false ;
-      }
+            duration: 400,
+            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+        });
+        e.source.toggle = false;
+    }
 
-   // If the slidding menu is already opened then close the slidding view
+    // If the slidding menu is already opened then close the slidding view
+    else {
+        $.view1.animate({
+            left: "75%",
+            width: "100%",
+            height: "90%",
+            duration: 400,
+            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+        });
+        $.view2.animate({
+            left: "0",
+            duration: 400,
+            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+        });
+        e.source.toggle = true;
 
-      else
-      {
-            $.view1.animate
-            ({
-                    left:"75%",
-                    width:"100%",
-                    height:"90%",
-                    duration:400,
-                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-            });
-            $.view2.animate
-            ({
-                    left:"0",
-                    duration:400,
-                    curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
-            });
-            e.source.toggle  = true;
-
-      }
+    }
 }
 
 
@@ -87,7 +83,7 @@ function SlideToMyProfile(e)
 function ListProduct(e) {
     Ti.API.info("click on which block" + e);
     Ti.API.info("click on next block" + JSON.stringify(e));
-    var ListProduct = Alloy.createController('ListProduct', e.source.productcategoryid,JSON.stringify(access_token)).getView();
+    var ListProduct = Alloy.createController('ListProduct', e.source.productcategoryid, JSON.stringify(access_token)).getView();
     ListProduct.open();
 }
 
@@ -131,11 +127,16 @@ function HomeScreenDetails(LoginDetails) {
     $.view21.image = (JSON.parse(LoginDetails)).data.product_categories[1].icon_image;
     $.view31.image = JSON.parse(LoginDetails).data.product_categories[2].icon_image;
     $.view41.image = JSON.parse(LoginDetails).data.product_categories[3].icon_image;
-    $.name.text=JSON.parse(LoginDetails).data.user_data.username;
-    $.email_id.text=JSON.parse(LoginDetails).data.user_data.email;
+    $.name.text = JSON.parse(LoginDetails).data.user_data.username;
+    $.email_id.text = JSON.parse(LoginDetails).data.user_data.email;
 
 }
 
-function GoToMyAccount(e){
-  Ti.API.info("Inside My Account");
+function GoToMyAccount(e) {
+    Ti.API.info("Inside My Account");
+}
+
+function GoToMyOrder(e) {
+    var MyOrder = Alloy.createController('MyOrder').getView();
+    MyOrder.open();
 }

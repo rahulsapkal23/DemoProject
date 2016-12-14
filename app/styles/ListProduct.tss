@@ -31,11 +31,10 @@
 ".falabelRate[platform=android ]" : {
 	font: {
 		fontFamily: 'FontAwesome',
-			fontSize: '32px',
+		fontSize: '32px',
 		height: "33",
 		width: "35"
 	},
-
 	//color: "#FFFFFF"
 }
 ".falabelRate[platform=ios formFactor=tablet]" : {
@@ -43,7 +42,6 @@
 		fontFamily: 'FontAwesome',
 		fontSize: '32px'
 	},
-
 	//color: "#FFFFFF"
 }
 ".LabelNamecontainer[platform=android]" : {
@@ -93,16 +91,15 @@
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
 		fontSize: '40px'
-	},
+	}
 }
 ".LabelPricecontainer[platform=android ]" : {
 	color: '#fe4040',
 	left: "262px",
-			width: "100",
+	width: "100",
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
-		fontSize: '60px'
-	},
-
+		fontSize: '40px'
+	}
 }

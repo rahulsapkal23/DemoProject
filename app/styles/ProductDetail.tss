@@ -5,8 +5,7 @@
 'Window' : {
 	navBarHidden: true,
 	tabBarHidden: true,
-	fullscreen: true,
-
+	fullscreen: true
 }
 ".TableViewRowcontainer" : {
 	borderColor: "pink",
@@ -33,10 +32,8 @@
 	font: {
 		fontFamily: 'FontAwesome',
 		height: "32px",
-		width: "36",
-
+		width: "36"
 	},
-
 	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 	//color: "#FFFFFF"
 }
@@ -45,7 +42,6 @@
 		fontFamily: 'FontAwesome',
 		fontSize: '40px'
 	},
-
 	//color: "#FFFFFF"
 }
 ".LabelNamecontainer[platform=android]" : {
@@ -72,7 +68,7 @@
 ".LabelProducercontainer[platform=ios formFactor=tablet]" : {
 	color: '#4f4f4f',
 	left: "262px",
-  top: "10",
+	top: "10",
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
@@ -84,13 +80,12 @@
 	left: "262px",
 	font: {
 		fontFamily: 'Arial',
-
 		fontSize: '30px'
 	}
 }
 ".LabelPricecontainer[platform=ios formFactor=tablet]" : {
 	color: '#fe4040',
-left: "40px",
+	left: "40px",
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
@@ -99,94 +94,114 @@ left: "40px",
 }
 ".LabelPricecontainer[platform=android ]" : {
 	color: '#fe4040',
-left: "40px",
+	left: "40px",
 	font: {
 		fontFamily: 'Arial',
 		fontWeight: 'bold',
 		fontSize: '60px'
 	}
 }
-
-".Labelcatagorycontainer": {
-  color: '#4f4f4f',
-
-  left: "40px",
-  font: {
-    fontFamily: 'book',
-
-    fontSize: '48px'
-  }
+".Labelcatagorycontainer" : {
+	color: '#4f4f4f',
+	left: "40px",
+	font: {
+		fontFamily: 'book',
+		fontSize: '48px'
+	}
 }
-
-".imagemaincontainer": {
+".imagemaincontainer[platform=ios formFactor=tablet]" : {
 	height: "534px",
-	width: "771px",
+	width: "771px"
 }
-
-".imagecontainer": {
-	left: "20px",
+".imagemaincontainer[platform=android ]" : {
+	height: "400px",
+	width: "671px"
+}
+".imagecontainer[platform=ios formFactor=tablet]" : {
+	left: "10px",
 	height: "207px",
 	width: "235px"
 }
-
-".Labeldescription": {
+".imagecontainer[platform=android ]" : {
+	left: "10px",
+	height: "150px",
+	width: "200px"
+}
+".Labeldescription[platform=ios formFactor=tablet]" : {
 	top: "40px",
 	left: "40px",
 	color: "#333333",
 	fontSize: "30px"
 }
-
-".buttonBUY": {
+".Labeldescription[platform=android ]" : {
+	top: "10px",
+	left: "40px",
+	color: "#333333",
+	fontSize: "30px"
+}
+".buttonBUY" : {
 	backgroundColor: "#db1514",
 	fontSize: "75px",
 	color: "#ffffff",
 	width: "48%",
 	height: "50",
 	top: "20"
-
 }
-
-".viewhead": {
-layout:"vertical",
-	 backgroundColor:"#ffffff",
-
-	 borderRadius: "10"
+".viewhead" : {
+	layout: "vertical",
+	backgroundColor: "#ffffff",
+	borderRadius: "10"
 }
 ".share[platform=android ]" : {
-    font: {
-        fontFamily: 'FontAwesome',
-        height: "70px",
-        width: "70px",
-				fontSize: "70px"
-    },
-    left: "50%",
-    color: "#7f7f7f"
-}
-".share[platform=ios formFactor=tablet]" : {
 	font: {
-			fontFamily: 'FontAwesome',
-			height: "70px",
-			width: "70px",
-			fontSize: "50px",
-			/*fontWeight: "0.5"*/
+		fontFamily: 'FontAwesome',
+		height: "70px",
+		width: "70px",
+		fontSize: "70px"
 	},
 	left: "50%",
 	color: "#7f7f7f"
 }
-".viewimg": {
-	backgroundColor:"#ffffff",
-	top:"50px",
-	layout:"vertical",
+".share[platform=ios formFactor=tablet]" : {
+	font: {
+		fontFamily: 'FontAwesome',
+		height: "70px",
+		width: "70px",
+		fontSize: "50px",
+		/*fontWeight: "0.5"*/
+	},
+	left: "50%",
+	color: "#7f7f7f"
+}
+".viewimg[platform=ios formFactor=tablet]" : {
+	backgroundColor: "#ffffff",
+	top: "50px",
+	layout: "vertical",
 	left: "40px",
 	right: "40px",
-	 borderRadius: "15"
+	borderRadius: "15"
 }
-
-".desc": {
+".viewimg[platform=android ]" : {
+	backgroundColor: "#ffffff",
+	top: "10px",
+	layout: "vertical",
+	left: "40px",
+	right: "40px",
+	borderRadius: "15"
+}
+".desc[platform=ios formFactor=tablet]" : {
 	top: "50px",
 	left: "40px",
 	font: {
-		fontSize: "30px",
+		fontSize: "30px"
 	},
-	color: "#111111",
+	color: "#111111"
+}
+".desc[platform=android ]" : {
+	top: "10px",
+	left: "40px",
+	font: {
+		fontSize: "30px"
+	},
+	color: "#111111"
 }

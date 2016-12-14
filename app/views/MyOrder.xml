@@ -1,0 +1,17 @@
+<Alloy>
+    <Window id="MyOrderwin" backgroundColor="#ededed" class="container1" layout="composite">
+        <Widget id="header" top="0" src="header"/>
+        <ListView id="dynamicListView" height="842px">
+            <Templates>
+                <ItemTemplate name="image_title" height="242px">
+                    <View id="vieworder" layout="vertical" class="adressListView">
+                        <Label class="orderId" bindId="orderId"></Label>
+                        <Label class="Price" bindId="Price"></Label>
+                        <Label class="orderDate" bindId="orderDate"></Label>
+                    </View>
+                </ItemTemplate>
+            </Templates>
+            <ListSection/>
+        </ListView>
+    </Window>
+</Alloy>
