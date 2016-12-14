@@ -43,9 +43,9 @@ function ViewofOrderList(OrderList) {
     Ti.API.info(OrderList);
     Ti.API.info("OrderList" + JSON.stringify(OrderList));
     Ti.API.info("OrderList7777" + JSON.parse(OrderList));
-
+  var items = [];
     for (var i = 0; i < JSON.parse(OrderList).data.length; i++) {
-        var items = []; {
+
             items.push({
                 "orderId": {
                     text: "Order ID : " + JSON.parse(OrderList).data[i].id,
@@ -63,7 +63,7 @@ function ViewofOrderList(OrderList) {
             $.dynamicListView.sections[0].setItems(items, {
                 animated: "false",
             });
-        }
+
 
     }
 }

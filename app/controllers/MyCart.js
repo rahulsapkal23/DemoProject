@@ -8,8 +8,8 @@ $.header.__views.tital.text = "My Cart";
 $.order.addEventListener('click',function (e) {
     Ti.API.info("inside order click ");
 
-    var Add_Address = Alloy.createController('Add_Address').getView();
-    Add_Address.open();
+    var AddressList = Alloy.createController('AddressList').getView();
+    AddressList.open();
 });
 
 

@@ -1,9 +1,9 @@
 <Alloy>
-    <Window id="MyOrderwin" backgroundColor="#ededed" class="container1" layout="composite">
+    <Window id="MyOrderwin"  class="container1" layout="vertical">
         <Widget id="header" top="0" src="header"/>
-        <ListView id="dynamicListView" height="842px">
+        <ListView id="dynamicListView" height="Ti.UI.SIZE">
             <Templates>
-                <ItemTemplate name="image_title" height="242px">
+                <ItemTemplate name="image_title" height="Ti.UI.SIZE" >
                     <View id="vieworder" layout="vertical" class="adressListView">
                         <Label class="orderId" bindId="orderId"></Label>
                         <Label class="Price" bindId="Price"></Label>

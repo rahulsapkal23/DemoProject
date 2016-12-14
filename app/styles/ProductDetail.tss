@@ -117,27 +117,29 @@
 	height: "400px",
 	width: "671px"
 }
-".imagecontainer[platform=ios formFactor=tablet]" : {
-	left: "10px",
+".imagecontainer" : {
+	left: "50px",
 	height: "207px",
 	width: "235px"
 }
-".imagecontainer[platform=android ]" : {
+/*".imagecontainer[platform=android ]" : {
 	left: "10px",
-	height: "150px",
-	width: "200px"
-}
+	height: "207px",
+	width: "235px"
+}*/
 ".Labeldescription[platform=ios formFactor=tablet]" : {
 	top: "40px",
 	left: "40px",
 	color: "#333333",
-	fontSize: "30px"
+	fontSize: "30px",
+
 }
 ".Labeldescription[platform=android ]" : {
 	top: "10px",
 	left: "40px",
 	color: "#333333",
-	fontSize: "30px"
+	fontSize: "30px",
+
 }
 ".buttonBUY" : {
 	backgroundColor: "#db1514",
@@ -173,7 +175,7 @@
 	left: "50%",
 	color: "#7f7f7f"
 }
-".viewimg[platform=ios formFactor=tablet]" : {
+".viewimg" : {
 	backgroundColor: "#ffffff",
 	top: "50px",
 	layout: "vertical",
@@ -181,15 +183,15 @@
 	right: "40px",
 	borderRadius: "15"
 }
-".viewimg[platform=android ]" : {
+/*".viewimg[platform=android ]" : {
 	backgroundColor: "#ffffff",
 	top: "10px",
 	layout: "vertical",
 	left: "40px",
 	right: "40px",
 	borderRadius: "15"
-}
-".desc[platform=ios formFactor=tablet]" : {
+}*/
+".desc" : {
 	top: "50px",
 	left: "40px",
 	font: {
@@ -197,11 +199,11 @@
 	},
 	color: "#111111"
 }
-".desc[platform=android ]" : {
+/*".desc[platform=android ]" : {
 	top: "10px",
 	left: "40px",
 	font: {
 		fontSize: "30px"
 	},
 	color: "#111111"
-}
+}*/
