@@ -1,0 +1,30 @@
+<Alloy>
+  <Window id="MyAccountwin" class="container" layout="vertical">
+<ScrollView layout="vertical" >
+    <Widget id="header" src="header"/>
+
+      <ImageView class="MyDP" ></ImageView>
+      <View class="view123" id="viewfirst_name">
+          <Label class="falabel" text="\uf007"></Label>
+          <TextField id="first_name"  class="textField123" hintText="First Name"/>
+      </View>
+      <View class="view123" id="viewlast_name">
+          <Label class="falabel" text="\uf007"></Label>
+          <TextField id="last_name" class="textField123" hintText="Last Name"/>
+      </View>
+      <View class="view123" id="viewemail_id">
+          <Label class="falabel" text="\uf0e0"></Label>
+          <TextField id="email_id" class="textField123" hintText="Email"/>
+      </View>
+      <View class="view123" id="viewphone_no">
+          <Label class="falabel" text="\uf10b"></Label>
+          <TextField id="phone_no" class="textField123" hintText="Phone No"/>
+      </View>
+      <View class="view123" id="viewphone_no">
+          <Label class="falabel" text="\uf10b"></Label>
+          <TextField id="phone_no" class="textField123" hintText="Date Of Birth"/>
+      </View>
+
+  </ScrollView>
+  </Window>
+</Alloy>

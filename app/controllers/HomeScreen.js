@@ -134,6 +134,8 @@ function HomeScreenDetails(LoginDetails) {
 
 function GoToMyAccount(e) {
     Ti.API.info("Inside My Account");
+    var MyAccount = Alloy.createController('MyAccount').getView();
+    MyAccount.open();
 }
 
 function GoToMyOrder(e) {

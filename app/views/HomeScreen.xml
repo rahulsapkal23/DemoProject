@@ -43,7 +43,8 @@
             </View>
 
             <View id="view2" class="slidingview"  layout="vertical">
-                  <View top="5%"  layout="vertical"><ImageView class="MyDP"></ImageView>
+                  <View top="5%"  layout="vertical">
+                    <ImageView class="MyDP"></ImageView>
                   <Label class="Name" id="name" >NAME</Label>
                     <Label class="Email" id="email_id" >email.id.com</Label>
 

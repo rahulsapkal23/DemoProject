@@ -1,6 +1,6 @@
 // ######################################### Setting Header #########################################
-
-$.header.__views.tital.text = "Order Details";
+var order_id1 = arguments[0] || {};
+$.header.__views.tital.text = order_id1;
 
 $.header.__views.back.addEventListener('click', function(e) {
     $.OrderDetailswin.close();
@@ -18,7 +18,7 @@ function itemclick(e){
   Ti.API.info("inside itemclick");
 }
 
-var order_id1 = arguments[0] || {};
+
 Ti.API.info("order id"+typeof order_id1);
 Ti.API.info("order id"+JSON.parse(order_id1));
 Ti.API.info("order id"+JSON.stringify(order_id1));

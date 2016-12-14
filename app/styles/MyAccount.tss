@@ -1,0 +1,8 @@
+".MyDP": {
+  borderColor: "white",
+  borderRadius: "60",
+  borderWidth: "3",
+  height: "400px",
+  width: "400px",
+
+}
