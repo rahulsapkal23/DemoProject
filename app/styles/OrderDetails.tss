@@ -1,0 +1,113 @@
+".LabelNamecontainer[platform=android]" : {
+	color: '#1c1c1c',
+left: "10px",
+
+	font: {
+		fontFamily: 'Arial',
+		fontWeight: 'bold',
+		fontSize: '30px'
+	}
+}
+".ListImageContainer[platform=ios formFactor=tablet]" : {
+	height: "207px",
+	width: "235px",
+
+
+}
+".ListImageContainer[platform=android]" : {
+	height: "200px",
+	width: "200px",
+
+}
+
+".viewtextfield": {
+
+}
+".LabelNamecontainer[platform=ios formFactor=tablet]" : {
+	color: '#1c1c1c',
+left: "10px",
+
+	font: {
+		fontFamily: 'Medium',
+		fontWeight: 'bold',
+		fontSize: '30px'
+	}
+}
+
+".falabelDown": {
+  left:"5",
+  font: {
+    fontFamily: 'FontAwesome',
+      fontSize: '32px',
+
+  },
+  color: "#1c1c1c",
+}
+
+".Viewprice": {
+left: "10px",
+top: "20px",
+   backgroundColor:"#ededed",
+   width: "100px",
+   height: "55px",
+}
+
+".LabelTypecontainer[platform=ios formFactor=tablet]" : {
+	color: '#6b6b6b',
+left: "10px",
+  top: "20px",
+	font: {
+		fontFamily: 'Medium',
+		fontWeight: 'bold',
+		fontSize: '20px'
+	}
+}
+".LabelTypecontainer[platform=android ]" : {
+	color: '#6b6b6b',
+left: "10px",
+  top: "20px",
+	font: {
+		fontFamily: 'Medium',
+		fontWeight: 'bold',
+		fontSize: '20px'
+	}
+}
+
+".Viewmycart": {
+  left: "40px",
+  top:"30px",
+  right: "40px",
+width: Ti.UI.SIZE,
+}
+
+".total": {
+	top: "60px",
+
+	font: {
+		fontSize: 20,
+	},
+	color: "#333333",
+	height: Ti.UI.SIZE,
+}
+
+
+
+
+".buttonOrder": {
+	backgroundColor: "#db1514",
+	fontSize: "75px",
+	color: "#ffffff",
+	width: "60%",
+	height: "50",
+	top: "10",
+	bottom: "10",
+}
+
+".viewcontainer[platform=ios formFactor=tablet]": {
+	left:"20px",
+	width: "65%",
+}
+".viewcontainer[platform=android]": {
+	left:"20px",
+	width: "50%",
+}

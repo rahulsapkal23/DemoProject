@@ -1,6 +1,7 @@
 
 ".orderId": {
   top: "60px",
+  left: "40px",
   font: {
     fontSize: "35px",
   },
@@ -17,6 +18,7 @@
 }
 
 ".orderDate": {
+    left: "40px",
   font: {
     fontSize: "25px",
   },

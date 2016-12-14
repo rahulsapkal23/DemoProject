@@ -1,3 +1,5 @@
+// ######################################### Setting Header #########################################
+
 $.header.__views.tital.text = "My Order";
 
 $.header.__views.back.addEventListener('click', function(e) {
@@ -57,7 +59,11 @@ function ViewofOrderList(OrderList) {
                     text: "Ordered Date : " + JSON.parse(OrderList).data[i].created,
                 },
 
+                "properties":{
+                  obj:JSON.parse(OrderList).data[i],
+                },
                 "template": "image_title",
+
 
             });
             $.dynamicListView.sections[0].setItems(items, {
@@ -66,4 +72,15 @@ function ViewofOrderList(OrderList) {
 
 
     }
+}
+
+function itemclick(e){
+  Ti.API.info("inside itemclick"+JSON.stringify(e));
+    var item = e.section.items[e.itemIndex];
+    Ti.API.info("orderid"+item.properties.obj.id);
+    Ti.API.info("orderid JSON.stringify"+JSON.stringify(item.properties));
+
+  var OrderDetails = Alloy.createController('OrderDetails',item.properties.obj.id).getView();
+  OrderDetails.open();
+
 }

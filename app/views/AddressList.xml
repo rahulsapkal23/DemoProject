@@ -4,7 +4,7 @@
         <ScrollView class="Add_AddressView" layout="vertical" >
 
         <Label  class="LabelAddress">Shipping Address</Label>
-        <ListView id="dynamicListView" onItemclick="GoToAddressList" height="Ti.UI.SIZE">
+        <ListView id="dynamicListView" onItemclick="GoToAddressList" height="70%">
             <Templates>
                 <ItemTemplate name="image_title" height="Ti.UI.SIZE"  >
 

@@ -34,8 +34,10 @@ function GoToRegister(e) {
 // ######################################### making  HTTP POST request for API #########################################
 function GoToLoginAPI() {
     var data = {
-        email: $.email_id.value,
-        password: $.password.value,
+        // email: $.email_id.value,
+        // password: $.password.value,
+        email: "rahul.sapkal@neosoft.com",
+        password: "rahuls123",
 
     }
     Ti.API.info(data);
