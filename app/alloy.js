@@ -42,6 +42,8 @@
 //
 // }
 
+Alloy.Globals.Map = require('ti.map');
+
 /* ######################### Create DATABASE ######################### */
 var db = Ti.Database.open('Demo_DB');
 db.execute('CREATE TABLE IF NOT EXISTS address (ADDRESS TEXT,LANDMARK TEXT,CITY TEXT,STATE TEXT,ZIP TEXT,COUNTRY TEXT)');

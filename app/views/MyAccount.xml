@@ -22,7 +22,8 @@
       </View>
       <View class="view123" top="60px" id="viewphone_no">
           <Label class="falabel" text="\uf10b"></Label>
-          <TextField id="Dob" editable="false" class="textField123" hintText="Date Of Birth"/>
+          	<Label id="Dob" color="white">Select Date of Birth</Label>
+          <!-- <TextField id="Dob" editable="false" class="textField123" hintText="Date Of Birth"/> -->
       </View>
       <View class="buttonContainer" >
           <Button id="Edit" onClick="edit_Account" class="button1" title="EDIT PROFILE"></Button>

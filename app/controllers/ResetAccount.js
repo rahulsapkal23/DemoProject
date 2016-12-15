@@ -14,14 +14,26 @@ $.header.__views.back.addEventListener('click', function(e) {
 // ######################################### checking login with API #########################################
 function check_Reset(e) {
     Ti.API.info("inside check_Login");
-if ($.newPWD.value==$.conformPWD.value) {
-  $.newPWDview.backgroundColor = "transprent";
-  $.conformPWDview.backgroundColor = "transprent";
-    GoToResetAPI();
-} else {
-  $.newPWDview.backgroundColor = "blue";
-  $.conformPWDview.backgroundColor = "blue";
+
+if ($.currentPWD.value==Alloy.Globals.Mpassword) {
+  $.currentPWDview.backgroundColor = "transprent";
+  if ($.newPWD.value==$.conformPWD.value) {
+    
+    $.newPWDview.backgroundColor = "transprent";
+    $.conformPWDview.backgroundColor = "transprent";
+      GoToResetAPI();
+  } else {
+
+    $.newPWDview.backgroundColor = "blue";
+    $.conformPWDview.backgroundColor = "blue";
+  }
+
 }
+else {
+    $.currentPWDview.backgroundColor = "blue";
+}
+
+
 
 
 

@@ -62,6 +62,82 @@ function edit_Account(e){
     $.email_id.editable="true";
     $.phone_no.editable="true";
     $.Dob.editable="true";
+    $.Dob.addEventListener('click',function () {
+Ti.API.info("inside click");
+      if (Ti.Platform.osname == "android") {
+        Ti.API.info("inside click android");
+        var picker = Ti.UI.createPicker({
+            type: Ti.UI.PICKER_TYPE_DATE,
+            minDate: new Date(1971, 0, 1),
+            maxDate: new Date(2016, 11, 30),
+            value: new Date(2016, 11, 30),
+        });
+
+        picker.showDatePickerDialog({
+            value: new Date(2010, 8, 1),
+            callback: function(e) {
+                if (e.cancel) {
+                    Ti.API.info('User canceled dialog');
+                } else {
+                    Ti.API.info('User selected date: ' + e.value);
+                    Titanium.API.info("You clicked the button");
+                    var date = e.value;
+                    var bMon = date.getMonth() + 1;
+                    var bdate = date.getDate();
+                    var byear = date.getFullYear();
+                    $.Dob.text = bdate + "/" + bMon + "/" + byear;
+                }
+            }
+        });
+
+    } else {
+
+      Ti.API.info("inside click ios");
+
+        Ti.UI.backgroundColor = 'white';
+        var MyAccountwin = Ti.UI.createWindow({
+            exitOnClose: true,
+            layout: 'vertical'
+        });
+        var view = Titanium.UI.createView({
+            borderRadius: 10,
+            top: 150,
+            backgroundColor: 'white',
+            width: 400,
+            height: 400
+        });
+        MyAccountwin.add(view);
+        var picker = Ti.UI.createPicker({
+            type: Ti.UI.PICKER_TYPE_DATE,
+            minDate: new Date(1971, 0, 1),
+            maxDate: new Date(2016, 11, 16),
+            value: new Date(2016, 11, 16),
+            top: 50
+        });
+        var button = Titanium.UI.createButton({
+            title: 'Set',
+            top: 300,
+            width: 100,
+            height: 50,
+            backgroundColor: "red"
+        });
+        button.addEventListener('click', function(e) {
+            Titanium.API.info("You clicked the button");
+            var date = picker.value;
+            var bMon = date.getMonth() + 1;
+            var bdate = date.getDate();
+            var byear = date.getFullYear();
+            $.Dob.text = bdate + "/" + bMon + "/" + byear;
+            MyAccountwin.close();
+        });
+        view.add(picker);
+        view.add(button);
+
+        MyAccountwin.open();
+
+    }
+
+    });
     $.Edit.title="Submit";
 
   } else {

@@ -33,6 +33,7 @@ function GoToRegister(e) {
 
 // ######################################### making  HTTP POST request for API #########################################
 function GoToLoginAPI() {
+
     var data = {
         // email: $.email_id.value,
         // password: $.password.value,
@@ -46,7 +47,7 @@ function GoToLoginAPI() {
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
-
+        Alloy.Globals.Mpassword=data.password;
         // alert(response.message);
         GoToHomescreen(client.getResponseText());
 

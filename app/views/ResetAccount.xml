@@ -3,7 +3,7 @@
 		<Widget id="header" src="header"/>
 		<Label id="NeoSTORE" class="NeoSTORE" top="100"></Label>
 
-		<View class="view123" top="50">
+		<View class="view123" id="currentPWDview" top="50">
 			<Label class="falabel" text="\uf007"></Label>
 			<TextField class="textField123" id="currentPWD" hintText="Current Password"/>
 		</View>

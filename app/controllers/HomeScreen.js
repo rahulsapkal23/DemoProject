@@ -142,3 +142,8 @@ function GoToMyOrder(e) {
     var MyOrder = Alloy.createController('MyOrder').getView();
     MyOrder.open();
 }
+
+function Store_Locator(e){
+  var Store_Locator = Alloy.createController('Store_Locator').getView();
+  Store_Locator.open();
+}
