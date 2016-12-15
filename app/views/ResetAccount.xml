@@ -1,0 +1,24 @@
+<Alloy>
+	<Window class="container" id="ResetAccountwin" layout="vertical">
+		<Widget id="header" src="header"/>
+		<Label id="NeoSTORE" class="NeoSTORE" top="100"></Label>
+
+		<View class="view123" top="50">
+			<Label class="falabel" text="\uf007"></Label>
+			<TextField class="textField123" id="currentPWD" hintText="Current Password"/>
+		</View>
+		<View class="view123" id="newPWDview">
+			<Label class="falabel" text="\uf0b1"></Label>
+			<TextField class="textField123" id="newPWD" passwordMask="true" hintText="New PassWord"/>
+		</View>
+		<View class="view123" id="conformPWDview">
+			<Label class="falabel" text="\uf0b1"></Label>
+			<TextField class="textField123" id="conformPWD" passwordMask="true" hintText="Conform PassWord"/>
+		</View>
+		<View class="buttonContainer" top="100px">
+			<Button id="button" onClick="check_Reset" class="button" title="Submit"></Button>
+		</View>
+
+
+	</Window>
+</Alloy>

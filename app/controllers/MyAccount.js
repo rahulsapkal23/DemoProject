@@ -54,5 +54,103 @@ function ViewofMyAccountDetails(Account) {
     };
 
 function edit_Account(e){
-  Ti.API.info("inside edit acc");
+  Ti.API.info("wwwwwwww"+JSON.stringify(e));
+  if ($.Edit.title=="EDIT PROFILE") {
+    Ti.API.info("inside edit acc");
+    $.first_name.editable="true";
+    $.last_name.editable="true";
+    $.email_id.editable="true";
+    $.phone_no.editable="true";
+    $.Dob.editable="true";
+    $.Edit.title="Submit";
+
+  } else {
+
+      Ti.API.info("inside submit acc");
+      // ######################################### making  HTTP POST request for API #########################################
+
+          var data = {
+              first_name: $.first_name.value,
+              last_name: $.last_name.value,
+              email: $.email_id.value,
+              phone_no: $.phone_no.value,
+              dob:$.Dob.value,
+              profile_pic:"https://lh6.googleusercontent.com/-XdTkVGot3rk/AAAAAAAAAAI/AAAAAAAAAB4/7vdnibKhzlQ/photo.jpg"
+          }
+           Ti.API.info(data);
+          var xhr = Ti.Network.createHTTPClient();
+          xhr.onload = function(e) {
+              // var response = JSON.stringify(xhr.getResponseText());
+              Ti.API.info("json stringfy load" + JSON.stringify(e));
+              Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
+
+              alert("Account has been updated Sucessfully");
+              var HomeScreen = Alloy.createController('HomeScreen').getView();
+              HomeScreen.open();
+
+          };
+          xhr.onerror = function(e) {
+              var response = JSON.stringify(xhr.getResponseText());
+              Ti.API.info(" onerror" + JSON.stringify(e));
+              Ti.API.info("xhr.responseText onerror" + xhr.getResponseText());
+              Ti.API.info("sayhdgas"+response);
+              Ti.API.info(response.message);
+              alert("Account not updated");
+
+          };
+          xhr.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/update');
+          xhr.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+
+          xhr.send(data);
+
+      }
+
+  }
+
+
+
+
+function reset_Account(e){
+  Ti.API.info("inside Reset Account");
+  var ResetAccount = Alloy.createController('ResetAccount').getView();
+  ResetAccount.open();
+}
+
+function Camera_Open(e){
+  Ti.API.info("inside camera open");
+  // This example is only able to capture video on the iOS platform.
+// To capture video on the Android platform, see the Android Capture Video Example below.
+// Titanium.Media.showCamera({
+// 	success:function(event) {
+// 		// called when media returned from the camera
+// 		Ti.API.debug('Our type was: '+event.mediaType);
+// 		if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+// 			var imageView = Ti.UI.createImageView({
+// 				width: win.width,
+// 				height: win.height,
+// 				image: event.media
+// 			});
+// 			win.add(imageView);
+// 		} else {
+// 			alert("got the wrong type back ="+event.mediaType);
+// 		}
+// 	},
+// 	cancel:function() {
+// 		// called when user cancels taking a picture
+// 	},
+// 	error:function(error) {
+// 		// called when there's an error
+// 		var a = Titanium.UI.createAlertDialog({title:'Camera'});
+// 		if (error.code == Titanium.Media.NO_CAMERA) {
+// 			a.setMessage('Please run this test on device');
+// 		} else {
+// 			a.setMessage('Unexpected error: ' + error.code);
+// 		}
+// 		a.show();
+// 	},
+// 	saveToPhotoGallery:true,
+//     // allowEditing and mediaTypes are iOS-only settings
+// 	allowEditing: true,
+// 	mediaTypes: [Ti.Media.MEDIA_TYPE_VIDEO,Ti.Media.MEDIA_TYPE_PHOTO]
+// });
 }

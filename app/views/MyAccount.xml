@@ -1,9 +1,9 @@
 <Alloy>
-  <Window id="MyAccountwin"  class="container1" >
-<ScrollView layout="vertical" backgroundColor="lime" >
+  <Window id="MyAccountwin"  class="container" >
+<ScrollView layout="vertical"  >
     <Widget id="header" src="header"/>
 
-      <ImageView class="MyDP" top="60px" ></ImageView>
+      <ImageView class="MyDP" top="60px" onClick="Camera_Open" ></ImageView>
       <View class="view123" top="60px" id="viewfirst_name">
           <Label class="falabel" text="\uf007"></Label>
           <TextField id="first_name" editable="false" class="textField123" />
@@ -25,10 +25,10 @@
           <TextField id="Dob" editable="false" class="textField123" hintText="Date Of Birth"/>
       </View>
       <View class="buttonContainer" >
-          <Button onClick="edit_Account" class="button">EDIT PROFILE</Button>
+          <Button id="Edit" onClick="edit_Account" class="button1" title="EDIT PROFILE"></Button>
       </View>
       <View class="buttonContainer1">
-          <Button onClick="edit_Account"  class="button1">RESET PASSWORD</Button>
+          <Button onClick="reset_Account"  class="button1">RESET PASSWORD</Button>
       </View>
   </ScrollView>
 
