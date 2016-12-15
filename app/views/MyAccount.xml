@@ -1,30 +1,37 @@
 <Alloy>
-  <Window id="MyAccountwin" class="container" layout="vertical">
-<ScrollView layout="vertical" >
+  <Window id="MyAccountwin"  class="container1" >
+<ScrollView layout="vertical" backgroundColor="lime" >
     <Widget id="header" src="header"/>
 
-      <ImageView class="MyDP" ></ImageView>
-      <View class="view123" id="viewfirst_name">
+      <ImageView class="MyDP" top="60px" ></ImageView>
+      <View class="view123" top="60px" id="viewfirst_name">
           <Label class="falabel" text="\uf007"></Label>
-          <TextField id="first_name"  class="textField123" hintText="First Name"/>
+          <TextField id="first_name" editable="false" class="textField123" />
       </View>
-      <View class="view123" id="viewlast_name">
+      <View class="view123" top="60px" id="viewlast_name">
           <Label class="falabel" text="\uf007"></Label>
-          <TextField id="last_name" class="textField123" hintText="Last Name"/>
+          <TextField id="last_name" editable="false" class="textField123" />
       </View>
-      <View class="view123" id="viewemail_id">
+      <View class="view123" top="60px" id="viewemail_id">
           <Label class="falabel" text="\uf0e0"></Label>
-          <TextField id="email_id" class="textField123" hintText="Email"/>
+          <TextField id="email_id" editable="false" class="textField123" />
       </View>
-      <View class="view123" id="viewphone_no">
+      <View class="view123" top="60px" id="viewphone_no">
           <Label class="falabel" text="\uf10b"></Label>
-          <TextField id="phone_no" class="textField123" hintText="Phone No"/>
+          <TextField id="phone_no" editable="false" class="textField123" />
       </View>
-      <View class="view123" id="viewphone_no">
+      <View class="view123" top="60px" id="viewphone_no">
           <Label class="falabel" text="\uf10b"></Label>
-          <TextField id="phone_no" class="textField123" hintText="Date Of Birth"/>
+          <TextField id="Dob" editable="false" class="textField123" hintText="Date Of Birth"/>
       </View>
-
+      <View class="buttonContainer" >
+          <Button onClick="edit_Account" class="button">EDIT PROFILE</Button>
+      </View>
+      <View class="buttonContainer1">
+          <Button onClick="edit_Account"  class="button1">RESET PASSWORD</Button>
+      </View>
   </ScrollView>
+
+
   </Window>
 </Alloy>
