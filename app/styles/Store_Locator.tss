@@ -1,15 +1,61 @@
-"#mapview" : {
-    region : {
-        latitude:33.74511,
-        longitude:-84.38993,
-        latitudeDelta:0.01,
-        longitudeDelta:0.01
-    }
-},
-"#appcHQ" : {
-    latitude: 37.390749,
-    longitude: -122.081651,
-    title: "Appcelerator Headquarters",
-    subtitle: "Mountain View, CA",
-    pincolor: Alloy.Globals.Map.ANNOTATION_RED
+
+".LabelNamecontainer": {
+  font: {
+    fontSize: "30px",
+  },
+  color: "#333333",
+  left: "0px",
+}
+
+".adressListView": {
+
+   height:"256px",
+    /*width:"906px",*/
+}
+
+".Labeladdcontainer": {
+  font: {
+    fontSize: "25px",
+  },
+  color: "#333333",
+}
+
+".Listicon_font[platform=ios formFactor=tablet]" : {
+    color: "red",
+left: "40px",
+    font: {
+        fontFamily: "fontawesome",
+        fontSize: "25",
+        fontWeight: "20",
+    },
+    height: "84px",
+    width: "84px"
+}
+".Listicon_font[platform=android ]" : {
+    color: "red",
+left: "40px",
+    font: {
+        fontFamily: "fontawesome",
+        fontSize: "25",
+        fontWeight: "20",
+    },
+    height: "84px",
+    width: "84px"
+}
+
+".label2": {
+  font: {
+    fontSize: "40px",
+  },
+
+  color: "#4f4f4f",
+}
+
+
+".label1": {
+  font: {
+    fontSize: "45px",
+  },
+  top: "30px",
+  color: "#333333",
 }

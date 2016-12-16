@@ -41,8 +41,10 @@ $.header.__views.search.addEventListener('click', function(e) {
 function SlideToMyProfile(e) {
     Ti.API.info("inside slider");
     // If the slidding menu isn't opened
+
     if (e.source.toggle == true) {
         Ti.API.info("inside if ");
+
         $.view1.animate({
             left: 0,
             height: "100%",

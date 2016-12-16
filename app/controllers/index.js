@@ -76,6 +76,6 @@ function GoToHomescreen(e) {
     HomeScreen.open();
 }
 
-$.index.open();
-// var window = Alloy.createController('HomeScreen').getView();
+ $.index.open();
+// var window = Alloy.createController('Store_Locator').getView();
 // window.open();

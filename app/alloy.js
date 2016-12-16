@@ -42,7 +42,7 @@
 //
 // }
 
-Alloy.Globals.Map = require('ti.map');
+// Alloy.Globals.Map = require('ti.map');
 
 /* ######################### Create DATABASE ######################### */
 var db = Ti.Database.open('Demo_DB');

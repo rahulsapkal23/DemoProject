@@ -46,9 +46,8 @@
 
 
 		<application>
-		                <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
 		                <meta-data android:name="com.google.android.maps.v2.API_KEY"
-		                    android:value="AIzaSyB3xu3MmYBqknwijHsVKJxl2KwwxMK0BxA"/>
+		                    android:value="AIzaSyANSkzVKJRvGake18L9mrcrrKshl-XIlUY"/>
 
 								</application>
 
@@ -92,8 +91,8 @@
 		<theme>default</theme>
 	</mobileweb>
 	<modules>
-<module platform="android">ti.map</module>
- <module platform="iphone">ti.map</module>
+ <module platform="android">ti.map</module>
+<!-- <module platform="iphone">ti.map</module> -->
 	</modules>
 	<deployment-targets>
 		<target device="android">true</target>

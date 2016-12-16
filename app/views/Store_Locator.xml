@@ -1,11 +1,42 @@
 <Alloy>
-  <Window id="Store_Locatorwin"  class="container" >
+  <Window id="Store_Locatorwin" layout="vertical"  class="container1" >
     <Widget id="header" src="header"/>
-    <View id="mapview" module="ti.map" onClick="report">
-            <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
-            <!-- Prior to Alloy 1.4.0, create annotations in the controller -->
-            <Annotation id='appcHQ' myid='1' />
-        </View>
+
+<View id="mapadd" backgroundColor="navy" height="500px"></View>
+
+
+<View layout="horizontal" height="208px" onClick="zoom" >
+	<Label class="Listicon_font" text="\uf041"></Label>
+  <View layout="horizontal" width="80%" latitude="19.025482" longitude="72.845358">
+  <Label class="label1" >Ruby Tower</Label>
+    <Label class="label2">4th Floor, The Ruby, 29, Senapati Bapat Marg, Dadar, Mumbai, Maharashtra 400028</Label>
+  </View>
+
+</View>
+<View layout="horizontal" height="208px" onClick="zoom" latitude="19.018109" longitude="72.82833">
+	<Label class="Listicon_font" text="\uf041"></Label>
+  <View layout="horizontal" width="80%" latitude="19.018109" longitude="72.82833">
+  <Label class="label1" >Sigma IT Park</Label>
+    <Label class="label2">Sector 8, MIDC Industrial Area, Rabale, Thane, Maharashtra 400701</Label>
+  </View>
+
+</View>
+<View layout="horizontal" height="208px" onClick="zoom" latitude="19.018109" longitude="72.82833">
+	<Label class="Listicon_font" text="\uf041"></Label>
+  <View layout="horizontal" width="80%" latitude="19.018109" longitude="72.82833">
+  <Label class="label1" >Rajiv Gandhi Infotech Park</Label>
+    <Label class="label2">Blue Ridge SEZ,Hinjewadi,Blue Ridge-Paranjpe Schemes, Pune, Maharashtra 411027</Label>
+  </View>
+
+</View>
+<View layout="horizontal" height="208px" onClick="zoom"  latitude="19.018109" longitude="72.82833">
+	<Label class="Listicon_font" text="\uf041"></Label>
+  <View layout="horizontal" width="80%" latitude="19.018109" longitude="72.82833">
+  <Label class="label1" >PrabhaDevi</Label>
+    <Label class="label2">124 Unique Industrial Estate, Mumbai, Maharashtra 400025</Label>
+  </View>
+
+</View>
 
   </Window>
 </Alloy>
