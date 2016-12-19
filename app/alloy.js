@@ -44,9 +44,9 @@
 
 // Alloy.Globals.Map = require('ti.map');
 
-
+Alloy.Globals.mycartItem;
 Alloy.Globals.MycartFlag = "false";
-Alloy.Globals.mycartItem = 0;
+
 /* ######################### Create DATABASE ######################### */
 var db = Ti.Database.open('Demo_DB');
 db.execute('CREATE TABLE IF NOT EXISTS address (ADDRESS TEXT,LANDMARK TEXT,CITY TEXT,STATE TEXT,ZIP TEXT,COUNTRY TEXT)');

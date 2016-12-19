@@ -188,6 +188,9 @@ function openBuy(e) {
                     Ti.API.info("json stringfy load" + JSON.stringify(e));
                     Ti.API.info("client.responseText onload" + client.getResponseText());
                     Ti.API.info(response.message);
+                    Alloy.Globals.MycartFlag = "true";
+                    Alloy.Globals.mycartItem++;
+                    Ti.API.info("  Alloy.Globals.mycartItem" + Alloy.Globals.mycartItem);
                     alert(response.message);
                 };
                 client.onerror = function(e) {
@@ -285,7 +288,7 @@ function openBuy(e) {
                     Ti.API.info("client.responseText onload" + client.getResponseText());
                     alert(response.message);
                     Alloy.Globals.MycartFlag = "true";
-                    Alloy.Globals.mycartItem++;
+
                 };
                 client.onerror = function(e) {
                     var response = JSON.parse(client.getResponseText());

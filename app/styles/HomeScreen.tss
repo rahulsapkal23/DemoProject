@@ -30,8 +30,6 @@
     backgroundColor: "white",
     height: "686px"
 }
-
-
 ".ListItem" : {
     height: Ti.UI.FILL,
     color: "navy",
@@ -132,58 +130,56 @@
 }
 ".Listicon_moon[platform=ios formFactor=tablet]" : {
     color: "white",
-left: "40px",
+    left: "40px",
     font: {
         fontFamily: "icomoon",
         fontSize: "25",
-        fontWeight: "20",
+        fontWeight: "20"
     },
     height: "84px",
     width: "84px"
 }
 ".Listicon_font[platform=ios formFactor=tablet]" : {
     color: "white",
-left: "40px",
+    left: "40px",
     font: {
         fontFamily: "fontawesome",
         fontSize: "25",
-        fontWeight: "20",
+        fontWeight: "20"
     },
     height: "84px",
     width: "84px"
 }
 ".Listicon_font[platform=android ]" : {
     color: "white",
-left: "40px",
+    left: "40px",
     font: {
         fontFamily: "fontawesome",
         fontSize: "25",
-        fontWeight: "20",
+        fontWeight: "20"
     },
     height: "84px",
     width: "84px"
 }
 ".Listicon_moon[platform=android]" : {
     color: "white",
-left: "40px",
+    left: "40px",
     font: {
         fontFamily: "icomoon",
         fontSize: "25",
-        fontWeight: "20",
+        fontWeight: "20"
     },
     height: "84px",
     width: "84px"
 }
-
 ".Homescreencontainer[platform=android ]" : {
-
-  top: "0",
-backgroundColor: "#333333",
-  orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
+    top: "0",
+    backgroundColor: "#333333",
+    orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
 }
 ".Homescreencontainer[platform=ios formFactor=tablet]" : {
-backgroundColor: "#333333",
-  top: "25",
+    backgroundColor: "#333333",
+    top: "25"
 }
 ".Sofasiconmoon[platform=ios formFactor=tablet]" : {
     color: "white",
@@ -239,74 +235,61 @@ backgroundColor: "#333333",
         fontSize: "70%"
     }
 }
-
-".slidingview": {
-
-  left: "-75%",
-  width:"75%",
+".slidingview" : {
+    left: "-75%",
+    width: "75%"
 }
-
-".ListItemLabel[platform=ios formFactor=tablet]": {
-left: "40px",
-  font: {
-    fontSize: "35",
-    fontWeight: "2",
-  },
-  color: "#ffffff",
-
+".ListItemLabel[platform=ios formFactor=tablet]" : {
+    left: "40px",
+    font: {
+        fontSize: "35",
+        fontWeight: "2"
+    },
+    color: "#ffffff"
 }
-".ListItemLabel[platform=android ]": {
-left: "40px",
-  font: {
-    fontSize: "20",
-    fontWeight: "2",
-  },
-  color: "#ffffff",
-
+".ListItemLabel[platform=android ]" : {
+    left: "40px",
+    font: {
+        fontSize: "20",
+        fontWeight: "2"
+    },
+    color: "#ffffff"
 }
-
-".Listcart[platform=android ]": {
-left: "100px",
-  font: {
-    fontSize: "20",
-    fontWeight: "2",
-  },
-  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-  color: "#ffffff",
-  borderRadius: 50,
-  backgroundColor: "red",
-  height: "78px",
-  width: "78px"
-
+".Listcart[platform=android ]" : {
+    left: "100px",
+    font: {
+        fontSize: "20",
+        fontWeight: "2"
+    },
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    color: "#ffffff",
+    borderRadius: 50,
+    backgroundColor: "red",
+    height: "78px",
+    width: "78px"
 }
-
-".list_view": {
-  height: "135px",
-  layout: "horizontal",
-
+".list_view" : {
+    height: "135px",
+    layout: "horizontal"
 }
-
-".MyDP": {
-  borderColor: "white",
-  borderRadius: "60",
-  borderWidth: "3",
-  height: "250px",
-  width: "250px",
-
+".MyDP" : {
+    borderColor: "white",
+    borderRadius: "60",
+    borderWidth: "3",
+    height: "250px",
+    width: "250px"
 }
-
-".Name": {
-  top:"54px",
-  font: {
-    fontSize: "23"
-  },
-  color: "#ffffff"
+".Name" : {
+    top: "54px",
+    font: {
+        fontSize: "23"
+    },
+    color: "#ffffff"
 }
-
-".Email": {
-  top:"40px",
-  font: {
-    fontSize: "13"
-  },
-  color: "#ffffff"
-  }
+".Email" : {
+    top: "40px",
+    font: {
+        fontSize: "13"
+    },
+    color: "#ffffff"
+}

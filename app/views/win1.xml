@@ -1,0 +1,3 @@
+<Alloy>
+    <Window onOpen="openWin2" backgroundColor="blue"/>
+</Alloy>

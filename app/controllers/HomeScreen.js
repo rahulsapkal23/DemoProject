@@ -40,9 +40,12 @@ $.header.__views.search.addEventListener('click', function(e) {
 
 });
 
-if (true) {
-    $.mycartItem.text = Alloy.Globals.mycartItem;
-}
+// $.mycartItem.text = Alloy.Globals.mycartItem;
+//
+// if (Alloy.Globals.MycartFlag == "true") {
+//     $.mycartItem.text = Alloy.Globals.mycartItem;
+//
+// }
 
 
 // ######################################### addEventListener #########################################
@@ -66,13 +69,10 @@ function SlideToMyProfile(e) {
 
 
 
-
     if (e.source.toggle == true) {
         Ti.API.info("inside if ");
         $.list_view1_table.addEventListener('click', ListProduct);
-        $.list_view1_sofa.addEventListener('click', ListProduct);
         $.list_view1_chair.addEventListener('click', ListProduct);
-        $.list_view1_cupbord.addEventListener('click', ListProduct);
         $.view1.animate({
             left: 0,
             height: "100%",
@@ -91,9 +91,7 @@ function SlideToMyProfile(e) {
     // If the slidding menu is already opened then close the slidding view
     else {
         $.list_view1_table.removeEventListener('click', ListProduct);
-        $.list_view1_sofa.removeEventListener('click', ListProduct);
         $.list_view1_chair.removeEventListener('click', ListProduct);
-        $.list_view1_cupbord.removeEventListener('click', ListProduct);
         $.view1.animate({
             left: "75%",
             width: "100%",
@@ -150,6 +148,49 @@ client.setRequestHeader("access_token", access_token);
 //xhr.setRequestHeader("postman-token", "1b1fe29f-2ff0-324e-aff5-547aed18e442");
 client.send();
 
+
+
+// ################################# making  HTTP GET request for API ###################################
+var client1 = Ti.Network.createHTTPClient({
+    onload: function(e) {
+        var response1 = JSON.parse(client1.getResponseText());
+        Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
+        Ti.API.info("client1.responseText MyCart" + client1.getResponseText());
+        // function called fir list view according to Product id
+        ViewofMycart(client1.getResponseText())
+    },
+    // function called when an error occurs, including a timeout
+    onerror: function(e) {
+        var response1 = JSON.parse(client1.getResponseText());
+        Ti.API.info(" onerror" + JSON.stringify(e));
+        Ti.API.info("client.responseText onerror" + client1.getResponseText());
+        Ti.API.info(response1.message);
+        alert(response1.message);
+    },
+    //  timeout : 5000  // in milliseconds
+});
+// Prepare the connection.
+
+client1.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/cart");
+client1.setRequestHeader("access_token", access_token);
+
+// Send the request.
+client1.send();
+
+function ViewofMycart(cardData) {
+    Ti.API.info("inside function ViewofMycart" + cardData);
+    if (JSON.parse(cardData).data.length > 0) {
+        $.mycartItem.text = JSON.parse(cardData).data.length;
+        Alloy.Globals.MycartFlag = "true";
+    } else {
+        $.mycartItem.text = JSON.parse(cardData).data.length;
+        Alloy.Globals.MycartFlag = "false";
+    }
+
+}
+
+
+
 function HomeScreenDetails(LoginDetails) {
 
 
@@ -181,3 +222,4 @@ function Store_Locator(e) {
     var Store_Locator = Alloy.createController('Store_Locator').getView();
     Store_Locator.open();
 }
+// export.SlideToMyProfile = SlideToMyProfile;

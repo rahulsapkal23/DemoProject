@@ -2,6 +2,7 @@
 $.header.__views.tital.text = "Home";
 $.header.__views.back.text = " ";
 
+
 // ######################################### checking login with API #########################################
 function check_Login(e) {
     Ti.API.info("inside check_Login");
@@ -24,6 +25,7 @@ function ForgotPwd(e) {
 }
 
 
+Alloy.Globals.mycartItem = 0;
 
 function GoToRegister(e) {
     Ti.API.info("inside Register");
@@ -47,7 +49,7 @@ function GoToLoginAPI() {
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
-        Alloy.Globals.Mpassword=data.password;
+        Alloy.Globals.Mpassword = data.password;
         // alert(response.message);
         GoToHomescreen(client.getResponseText());
 
@@ -76,6 +78,6 @@ function GoToHomescreen(e) {
     HomeScreen.open();
 }
 
- $.index.open();
-// var window = Alloy.createController('Store_Locator').getView();
+$.index.open();
+// var window = Alloy.createController('win1').getView();
 // window.open();

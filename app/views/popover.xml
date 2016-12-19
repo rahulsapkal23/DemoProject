@@ -1,11 +1,12 @@
 <Alloy>
-<Window id="popoverwin" onClick="closeWindow" backgroundColor="transparent" >
-  <View layout="vertical" class="Popcontainer">
-  <Label id="Name"  class="PopName"></Label>
-<ImageView id="Image" class="PopImage"></ImageView>
-<Label   class="PopQty" >Enter Qty </Label>
-<TextField   class="PopTextField"></TextField>
-<Button  onClick="Submit" class="PopButton"></Button>
-</View>
-</Window>
+    <Window id="popoverwin" onClick="closeWindow" backgroundColor="transparent">
+        <View layout="vertical" class="Popcontainer">
+            <Label id="Name" class="PopName"></Label>
+            <ImageView id="Image" class="PopImage"></ImageView>
+            <Label class="PopQty">Enter Qty
+            </Label>
+            <TextField class="PopTextField"></TextField>
+            <Button onClick="Submit" class="PopButton"></Button>
+        </View>
+    </Window>
 </Alloy>

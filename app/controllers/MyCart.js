@@ -81,10 +81,11 @@ function ViewofMycart(cardData) {
                 current_product: JSON.parse(cardData).data[i],
             }
         });
-        $.dynamicListView.sections[0].setItems(items, {
-            animated: "false",
-        });
+
     }
+    $.dynamicListView.sections[0].setItems(items, {
+        animated: "false",
+    });
     Ti.API.info(JSON.parse(cardData).total);
     $.total.text = "Rs." + JSON.parse(cardData).total;
 };

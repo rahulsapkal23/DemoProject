@@ -23,17 +23,17 @@
                         <Label class="TableText" touchEnabled="false">Table</Label>
                     </View>
 
-                    <View class="HomeScreenItem" productcategoryid="3" id="list_view1_sofa" onClick="ListProduct">
+                    <View class="HomeScreenItem" productcategoryid="3" id="list_view1_sofa">
                         <Label class="Sofasiconmoon" touchEnabled="false" text="\ue902"></Label>
                         <Label class="SofasText" touchEnabled="false">Sofas</Label>
                     </View>
                 </View>
                 <View class="HomeScreenItemContainer">
-                    <View class="HomeScreenItem" productcategoryid="2" id="list_view1_chair" onClick="ListProduct">
+                    <View class="HomeScreenItem" productcategoryid="2" id="list_view1_chair">
                         <Label class="Chairsiconmoon" touchEnabled="false" text="\ue900"></Label>
                         <Label class="ChairsText" touchEnabled="false">Chairs</Label>
                     </View>
-                    <View class="HomeScreenItem" productcategoryid="4" id="list_view1_cupbord" onClick="ListProduct">
+                    <View class="HomeScreenItem" productcategoryid="4" id="list_view1_cupbord">
                         <Label class="Cupbordsiconmoon" touchEnabled="false" text="\ue901"></Label>
                         <Label class="CupbordsText" touchEnabled="false">Cupbords</Label>
                     </View>
@@ -50,9 +50,9 @@
                 <View id="mycart" class="list_view" top="40px">
                     <Label class="Listicon_font" text="\uf007"></Label>
                     <Label class="ListItemLabel">My Cart</Label>
-                    <Label id="mycartItem" class="Listcart">0</Label>
+                    <Label id="mycartItem" class="Listcart"></Label>
                 </View>
-                <View class="list_view" productcategoryid="1" id="list_view2_table">
+                <View class="list_view" onClick="ListProduct" productcategoryid="1" id="list_view2_table">
                     <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label>
                     <Label class="ListItemLabel" touchEnabled="false">Tables</Label>
                 </View>
