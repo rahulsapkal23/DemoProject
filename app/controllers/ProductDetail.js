@@ -4,8 +4,13 @@ $.header.__views.back.addEventListener('click', function(e) {
 });
 $.header.__views.search.text = "\uf07a";
 $.header.__views.search.addEventListener('click', function(e) {
-    var MyCart = Alloy.createController('MyCart').getView();
-    MyCart.open();
+    if (Alloy.Globals.MycartFlag == "true") {
+        var MyCart = Alloy.createController('MyCart').getView();
+        MyCart.open();
+
+    } else {
+        alert("My Cart is Empty");
+    }
 });
 
 // ################################# get argument from previous controllew ###################################
@@ -166,32 +171,40 @@ function openBuy(e) {
             height: "142px"
         });
         button.addEventListener('click', function(e) {
-            Titanium.API.info("You clicked the button");
-            var data = {
+            var TfRE = /^[1-8]$/;
+            if (TfRE.test(textField.value) == false) {
+                textField.backgroundColor = "blue";
+            } else {
+                Titanium.API.info("You clicked the button");
+                textField.backgroundColor = "transprent";
+                var data = {
 
-                quantity: textField.value,
-                product_id: args,
+                    quantity: textField.value,
+                    product_id: args,
+                }
+                var client = Ti.Network.createHTTPClient();
+                client.onload = function(e) {
+                    var response = JSON.parse(client.getResponseText());
+                    Ti.API.info("json stringfy load" + JSON.stringify(e));
+                    Ti.API.info("client.responseText onload" + client.getResponseText());
+                    Ti.API.info(response.message);
+                    alert(response.message);
+                };
+                client.onerror = function(e) {
+                    var response = JSON.parse(client.getResponseText());
+                    Ti.API.info(" onerror" + JSON.stringify(e));
+                    Ti.API.info("client.responseText onerror" + client.getResponseText());
+                    Ti.API.info(response.message);
+                    alert(response.message);
+
+                };
+                client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
+                client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+                client.send(data);
+                $.ProductDetailwin.remove(viewBody);
+
             }
-            var client = Ti.Network.createHTTPClient();
-            client.onload = function(e) {
-                var response = JSON.parse(client.getResponseText());
-                Ti.API.info("json stringfy load" + JSON.stringify(e));
-                Ti.API.info("client.responseText onload" + client.getResponseText());
-                Ti.API.info(response.message);
-                alert(response.message);
-            };
-            client.onerror = function(e) {
-                var response = JSON.parse(client.getResponseText());
-                Ti.API.info(" onerror" + JSON.stringify(e));
-                Ti.API.info("client.responseText onerror" + client.getResponseText());
-                Ti.API.info(response.message);
-                alert(response.message);
 
-            };
-            client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
-            client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
-            client.send(data);
-            $.ProductDetailwin.remove(viewBody);
         });
         view.add(Name);
         view.add(image);
@@ -255,30 +268,38 @@ function openBuy(e) {
             height: "142px"
         });
         button.addEventListener('click', function(m) {
-            Titanium.API.info("You clicked the button" + JSON.stringify(e));
-            var data = {
-                quantity: textField.value,
-                product_id: args,
-            }
-            var client = Ti.Network.createHTTPClient();
-            client.onload = function(e) {
-                var response = JSON.parse(client.getResponseText());
-                Ti.API.info("json stringfy load" + JSON.stringify(e));
-                Ti.API.info("client.responseText onload" + client.getResponseText());
-                alert(response.message)
-            };
-            client.onerror = function(e) {
-                var response = JSON.parse(client.getResponseText());
-                Ti.API.info(" onerror" + JSON.stringify(e));
-                Ti.API.info("client.responseText onerror" + client.getResponseText());
-                Ti.API.info(response.message);
-                alert(response.message);
+            var TfRE = /^[1-8]$/;
+            if (TfRE.test(textField.value) == false) {
+                textField.backgroundColor = "blue";
+            } else {
+                textField.backgroundColor = "transprent";
+                Titanium.API.info("You clicked the button" + JSON.stringify(e));
+                var data = {
+                    quantity: textField.value,
+                    product_id: args,
+                }
+                var client = Ti.Network.createHTTPClient();
+                client.onload = function(e) {
+                    var response = JSON.parse(client.getResponseText());
+                    Ti.API.info("json stringfy load" + JSON.stringify(e));
+                    Ti.API.info("client.responseText onload" + client.getResponseText());
+                    alert(response.message);
+                    Alloy.Globals.MycartFlag = "true";
+                    Alloy.Globals.mycartItem++;
+                };
+                client.onerror = function(e) {
+                    var response = JSON.parse(client.getResponseText());
+                    Ti.API.info(" onerror" + JSON.stringify(e));
+                    Ti.API.info("client.responseText onerror" + client.getResponseText());
+                    Ti.API.info(response.message);
+                    alert(response.message);
 
-            };
-            client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
-            client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
-            client.send(data);
-            $.ProductDetailwin.remove(viewBody);
+                };
+                client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
+                client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+                client.send(data);
+                $.ProductDetailwin.remove(viewBody);
+            }
         });
         view.add(Name, image, Qty, textField, button);
         viewBody.add(view);

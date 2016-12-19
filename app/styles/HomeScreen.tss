@@ -265,6 +265,21 @@ left: "40px",
 
 }
 
+".Listcart[platform=android ]": {
+left: "100px",
+  font: {
+    fontSize: "20",
+    fontWeight: "2",
+  },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color: "#ffffff",
+  borderRadius: 50,
+  backgroundColor: "red",
+  height: "78px",
+  width: "78px"
+
+}
+
 ".list_view": {
   height: "135px",
   layout: "horizontal",

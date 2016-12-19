@@ -1,98 +1,93 @@
-
 <Alloy>
-    <Window id="HomeScreenwin" class="Homescreencontainer" >
+    <Window id="HomeScreenwin" class="Homescreencontainer">
 
         <!-- <ScrollableView id="scrollableView"> -->
-            <View id="view1" layout="vertical" >
-                <Widget id="header" src="header"/>
-                <View class="HomeScreenScrollable"  layout="horizontal">
+        <View id="view1" layout="vertical">
+            <Widget id="header" src="header"/>
+            <View class="HomeScreenScrollable" layout="horizontal">
 
-                    <ScrollableView id="scrollableView1" showPagingControl="true" pageIndicatorColor="red" pagingControlTimeout="3000">
-                        <!-- <View id="view11"  backgroundColor="#123"></View> -->
-                        <ImageView id="view11" width="Ti.UI.FILL"></ImageView>
-                        <ImageView id="view21" width="Ti.UI.FILL"></ImageView>
-                        <ImageView id="view31" width="Ti.UI.FILL"></ImageView>
-                        <ImageView id="view41" width="Ti.UI.FILL"></ImageView>
-                    </ScrollableView>
+                <ScrollableView id="scrollableView1" showPagingControl="true" pageIndicatorColor="red" pagingControlTimeout="3000">
+                    <!-- <View id="view11"  backgroundColor="#123"></View> -->
+                    <ImageView id="view11" width="Ti.UI.FILL"></ImageView>
+                    <ImageView id="view21" width="Ti.UI.FILL"></ImageView>
+                    <ImageView id="view31" width="Ti.UI.FILL"></ImageView>
+                    <ImageView id="view41" width="Ti.UI.FILL"></ImageView>
+                </ScrollableView>
 
-                </View>
-                <View layout="vertical" backgroundColor="white">
-                    <View class="HomeScreenItemContainer" top="45px">
-                        <View class="HomeScreenItem" productcategoryid="1" onClick="ListProduct">
-                            <!-- <Label id="labicon">ABCDEFGHIJKLM NOPQRSTUVWXYZ abcdefghijklm nopqrstuvwxyz 1234567890</Label> -->
-                            <Label class="Tableiconmoon" touchEnabled="false" text="\ue903"></Label>
-                            <Label class="TableText"  touchEnabled="false">Table</Label>
-                        </View>
-
-                        <View class="HomeScreenItem" productcategoryid="3" onClick="ListProduct">
-                            <Label class="Sofasiconmoon" touchEnabled="false" text="\ue902"></Label>
-                            <Label class="SofasText" touchEnabled="false">Sofas</Label>
-                        </View>
+            </View>
+            <View layout="vertical" backgroundColor="white">
+                <View class="HomeScreenItemContainer" top="45px">
+                    <View class="HomeScreenItem" productcategoryid="1" id="list_view1_table">
+                        <!-- <Label id="labicon">ABCDEFGHIJKLM NOPQRSTUVWXYZ abcdefghijklm nopqrstuvwxyz 1234567890</Label> -->
+                        <Label class="Tableiconmoon" touchEnabled="false" text="\ue903"></Label>
+                        <Label class="TableText" touchEnabled="false">Table</Label>
                     </View>
-                    <View class="HomeScreenItemContainer">
-                        <View class="HomeScreenItem" productcategoryid="2" onClick="ListProduct">
-                            <Label class="Chairsiconmoon" touchEnabled="false" text="\ue900"></Label>
-                            <Label class="ChairsText" touchEnabled="false">Chairs</Label>
-                        </View>
-                        <View class="HomeScreenItem" productcategoryid="4" onClick="ListProduct">
-                            <Label class="Cupbordsiconmoon" touchEnabled="false" text="\ue901"></Label>
-                            <Label class="CupbordsText" touchEnabled="false">Cupbords</Label>
-                        </View>
+
+                    <View class="HomeScreenItem" productcategoryid="3" id="list_view1_sofa" onClick="ListProduct">
+                        <Label class="Sofasiconmoon" touchEnabled="false" text="\ue902"></Label>
+                        <Label class="SofasText" touchEnabled="false">Sofas</Label>
+                    </View>
+                </View>
+                <View class="HomeScreenItemContainer">
+                    <View class="HomeScreenItem" productcategoryid="2" id="list_view1_chair" onClick="ListProduct">
+                        <Label class="Chairsiconmoon" touchEnabled="false" text="\ue900"></Label>
+                        <Label class="ChairsText" touchEnabled="false">Chairs</Label>
+                    </View>
+                    <View class="HomeScreenItem" productcategoryid="4" id="list_view1_cupbord" onClick="ListProduct">
+                        <Label class="Cupbordsiconmoon" touchEnabled="false" text="\ue901"></Label>
+                        <Label class="CupbordsText" touchEnabled="false">Cupbords</Label>
                     </View>
                 </View>
             </View>
+        </View>
 
-            <View id="view2" class="slidingview"  layout="vertical">
-                  <View top="5%"  layout="vertical">
-                    <ImageView class="MyDP"></ImageView>
-                  <Label class="Name" id="name" >NAME</Label>
-                    <Label class="Email" id="email_id" >email.id.com</Label>
+        <View id="view2" class="slidingview" layout="vertical">
+            <View top="5%" layout="vertical">
+                <ImageView class="MyDP"></ImageView>
+                <Label class="Name" id="name">NAME</Label>
+                <Label class="Email" id="email_id">email.id.com</Label>
 
-
-              <View id="mycart"  class="list_view" top="40px" >
-                	<Label class="Listicon_font" text="\uf007"></Label>
-                 <Label class="ListItemLabel" >My Cart</Label>
-              </View>
-                <View class="list_view" productcategoryid="1" onClick="ListProduct" >
-                  <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label>
-                          <Label  class="ListItemLabel" touchEnabled="false">Tables</Label>
-                  </View>
-                  <View class="list_view" onClick="ListProduct" productcategoryid="3">
+                <View id="mycart" class="list_view" top="40px">
+                    <Label class="Listicon_font" text="\uf007"></Label>
+                    <Label class="ListItemLabel">My Cart</Label>
+                    <Label id="mycartItem" class="Listcart">0</Label>
+                </View>
+                <View class="list_view" productcategoryid="1" id="list_view2_table">
+                    <Label class="Listicon_moon" touchEnabled="false" text="\ue903"></Label>
+                    <Label class="ListItemLabel" touchEnabled="false">Tables</Label>
+                </View>
+                <View class="list_view" onClick="ListProduct" id="list_view2_sofa" productcategoryid="3">
                     <Label class="Listicon_moon" touchEnabled="false" text="\ue902"></Label>
-                         <Label  class="ListItemLabel" touchEnabled="false">Sofas</Label>
-                    </View>
-                    <View class="list_view" onClick="ListProduct" productcategoryid="2" >
-                      <Label class="Listicon_moon" touchEnabled="false" text="\ue900"></Label>
-                          <Label class="ListItemLabel" touchEnabled="false">Chairs</Label>
-                      </View>
-                      <View class="list_view" onClick="ListProduct" productcategoryid="4">
-                        <Label class="Listicon_moon" touchEnabled="false" text="\ue901"></Label>
-                         <Label class="ListItemLabel" touchEnabled="false">Cupbords</Label>
-                       </View>
-                        <View class="list_view" onClick="GoToMyAccount">
-                          	<Label class="Listicon_font" text="\uf007"></Label>
-                              <Label class="ListItemLabel">My Account</Label>
-                          </View>
-                          <View class="list_view" onClick="Store_Locator" >
-                                	<Label class="Listicon_font" text="\uf041"></Label>
-                                <Label class="ListItemLabel">Store Locator</Label>
-                          </View>
-                            <View class="list_view" onClick="GoToMyOrder" >
-                                  	<Label class="Listicon_font" text="\uf007"></Label>
-                              <Label class="ListItemLabel">My Orders</Label>
-                          </View>
-                          <View class="list_view">
-                                	<Label class="Listicon_font" text="\uf090"></Label>
-                                <Label class="ListItemLabel" >Logout</Label>
-                          </View>
-
-
-
- </View>
+                    <Label class="ListItemLabel" touchEnabled="false">Sofas</Label>
+                </View>
+                <View class="list_view" onClick="ListProduct" id="list_view2_chair" productcategoryid="2">
+                    <Label class="Listicon_moon" touchEnabled="false" text="\ue900"></Label>
+                    <Label class="ListItemLabel" touchEnabled="false">Chairs</Label>
+                </View>
+                <View class="list_view" onClick="ListProduct" id="list_view2_cupbord" productcategoryid="4">
+                    <Label class="Listicon_moon" touchEnabled="false" text="\ue901"></Label>
+                    <Label class="ListItemLabel" touchEnabled="false">Cupbords</Label>
+                </View>
+                <View class="list_view" onClick="GoToMyAccount">
+                    <Label class="Listicon_font" text="\uf007"></Label>
+                    <Label class="ListItemLabel">My Account</Label>
+                </View>
+                <View class="list_view" onClick="Store_Locator">
+                    <Label class="Listicon_font" text="\uf041"></Label>
+                    <Label class="ListItemLabel">Store Locator</Label>
+                </View>
+                <View class="list_view" onClick="GoToMyOrder">
+                    <Label class="Listicon_font" text="\uf007"></Label>
+                    <Label class="ListItemLabel">My Orders</Label>
+                </View>
+                <View class="list_view">
+                    <Label class="Listicon_font" text="\uf090"></Label>
+                    <Label class="ListItemLabel">Logout</Label>
+                </View>
 
             </View>
 
-
+        </View>
 
     </Window>
 </Alloy>

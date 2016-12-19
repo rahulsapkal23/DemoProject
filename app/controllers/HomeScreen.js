@@ -9,8 +9,13 @@ Ti.API.info(JSON.stringify(access_token));
 
 $.mycart.addEventListener('click', function(e) {
     Ti.API.info("inside mycart function");
-    var MyCart = Alloy.createController('MyCart').getView();
-    MyCart.open();
+    if (Alloy.Globals.MycartFlag == "true") {
+        var MyCart = Alloy.createController('MyCart').getView();
+        MyCart.open();
+
+    } else {
+        alert("My Cart is Empty");
+    }
 });
 
 
@@ -24,12 +29,28 @@ $.header.__views.back.addEventListener('click', function(e) {
 });
 $.header.__views.search.text = "\uf07a";
 $.header.__views.search.addEventListener('click', function(e) {
-    var MyCart = Alloy.createController('MyCart').getView();
-    MyCart.open();
+
+    if (Alloy.Globals.MycartFlag == "true") {
+        var MyCart = Alloy.createController('MyCart').getView();
+        MyCart.open();
+
+    } else {
+        alert("My Cart is Empty");
+    }
+
 });
-// ######################################### My Profile Get Details #########################################
+
+if (true) {
+    $.mycartItem.text = Alloy.Globals.mycartItem;
+}
 
 
+// ######################################### addEventListener #########################################
+
+$.list_view1_table.addEventListener('click', ListProduct);
+$.list_view1_sofa.addEventListener('click', ListProduct);
+$.list_view1_chair.addEventListener('click', ListProduct);
+$.list_view1_cupbord.addEventListener('click', ListProduct);
 
 
 
@@ -39,12 +60,19 @@ $.header.__views.search.addEventListener('click', function(e) {
 
 
 function SlideToMyProfile(e) {
+
     Ti.API.info("inside slider");
     // If the slidding menu isn't opened
 
+
+
+
     if (e.source.toggle == true) {
         Ti.API.info("inside if ");
-
+        $.list_view1_table.addEventListener('click', ListProduct);
+        $.list_view1_sofa.addEventListener('click', ListProduct);
+        $.list_view1_chair.addEventListener('click', ListProduct);
+        $.list_view1_cupbord.addEventListener('click', ListProduct);
         $.view1.animate({
             left: 0,
             height: "100%",
@@ -62,6 +90,10 @@ function SlideToMyProfile(e) {
 
     // If the slidding menu is already opened then close the slidding view
     else {
+        $.list_view1_table.removeEventListener('click', ListProduct);
+        $.list_view1_sofa.removeEventListener('click', ListProduct);
+        $.list_view1_chair.removeEventListener('click', ListProduct);
+        $.list_view1_cupbord.removeEventListener('click', ListProduct);
         $.view1.animate({
             left: "75%",
             width: "100%",
@@ -145,7 +177,7 @@ function GoToMyOrder(e) {
     MyOrder.open();
 }
 
-function Store_Locator(e){
-  var Store_Locator = Alloy.createController('Store_Locator').getView();
-  Store_Locator.open();
+function Store_Locator(e) {
+    var Store_Locator = Alloy.createController('Store_Locator').getView();
+    Store_Locator.open();
 }

@@ -8,8 +8,13 @@ $.header.__views.back.addEventListener('click', function(e) {
 
 $.header.__views.search.text = "\uf07a";
 $.header.__views.search.addEventListener('click', function(e) {
+  if (Alloy.Globals.MycartFlag=="true") {
     var MyCart = Alloy.createController('MyCart').getView();
     MyCart.open();
+
+  } else {
+    alert("My Cart is Empty");
+  }
 });
 
 
@@ -185,8 +190,8 @@ function zoom(e){
   Ti.API.info("before"+mapview.region.longitudeDelta);
   mapview.region.latitude=19.018109;
 mapview.region.longitude=72.82833;
-mapview.region.latitudeDelta=0.10;
-mapview.region.longitudeDelta=0.10;
+mapview.region.latitudeDelta=0.01;
+mapview.region.longitudeDelta=0.01;
 Ti.API.info("after"+mapview.region.latitude);
 Ti.API.info("after"+mapview.region.longitude);
 Ti.API.info("after"+mapview.region.latitudeDelta);

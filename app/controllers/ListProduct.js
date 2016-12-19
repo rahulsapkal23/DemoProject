@@ -6,12 +6,18 @@ $.header.__views.back.addEventListener('click', function(e) {
 });
 $.header.__views.search.text = "\uf07a";
 $.header.__views.search.addEventListener('click', function(e) {
+  if (Alloy.Globals.MycartFlag=="true") {
     var MyCart = Alloy.createController('MyCart').getView();
     MyCart.open();
+
+  } else {
+    alert("My Cart is Empty");
+  }
 });
 // ################################# function for clear Memory ###################################
 function clearMemory() {
     Ti.API.info("Inside Clear Memory");
+
 
 }
 

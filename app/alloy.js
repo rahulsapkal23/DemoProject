@@ -44,7 +44,21 @@
 
 // Alloy.Globals.Map = require('ti.map');
 
+
+Alloy.Globals.MycartFlag = "false";
+Alloy.Globals.mycartItem = 0;
 /* ######################### Create DATABASE ######################### */
 var db = Ti.Database.open('Demo_DB');
 db.execute('CREATE TABLE IF NOT EXISTS address (ADDRESS TEXT,LANDMARK TEXT,CITY TEXT,STATE TEXT,ZIP TEXT,COUNTRY TEXT)');
 // db.execute('DROP TABLE  address ');
+
+
+
+// Alloy.Globals.Loader = function(){
+//   var view = Titanium.UI.createView({
+//    borderRadius:10,
+//    backgroundColor:'red',
+//    width:50,
+//    height:50
+// });
+// };
