@@ -26,11 +26,12 @@ recordButton.addEventListener('click', function() {
         Titanium.Media.showCamera({
             success: function(event) {
                 if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
-                    if (cropStatus) {
-                        cropImage(event.media.nativePath, view);
-                    } else {
-                        view.image = event.media;
-                    }
+                  var imageView = Ti.UI.createImageView({
+                            width: 100,
+                            height: 100,
+                            image: event.media
+                          });
+                          $.win.add(imageView);
                 }
             },
 

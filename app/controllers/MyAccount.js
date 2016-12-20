@@ -143,22 +143,28 @@ Ti.API.info("inside click");
     }
 
     });
+
+    $.MyDP.addEventListener('click',Camera_Open);
     $.Edit.title="Submit";
 
   } else {
 
-      Ti.API.info("inside submit acc");
-      // ######################################### making  HTTP POST request for API #########################################
+      Ti.API.info("inside submit acc"+$.MyDP.image);
+      var imgStr = Ti.Utils.base64encode($.MyDP.image).toString();
 
+      Ti.API.info("inside submit stringfy"+JSON.stringify($.MyDP.image));
+        // Ti.API.info("inside submit parse"+JSON.parse($.MyDP.image));
+      // ######################################### making  HTTP POST request for API #########################################
+Ti.API.info("hfuhhsduf"+imgStr);
           var data = {
               first_name: $.first_name.value,
               last_name: $.last_name.value,
               email: $.email_id.value,
               phone_no: $.phone_no.value,
               dob:$.Dob.value,
-              profile_pic:"https://lh6.googleusercontent.com/-XdTkVGot3rk/AAAAAAAAAAI/AAAAAAAAAB4/7vdnibKhzlQ/photo.jpg"
+              profile_pic:imgStr,
           }
-           Ti.API.info(data);
+           Ti.API.info("data"+JSON.stringify(data));
           var xhr = Ti.Network.createHTTPClient();
           xhr.onload = function(e) {
               // var response = JSON.stringify(xhr.getResponseText());
@@ -199,39 +205,61 @@ function reset_Account(e){
 
 function Camera_Open(e){
   Ti.API.info("inside camera open");
-  // This example is only able to capture video on the iOS platform.
-// To capture video on the Android platform, see the Android Capture Video Example below.
-// Titanium.Media.showCamera({
-// 	success:function(event) {
-// 		// called when media returned from the camera
-// 		Ti.API.debug('Our type was: '+event.mediaType);
-// 		if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
-// 			var imageView = Ti.UI.createImageView({
-// 				width: win.width,
-// 				height: win.height,
-// 				image: event.media
-// 			});
-// 			win.add(imageView);
-// 		} else {
-// 			alert("got the wrong type back ="+event.mediaType);
-// 		}
-// 	},
-// 	cancel:function() {
-// 		// called when user cancels taking a picture
-// 	},
-// 	error:function(error) {
-// 		// called when there's an error
-// 		var a = Titanium.UI.createAlertDialog({title:'Camera'});
-// 		if (error.code == Titanium.Media.NO_CAMERA) {
-// 			a.setMessage('Please run this test on device');
-// 		} else {
-// 			a.setMessage('Unexpected error: ' + error.code);
-// 		}
-// 		a.show();
-// 	},
-// 	saveToPhotoGallery:true,
-//     // allowEditing and mediaTypes are iOS-only settings
-// 	allowEditing: true,
-// 	mediaTypes: [Ti.Media.MEDIA_TYPE_VIDEO,Ti.Media.MEDIA_TYPE_PHOTO]
-// });
+
+  if (Ti.Media.hasCameraPermissions()) {
+      logicToShowCamera(); //Write showCamera related logic here....
+  } else {
+      Ti.Media.requestCameraPermissions(function(obj) {
+          if (obj.success) {
+              logicToShowCamera();
+          } else {
+              alert('Please Provide permission first');
+          }
+      });
+  }
+}
+
+
+function logicToShowCamera() {
+
+
+  var opts = {
+    cancel: 2,
+    options: ['Gallary', 'Camera', 'Cancel'],
+    selectedIndex: 2,
+    destructive: 0,
+    title: 'Upload Photo'
+  };
+
+  $.MyDP.addEventListener('click', function(e){
+    var dialog = Ti.UI.createOptionDialog(opts).show();
+  });
+
+
+    Titanium.Media.showCamera({
+        success: function(event) {
+            if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+
+                        var image = event.media;
+                        var imgStr = Ti.Utils.base64encode(image).toString();
+                          $.MyDP.image=image;
+            }
+        },
+
+        error: function(error) {
+            var a = Titanium.UI.createAlertDialog({
+                title: 'Camera'
+            });
+            if (error.code == Titanium.Media.NO_CAMERA) {
+                a.setMessage('Device does not have camera');
+            } else {
+                a.setMessage('Unexpected error: ' + error.code);
+            }
+            a.show();
+            a = null;
+        },
+        saveToPhotoGallery: true,
+        allowEditing: true,
+        mediaTypes: [Ti.Media.MEDIA_TYPE_PHOTO],
+    });
 }

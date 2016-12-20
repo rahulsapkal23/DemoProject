@@ -3,7 +3,7 @@
 <ScrollView layout="vertical"  >
     <Widget id="header" src="header"/>
 
-      <ImageView class="MyDP" top="60px" onClick="Camera_Open" ></ImageView>
+      <ImageView class="MyDP" top="60px" id="MyDP"></ImageView>
       <View class="view123" top="60px" id="viewfirst_name">
           <Label class="falabel" text="\uf007"></Label>
           <TextField id="first_name" editable="false" class="textField123" />
