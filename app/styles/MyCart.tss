@@ -92,10 +92,15 @@
 	width: "50%"
 }
 ".DeleteFont" : {
-	left: 1,
+	left: 10,
 	font: {
 		fontFamily: 'FontAwesome',
 		fontSize: '32px'
 	},
-	color: "#1c1c1c"
+	color: "#1c1c1c",
+	backgroundColor: "red",
+	borderRadius: 50,
+	height: "70px",
+	width: "70px",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }

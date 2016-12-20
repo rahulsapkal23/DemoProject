@@ -179,12 +179,13 @@ client1.send();
 
 function ViewofMycart(cardData) {
     Ti.API.info("inside function ViewofMycart" + cardData);
-    if (JSON.parse(cardData).data.length > 0) {
-        $.mycartItem.text = JSON.parse(cardData).data.length;
-        Alloy.Globals.MycartFlag = "true";
+    if (JSON.parse(cardData).data == null) {
+        $.mycartItem.text = "0";
+        Alloy.Globals.MycartFlag = "false";
     } else {
         $.mycartItem.text = JSON.parse(cardData).data.length;
-        Alloy.Globals.MycartFlag = "false";
+        Alloy.Globals.MycartFlag = "true";
+
     }
 
 }

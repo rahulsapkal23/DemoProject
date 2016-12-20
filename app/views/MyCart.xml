@@ -1,9 +1,11 @@
 <Alloy>
 	<Window id="Mycartwin" class="container1" layout="vertical">
 		<Widget id="header" src="header"/>
-		<ListView id="dynamicListView" onItemclick="itemclick" height="70%">
+
+		<ListView id="dynamicListView" onItemclick="itemclick" height="70%" width="1200px">
 			<Templates>
-				<ItemTemplate name="image_title" height="270px">
+				<ItemTemplate name="image_title" height="270px" width="1200px">
+
 					<View layout="horizontal" class="Viewmycart" backgroundColor="white">
 						<ImageView bindId="image" class="ListImageContainer" id="image"/>
 						<View layout="vertical" top="1px" class="viewcontainer">
@@ -15,12 +17,14 @@
 							</View>
 						</View>
 						<Label id="pr" bindId="price"/>
-						<Label id="Delete" class="DeleteFont" text="\uf1f8"></Label>
+						<Label id="Delete" bindId="DeleteItem" class="DeleteFont" text="\uf1f8"></Label>
 					</View>
+
 				</ItemTemplate>
 			</Templates>
 			<ListSection/>
 		</ListView>
+
 		<View height="200px" layout="horizontal" class="Viewmycart">
 			<Label left="40px" top="60px" class="LabelNamecontainer">Total</Label>
 			<Label left="65%" top="60px" class="LabelNamecontainer" id="total"></Label>

@@ -1,7 +1,3 @@
 <Alloy>
-    <Window onOpen="showIndicator" fullscreen="true" backgroundColor="yellow">
-
-        <!-- Define the styling properties in the TSS file -->
-        <ActivityIndicator id="activityIndicator" message="Loading..."/>
-    </Window>
+    <Window id="win" backgroundColor="#fff" layout="vertical"></Window>
 </Alloy>

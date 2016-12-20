@@ -3,6 +3,12 @@ $.header.__views.back.addEventListener('click', function(e) {
     $.Mycartwin.close();
 });
 
+
+$.header.__views.search.addEventListener('click', function(e) {
+    var window = Alloy.createController('win3').getView();
+    window.open();
+});
+
 $.header.__views.tital.text = "My Cart";
 
 $.order.addEventListener('click', function(e) {
@@ -211,7 +217,7 @@ function itemclick(e) {
                         alert(response.message);
 
                     };
-                    client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/addToCart');
+                    client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/editCart');
                     client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
                     client.send(data);
                     $.dynamicListView.remove(viewBody);
@@ -360,6 +366,33 @@ function itemclick(e) {
         //     //  picker.show();
         //
         //   }
-    }
+    } else if (e.bindId == "DeleteItem") {
+        Ti.API.info("inside DeleteItem");
+        var data = {
 
+            product_id: item.properties.current_product.product_id,
+        }
+        var client = Ti.Network.createHTTPClient();
+        client.onload = function(e) {
+            var response = JSON.parse(client.getResponseText());
+            Ti.API.info("json stringfy load" + JSON.stringify(e));
+            Ti.API.info("client.responseText onload" + client.getResponseText());
+            // Ti.API.info(e.section.getItemAt(e.itemIndex));
+            // e.section.deleteItemsAt(e.itemIndex, 1);
+            alert(response.message)
+        };
+        client.onerror = function(e) {
+            var response = JSON.parse(client.getResponseText());
+            Ti.API.info(" onerror" + JSON.stringify(e));
+            Ti.API.info("client.responseText onerror" + client.getResponseText());
+            Ti.API.info(response.message);
+            alert(response.message);
+
+        };
+        client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/deleteCart');
+        client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+        client.send(data);
+
+
+    }
 }
