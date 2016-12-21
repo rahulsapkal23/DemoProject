@@ -15,7 +15,7 @@ $.header.__views.search.addEventListener('click', function(e) {
     }
 });
 
-alert(Alloy.Globals.Maccess_token);
+
 
 
 var access_token123 = Alloy.Globals.Maccess_token;
@@ -58,6 +58,8 @@ function ViewofMyAccountDetails(Account) {
     $.last_name.value = JSON.parse(Account).data.user_data.last_name;
     $.email_id.value = JSON.parse(Account).data.user_data.email;
     $.phone_no.value = JSON.parse(Account).data.user_data.phone_no;
+    $.Dob.text = JSON.parse(Account).data.user_data.dob;
+
 
 };
 
@@ -147,7 +149,7 @@ function edit_Account(e) {
 
         });
 
-        $.MyDP.addEventListener('click', Camera_Open);
+        $.MyDP.addEventListener('click', option);
         $.Edit.title = "Submit";
 
     } else {
@@ -211,15 +213,18 @@ function reset_Account(e) {
 }
 
 function option() {
+    Ti.API.info("inside option");
     $.Cameradialog.setOptions([
         "Camera", "Gallary", "Cancel"
     ]);
     $.Cameradialog.show();
     $.Cameradialog.addEventListener('click', function(e) {
-        if (e.index == 1) {
+        if (e.index == 0) {
             Camera_Open();
-        } else {
+        } else if (e.index == 1) {
             Gallary_Open();
+        } else {
+            alert("plese Select image");
         }
     });
 }
