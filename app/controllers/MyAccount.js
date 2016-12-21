@@ -15,7 +15,10 @@ $.header.__views.search.addEventListener('click', function(e) {
   }
 });
 
+alert(Alloy.Globals.Maccess_token);
 
+
+var access_token123=Alloy.Globals.Maccess_token;
 
 // ################################# making  HTTP GET request for API ###################################
 
@@ -90,7 +93,7 @@ Ti.API.info("inside click");
                     var bMon = date.getMonth() + 1;
                     var bdate = date.getDate();
                     var byear = date.getFullYear();
-                    $.Dob.text = bdate + "/" + bMon + "/" + byear;
+                    $.Dob.text = bdate + "-" + bMon + "-" + byear;
                 }
             }
         });
@@ -132,7 +135,7 @@ Ti.API.info("inside click");
             var bMon = date.getMonth() + 1;
             var bdate = date.getDate();
             var byear = date.getFullYear();
-            $.Dob.text = bdate + "/" + bMon + "/" + byear;
+            $.Dob.text = bdate + "-" + bMon + "-" + byear;
             MyAccountwin.close();
         });
         view.add(picker);
@@ -150,19 +153,20 @@ Ti.API.info("inside click");
   } else {
 
       Ti.API.info("inside submit acc"+$.MyDP.image);
-      var imgStr = Ti.Utils.base64encode($.MyDP.image).toString();
+      var image=$.MyDP.image
+      var imgStr = Ti.Utils.base64encode(image).toString();
 
-      Ti.API.info("inside submit stringfy"+JSON.stringify($.MyDP.image));
+      Ti.API.info("inside submit stringfy"+JSON.stringify($.MyDP.image)+"sfhnd"+imgStr);
         // Ti.API.info("inside submit parse"+JSON.parse($.MyDP.image));
       // ######################################### making  HTTP POST request for API #########################################
-Ti.API.info("hfuhhsduf"+imgStr);
+Ti.API.info("hfuhhsduf"+imgStr+$.Dob.value);
           var data = {
               first_name: $.first_name.value,
               last_name: $.last_name.value,
+              dob:$.Dob.text,
               email: $.email_id.value,
               phone_no: $.phone_no.value,
-              dob:$.Dob.value,
-              profile_pic:imgStr,
+              profile_pic:Ti.Utils.base64encode(image).toString(),
           }
            Ti.API.info("data"+JSON.stringify(data));
           var xhr = Ti.Network.createHTTPClient();
@@ -186,7 +190,7 @@ Ti.API.info("hfuhhsduf"+imgStr);
 
           };
           xhr.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/update');
-          xhr.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+          xhr.setRequestHeader("access_token", access_token123);
 
           xhr.send(data);
 
@@ -202,6 +206,12 @@ function reset_Account(e){
   var ResetAccount = Alloy.createController('ResetAccount').getView();
   ResetAccount.open();
 }
+
+function option() {
+
+}
+
+
 
 function Camera_Open(e){
   Ti.API.info("inside camera open");
@@ -223,17 +233,17 @@ function Camera_Open(e){
 function logicToShowCamera() {
 
 
-  var opts = {
-    cancel: 2,
-    options: ['Gallary', 'Camera', 'Cancel'],
-    selectedIndex: 2,
-    destructive: 0,
-    title: 'Upload Photo'
-  };
-
-  $.MyDP.addEventListener('click', function(e){
-    var dialog = Ti.UI.createOptionDialog(opts).show();
-  });
+  // var opts = {
+  //   cancel: 2,
+  //   options: ['Gallary', 'Camera', 'Cancel'],
+  //   selectedIndex: 2,
+  //   destructive: 0,
+  //   title: 'Upload Photo'
+  // };
+  //
+  // $.MyDP.addEventListener('click', function(e){
+  //   var dialog = Ti.UI.createOptionDialog(opts).show();
+  // });
 
 
     Titanium.Media.showCamera({
@@ -241,7 +251,8 @@ function logicToShowCamera() {
             if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
 
                         var image = event.media;
-                        var imgStr = Ti.Utils.base64encode(image).toString();
+
+                        var imgStr = Ti.Utils.base64encode(image);
                           $.MyDP.image=image;
             }
         },

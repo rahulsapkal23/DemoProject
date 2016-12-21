@@ -4,6 +4,13 @@
     <Widget id="header" src="header"/>
 
       <ImageView class="MyDP" top="60px" id="MyDP"></ImageView>
+      <OptionDialog id="Cameradialog" title="Select Image">
+				<Options id="Cameraopts">
+					<Option >Camera</Option>
+          	<Option >Gallary</Option>
+				</Options>
+			</OptionDialog>
+
       <View class="view123" top="60px" id="viewfirst_name">
           <Label class="falabel" text="\uf007"></Label>
           <TextField id="first_name" editable="false" class="textField123" />
