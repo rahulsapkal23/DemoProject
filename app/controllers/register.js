@@ -3,7 +3,7 @@ $.header.__views.tital.text = "Register";
 $.header.__views.back.addEventListener('click', function(e) {
     $.Registerwin.close();
 });
-$.header.__views.search.text = " ";
+$.header.__views.search1.text = " ";
 
 function clickMale() {
     $.male.text = "\uf111";
@@ -125,8 +125,10 @@ function GoToRegisterAPI() {
         Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
         Ti.API.info(response.message);
         alert(response.message);
-        var HomeScreen = Alloy.createController('HomeScreen', response.data.access_token).getView();
-        HomeScreen.open();
+        // var HomeScreen = Alloy.createController('HomeScreen', response.data.access_token).getView();
+        // HomeScreen.open();
+        var index = Alloy.createController('index').getView();
+        index.open();
 
     };
     xhr.onerror = function(e) {

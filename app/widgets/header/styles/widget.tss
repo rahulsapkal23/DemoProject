@@ -11,7 +11,23 @@
 
 ".viewhead" : {
 
-    
+
     height: "40",
     backgroundColor:"red"
+}
+
+".viewback": {
+  height: "40",
+  width: "20%",
+  left: "0",
+  backgroundColor:"transparent",
+
+}
+
+".viewsearch": {
+  height: "40",
+  width: "20%",
+  /*top:"0",*/
+  right: "0",
+  backgroundColor:"transparent",
 }

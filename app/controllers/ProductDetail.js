@@ -2,7 +2,7 @@
 $.header.__views.back.addEventListener('click', function(e) {
     $.ProductDetailwin.close();
 });
-$.header.__views.search.text = "\uf07a";
+
 $.header.__views.search.addEventListener('click', function(e) {
     if (Alloy.Globals.MycartFlag == "true") {
         var MyCart = Alloy.createController('MyCart').getView();

@@ -1,17 +1,18 @@
+// ######################################### Setting Header #########################################
+
 $.header.__views.back.addEventListener('click', function(e) {
     $.ForgotPwdWin.close();
 });
-$.header.__views.search.text = " ";
+$.header.__views.search1.text = " ";
 
 
+// #########################################Function call API Hit #########################################
 
 function Send_Pwd(e) {
     Ti.API.info("inside send mail");
 
     var data = {
         email: $.email_id.value,
-
-
     }
     Ti.API.info(data);
     var xhr = Ti.Network.createHTTPClient();
@@ -37,6 +38,8 @@ function Send_Pwd(e) {
     xhr.send(data);
 
 }
+
+// ######################################### function call #########################################
 
 function GoToRegister(e) {
     Ti.API.info("inside Register");

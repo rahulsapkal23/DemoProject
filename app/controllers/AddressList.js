@@ -1,6 +1,6 @@
 // ######################################### Setting Header #########################################
 $.header.__views.tital.text = "Address List";
-$.header.__views.search.text = "\uf067";
+$.header.__views.search1.text = "\uf067";
 $.header.__views.back.addEventListener('click', function(e) {
     $.AddressListwin.close();
 });
@@ -10,6 +10,7 @@ $.header.__views.search.addEventListener('click', function(e) {
     var window = Alloy.createController('Add_Address').getView();
     window.open();
 });
+// ######################################### variable Decleration #########################################
 
 var flag_select = "false";
 var flag_Add = null;
@@ -54,6 +55,7 @@ $.dynamicListView.sections[0].setItems(items, {
     animated: "false",
 
 });
+// ######################################### function call Address List#########################################
 
 
 var selected = null;
@@ -128,10 +130,11 @@ $.place_add.addEventListener('click', function(e) {
         Ti.API.info("inside else add is" + JSON.stringify(e));
         Ti.API.info("add is" + flag_Add);
 
+
+        // ######################################### API call #########################################
+
         var data = {
             address: flag_Add,
-
-
         }
         Ti.API.info(data);
         var client = Ti.Network.createHTTPClient();
@@ -156,10 +159,6 @@ $.place_add.addEventListener('click', function(e) {
         client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/order');
         client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
         client.send(data);
-
-
-
-
 
         // http://staging.php-dev.in:8844/trainingapp/api/order
         var window = Alloy.createController('MyOrder').getView();

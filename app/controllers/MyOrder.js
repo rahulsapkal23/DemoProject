@@ -6,15 +6,15 @@ $.header.__views.back.addEventListener('click', function(e) {
     $.MyOrderwin.close();
 });
 
-$.header.__views.search.text = "\uf07a";
-$.header.__views.search.addEventListener('click', function(e) {
-  if (Alloy.Globals.MycartFlag=="true") {
-    var MyCart = Alloy.createController('MyCart').getView();
-    MyCart.open();
 
-  } else {
-    alert("My Cart is Empty");
-  }
+$.header.__views.search.addEventListener('click', function(e) {
+    if (Alloy.Globals.MycartFlag == "true") {
+        var MyCart = Alloy.createController('MyCart').getView();
+        MyCart.open();
+
+    } else {
+        alert("My Cart is Empty");
+    }
 });
 
 
@@ -50,42 +50,42 @@ function ViewofOrderList(OrderList) {
     Ti.API.info(OrderList);
     Ti.API.info("OrderList" + JSON.stringify(OrderList));
     Ti.API.info("OrderList7777" + JSON.parse(OrderList));
-  var items = [];
+    var items = [];
     for (var i = 0; i < JSON.parse(OrderList).data.length; i++) {
 
-            items.push({
-                "orderId": {
-                    text: "Order ID : " + JSON.parse(OrderList).data[i].id,
-                },
-                "Price": {
-                    text: "Rs . " + JSON.parse(OrderList).data[i].cost,
-                },
-                "orderDate": {
-                    text: "Ordered Date : " + JSON.parse(OrderList).data[i].created,
-                },
+        items.push({
+            "orderId": {
+                text: "Order ID : " + JSON.parse(OrderList).data[i].id,
+            },
+            "Price": {
+                text: "Rs . " + JSON.parse(OrderList).data[i].cost,
+            },
+            "orderDate": {
+                text: "Ordered Date : " + JSON.parse(OrderList).data[i].created,
+            },
 
-                "properties":{
-                  obj:JSON.parse(OrderList).data[i],
-                },
-                "template": "image_title",
+            "properties": {
+                obj: JSON.parse(OrderList).data[i],
+            },
+            "template": "image_title",
 
 
-            });
-            $.dynamicListView.sections[0].setItems(items, {
-                animated: "false",
-            });
+        });
+        $.dynamicListView.sections[0].setItems(items, {
+            animated: "false",
+        });
 
 
     }
 }
 
-function itemclick(e){
-  Ti.API.info("inside itemclick"+JSON.stringify(e));
+function itemclick(e) {
+    Ti.API.info("inside itemclick" + JSON.stringify(e));
     var item = e.section.items[e.itemIndex];
-    Ti.API.info("orderid"+item.properties.obj.id);
-    Ti.API.info("orderid JSON.stringify"+JSON.stringify(item.properties));
+    Ti.API.info("orderid" + item.properties.obj.id);
+    Ti.API.info("orderid JSON.stringify" + JSON.stringify(item.properties));
 
-  var OrderDetails = Alloy.createController('OrderDetails',item.properties.obj.id).getView();
-  OrderDetails.open();
+    var OrderDetails = Alloy.createController('OrderDetails', item.properties.obj.id).getView();
+    OrderDetails.open();
 
 }

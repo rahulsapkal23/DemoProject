@@ -1,7 +1,7 @@
 // ######################################### Setting Header #########################################
 $.header.__views.tital.text = "Login";
-$.header.__views.back.text = " ";
-$.header.__views.search.text = " ";
+$.header.__views.back1.text = " ";
+$.header.__views.search1.text = " ";
 
 // ######################################### checking login with API #########################################
 function check_Login(e) {

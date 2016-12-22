@@ -4,10 +4,15 @@
         <Label id="tital"></Label>
     </View> -->
 
-    <View id="WidView" class="viewhead" >
-        <Label class="falabel" id="back" text="\uf053"></Label>
-        <Label id="tital" color="white" ></Label>
-        <Label class="falabel" toggle="false" left="90%" id="search" text="\uf002"></Label>
+    <View id="WidView" class="viewhead">
+        <View class="viewback" id="back">
+            <Label class="falabel" id="back1" text="\uf053"></Label>
+        </View>
+        <Label id="tital" color="white"></Label>
+        <View class="viewsearch" id="search">
+            <Label class="falabel" toggle="false" left="90%" id="search1" text="\uf07a"></Label>
+
+        </View>
 
     </View>
 </Alloy>

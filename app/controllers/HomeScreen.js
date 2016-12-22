@@ -21,13 +21,13 @@ $.mycart.addEventListener('click', function(e) {
 
 // ######################################### Setting Header #########################################
 $.header.__views.tital.text = "Home Screen";
-$.header.__views.back.text = "\uf0c9";
+$.header.__views.back1.text = "\uf0c9";
 $.header.__views.back.addEventListener('click', function(e) {
     // $.HomeScreenwin.close();
 
     SlideToMyProfile(e);
 });
-$.header.__views.search.text = "\uf07a";
+$.header.__views.search1.text = "\uf07a";
 $.header.__views.search.addEventListener('click', function(e) {
 
     if (Alloy.Globals.MycartFlag == "true") {

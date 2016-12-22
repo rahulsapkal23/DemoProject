@@ -11,6 +11,11 @@ $.header.__views.search.addEventListener('click', function(e) {
 
 $.header.__views.tital.text = "My Cart";
 
+
+
+Refresh();
+// ######################################### click on Order #########################################
+
 $.order.addEventListener('click', function(e) {
     Ti.API.info("inside order click ");
 
@@ -24,30 +29,37 @@ Ti.API.info("inside Add to cart" + Alloy.Globals.Maccess_token);
 // $.picker.setSelectedRow(1, 3, false);
 
 // ################################# making  HTTP GET request for API ###################################
-var client = Ti.Network.createHTTPClient({
-    onload: function(e) {
-        var response = JSON.parse(client.getResponseText());
-        Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
-        Ti.API.info("client.responseText MyCart" + client.getResponseText());
-        // function called fir list view according to Product id
-        ViewofMycart(client.getResponseText())
-    },
-    // function called when an error occurs, including a timeout
-    onerror: function(e) {
-        var response = JSON.parse(client.getResponseText());
-        Ti.API.info(" onerror" + JSON.stringify(e));
-        Ti.API.info("client.responseText onerror" + client.getResponseText());
-        Ti.API.info(response.message);
-        alert(response.message);
-    },
-    //  timeout : 5000  // in milliseconds
-});
-// Prepare the connection.
 
-client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/cart");
-client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
-// Send the request.
-client.send();
+function Refresh() {
+    var client = Ti.Network.createHTTPClient({
+        onload: function(e) {
+            var response = JSON.parse(client.getResponseText());
+            Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
+            Ti.API.info("client.responseText MyCart" + client.getResponseText());
+            // function called fir list view according to Product id
+            ViewofMycart(client.getResponseText())
+        },
+        // function called when an error occurs, including a timeout
+        onerror: function(e) {
+            var response = JSON.parse(client.getResponseText());
+            Ti.API.info(" onerror" + JSON.stringify(e));
+            Ti.API.info("client.responseText onerror" + client.getResponseText());
+            Ti.API.info(response.message);
+            alert(response.message);
+        },
+        //  timeout : 5000  // in milliseconds
+    });
+    // Prepare the connection.
+
+    client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/cart");
+    client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
+    // Send the request.
+    client.send();
+
+}
+
+
+// ################################# function call for seting card Details ###################################
 
 function ViewofMycart(cardData) {
     Ti.API.info("inside function ViewofMycart" + cardData);
@@ -97,39 +109,12 @@ function ViewofMycart(cardData) {
 };
 
 
-
-// var checkFlag = true;
-// var pickerView = Titanium.UI.createView({
-//     borderRadius: 10,
-//     top: 50,
-//     backgroundColor: 'white',
-//     width: 250,
-//     height: 400
-// });
-
-
-// var picker = Ti.UI.createPicker({ width:30,top:10,backgroundColor:"gray"});
-// var data = [];
-// // for(var j=1;j<=$.QTY.value;j++)
-// data.push(Titanium.UI.createPickerRow({title:'1',value:'1'}));
-// data.push(Titanium.UI.createPickerRow({title:'2',value:'2'}));
-// data.push(Titanium.UI.createPickerRow({title:'3',value:'3'}));
-// data.push(Titanium.UI.createPickerRow({title:'4',value:'4'}));
-// picker.add(data);
-// picker.selectionIndicator = true;
-// pickerView.add(picker);
-
-
 function picker(e) {
-
-
-
 
     $.dynamicListView.add(pickerView);
 
-
-
 };
+// ################################# on click quantity  ###################################
 
 function itemclick(e) {
     Ti.API.info(e.bindId);
@@ -208,6 +193,7 @@ function itemclick(e) {
                         Ti.API.info("client.responseText onload" + client.getResponseText());
                         Ti.API.info(response.message);
                         alert(response.message);
+                        Refresh();
                     };
                     client.onerror = function(e) {
                         var response = JSON.parse(client.getResponseText());
@@ -300,7 +286,8 @@ function itemclick(e) {
                         var response = JSON.parse(client.getResponseText());
                         Ti.API.info("json stringfy load" + JSON.stringify(e));
                         Ti.API.info("client.responseText onload" + client.getResponseText());
-                        alert(response.message)
+                        alert(response.message);
+                        Refresh();
                     };
                     client.onerror = function(e) {
                         var response = JSON.parse(client.getResponseText());
@@ -321,51 +308,6 @@ function itemclick(e) {
             $.dynamicListView.add(viewBody);
         }
         Ti.API.info("inside open popover" + e);
-
-
-
-
-
-        //   var data = {
-        //
-        //       quantity: textField.value,
-        //       product_id:args,
-        //   }
-        //   var client = Ti.Network.createHTTPClient();
-        //   client.onload = function(e) {
-        //       var response = JSON.parse(client.getResponseText());
-        //       Ti.API.info("json stringfy load" + JSON.stringify(e));
-        //       Ti.API.info("client.responseText onload" + client.getResponseText());
-        //       Ti.API.info(response.message);
-        //        alert(response.message);
-        //   };
-        //   client.onerror = function(e) {
-        //       var response = JSON.parse(client.getResponseText());
-        //       Ti.API.info(" onerror" + JSON.stringify(e));
-        //       Ti.API.info("client.responseText onerror" + client.getResponseText());
-        //       Ti.API.info(response.message);
-        //        alert(response.message);
-        //
-        //   };
-        //   client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/editCart');
-        //   client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
-        //   client.send(data);
-        //
-        //   Ti.API.info('checkFlag = ' + checkFlag);
-        //   if(checkFlag) {
-        //     //  picker.hide();
-        // Ti.API.info("inside if");
-        //       checkFlag = false;
-        //       Ti.API.info("you select"+Ti.UI.picker);
-        //       $.dynamicListView.remove(pickerView);
-        //   } else {
-        //     Ti.API.info("inside else");
-        //     checkFlag = true;
-        //       Ti.API.info("you select"+JSON.stringify(picker));
-        //   $.dynamicListView.add(pickerView);
-        //     //  picker.show();
-        //
-        //   }
     } else if (e.bindId == "DeleteItem") {
         Ti.API.info("inside DeleteItem");
         var data = {
@@ -377,9 +319,9 @@ function itemclick(e) {
             var response = JSON.parse(client.getResponseText());
             Ti.API.info("json stringfy load" + JSON.stringify(e));
             Ti.API.info("client.responseText onload" + client.getResponseText());
-            // Ti.API.info(e.section.getItemAt(e.itemIndex));
-            // e.section.deleteItemsAt(e.itemIndex, 1);
             alert(response.message)
+            Refresh();
+
         };
         client.onerror = function(e) {
             var response = JSON.parse(client.getResponseText());
@@ -392,7 +334,5 @@ function itemclick(e) {
         client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/deleteCart');
         client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
         client.send(data);
-
-
     }
 }
