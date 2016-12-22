@@ -2,15 +2,15 @@
 $.header.__views.back.addEventListener('click', function(e) {
     $.Mycartwin.close();
 });
+alert("inside my cart");
 
-
-$.header.__views.search.addEventListener('click', function(e) {
-    var window = Alloy.createController('win3').getView();
-    window.open();
-});
+// $.header.__views.search.addEventListener('click', function(e) {
+//     var window = Alloy.createController('HomeScreen').getView();
+//     window.open();
+// });
 
 $.header.__views.tital.text = "My Cart";
-
+$.header.__views.search1.text = " ";
 
 
 Refresh();
@@ -31,13 +31,25 @@ Ti.API.info("inside Add to cart" + Alloy.Globals.Maccess_token);
 // ################################# making  HTTP GET request for API ###################################
 
 function Refresh() {
+
     var client = Ti.Network.createHTTPClient({
         onload: function(e) {
             var response = JSON.parse(client.getResponseText());
             Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
             Ti.API.info("client.responseText MyCart" + client.getResponseText());
             // function called fir list view according to Product id
-            ViewofMycart(client.getResponseText())
+            if (client.getResponseText().data == null) {
+                Alloy.Globals.cartFlag = false;
+                alert("card is empty" + Alloy.Globals.cartFlag);
+                $.Mycartwin.close();
+
+            } else {
+                Alloy.Globals.cartFlag = true;
+                alert("card is empty" + Alloy.Globals.cartFlag);
+
+                ViewofMycart(client.getResponseText())
+            }
+
         },
         // function called when an error occurs, including a timeout
         onerror: function(e) {
@@ -129,8 +141,10 @@ function itemclick(e) {
                 backgroundColor: "#ededed",
             });
             var view = Titanium.UI.createView({
-                height: "100%",
-                width: "100%",
+                top: "10%",
+                right: "5%",
+                bottom: "10%",
+                left: "5%",
                 backgroundColor: "white",
                 layout: "vertical"
             });
@@ -219,14 +233,13 @@ function itemclick(e) {
 
         } else {
             var viewBody = Titanium.UI.createView({
-                backgroundColor: "#282727",
                 backgroundColor: "#ededed",
             });
-            Ti.API.info("inside open popover IOS" + JSON.stringify(e));
-            //  $.dynamicListView.opacity="0.5";
-            Ti.API.info();
             var view = Titanium.UI.createView({
-
+                top: "10%",
+                right: "5%",
+                bottom: "10%",
+                left: "5%",
                 backgroundColor: "white",
                 layout: "vertical"
             });

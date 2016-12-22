@@ -45,7 +45,18 @@
 
 		<application>
 			<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyANSkzVKJRvGake18L9mrcrrKshl-XIlUY"/>
+			<activity android:name=".Composer" android:exported="true" android:windowSoftInputMode="stateHidden|adjustResize">
 
+				<intent-filter>
+					<action android:name="android.intent.action.SEND"/>
+
+					<category android:name="android.intent.category.DEFAULT"/>
+
+					<data android:mimeType="text/plain"/>
+					<data android:mimeType="image/jpeg"/>
+					<data android:mimeType="image/png"/>
+				</intent-filter>
+			</activity>
 		</application>
 
 		<!-- <manifest>

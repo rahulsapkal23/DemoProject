@@ -41,6 +41,8 @@ function GoToLoginAPI() {
         password: $.password.value,
         // email: "rahul.sapkal@neosoft.com",
         // password: "rahuls123",
+        // email: "rahulsapkal@neo.com",
+        // password: "rahuls123",
 
     }
     Ti.API.info(data);

@@ -12,8 +12,8 @@
 							<Label bindId="name" class="LabelNamecontainer"/>
 							<Label bindId="type" class="LabelTypecontainer"/>
 							<View class="Viewprice" bindId="Viewprice" layout="horizontal">
-								<Label id="QTY" left="5" bindId="QTY"></Label>
-								<Label class="falabelDown" text="\uf107"></Label>
+								<Label id="QTY" left="5" bindId="QTY" touchEnabled="false"></Label>
+								<Label class="falabelDown" text="\uf107" touchEnabled="false"></Label>
 							</View>
 						</View>
 						<Label id="pr" bindId="price"/>

@@ -4,7 +4,7 @@ $.header.__views.back.addEventListener('click', function(e) {
 });
 
 $.header.__views.search.addEventListener('click', function(e) {
-    if (Alloy.Globals.MycartFlag == "true") {
+    if (Alloy.Globals.cartFlag == true) {
         var MyCart = Alloy.createController('MyCart').getView();
         MyCart.open();
 
@@ -188,7 +188,7 @@ function openBuy(e) {
                     Ti.API.info("json stringfy load" + JSON.stringify(e));
                     Ti.API.info("client.responseText onload" + client.getResponseText());
                     Ti.API.info(response.message);
-                    Alloy.Globals.MycartFlag = "true";
+                    Alloy.Globals.cartFlag = true;
                     Alloy.Globals.mycartItem++;
                     Ti.API.info("  Alloy.Globals.mycartItem" + Alloy.Globals.mycartItem);
                     alert(response.message);
@@ -287,7 +287,7 @@ function openBuy(e) {
                     Ti.API.info("json stringfy load" + JSON.stringify(e));
                     Ti.API.info("client.responseText onload" + client.getResponseText());
                     alert(response.message);
-                    Alloy.Globals.MycartFlag = "true";
+                    Alloy.Globals.cartFlag = true;
 
                 };
                 client.onerror = function(e) {
@@ -313,8 +313,18 @@ function openBuy(e) {
 
 // $.rate.addEventListener('click',function(e)
 
+$.share.addEventListener('click', Share);
 
+function Share() {
+    var intent = Ti.Android.createIntent({
+        action: Ti.Android.ACTION_SEND,
+        type: "*/*"
+    });
 
+    intent.putExtra(Ti.Android.EXTRA_TEXT, 'asdasd');
+    intent.addCategory(Ti.Android.CATEGORY_DEFAULT);
+    $.ProductDetailwin.activity.startActivity(intent);
+}
 
 function openRate(e) {
     Ti.API.info("njkvdxhkjvndxk" + JSON.stringify(e));
@@ -342,14 +352,15 @@ function openRate(e) {
         });
         var image = Ti.UI.createImageView({
             image: e.source.properties.data.product_images[0].image,
-
+            top: "100px",
             borderColor: "black",
 
         });
         var viewstar = Titanium.UI.createView({
             layout: "horizontal",
             height: "250px",
-            left: "100px",
+            left: "200px",
+            top: "100px",
 
         });
         for (var i = 0; i < 5; i++) {
@@ -448,6 +459,7 @@ function openRate(e) {
             text: e.source.properties.data.name,
         });
         var image = Ti.UI.createImageView({
+            top: "100px",
             image: e.source.properties.data.product_images[0].image,
         });
 
@@ -455,8 +467,8 @@ function openRate(e) {
         var viewstar = Titanium.UI.createView({
             layout: "horizontal",
             height: "250px",
-            left: "100px",
-
+            left: "200px",
+            top: "100px",
         });
         for (var i = 0; i < 5; i++) {
             var star = Ti.UI.createLabel({

@@ -10,7 +10,7 @@
         </View>
         <Label id="tital" color="white"></Label>
         <View class="viewsearch" id="search">
-            <Label class="falabel" toggle="false" left="90%" id="search1" text="\uf07a"></Label>
+            <Label class="falabel" toggle="false" id="search1" text="\uf07a"></Label>
 
         </View>
 

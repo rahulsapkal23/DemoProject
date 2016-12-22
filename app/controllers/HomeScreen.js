@@ -8,13 +8,13 @@ Ti.API.info(JSON.stringify(access_token));
 
 
 $.mycart.addEventListener('click', function(e) {
-    Ti.API.info("inside mycart function");
-    if (Alloy.Globals.MycartFlag == "true") {
+    Ti.API.info("inside mycart function Alloy.Globals.cartFlag" + Alloy.Globals.cartFlag);
+    if (Alloy.Globals.cartFlag === true) {
         var MyCart = Alloy.createController('MyCart').getView();
         MyCart.open();
-
     } else {
         alert("My Cart is Empty");
+
     }
 });
 
@@ -30,7 +30,7 @@ $.header.__views.back.addEventListener('click', function(e) {
 $.header.__views.search1.text = "\uf07a";
 $.header.__views.search.addEventListener('click', function(e) {
 
-    if (Alloy.Globals.MycartFlag == "true") {
+    if (Alloy.Globals.cartFlag === true) {
         var MyCart = Alloy.createController('MyCart').getView();
         MyCart.open();
 
@@ -42,7 +42,7 @@ $.header.__views.search.addEventListener('click', function(e) {
 
 // $.mycartItem.text = Alloy.Globals.mycartItem;
 //
-// if (Alloy.Globals.MycartFlag == "true") {
+// if (Alloy.Globals.cartFlag == "true") {
 //     $.mycartItem.text = Alloy.Globals.mycartItem;
 //
 // }
@@ -127,6 +127,7 @@ var client = Ti.Network.createHTTPClient({
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseTextinsudefun onload" + client.getResponseText());
         // function called fir list view according to Product id
+
         HomeScreenDetails(client.getResponseText());
     },
     // function called when an error occurs, including a timeout
@@ -157,7 +158,9 @@ var client1 = Ti.Network.createHTTPClient({
         Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
         Ti.API.info("client1.responseText MyCart" + client1.getResponseText());
         // function called fir list view according to Product id
+
         ViewofMycart(client1.getResponseText())
+
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
@@ -181,11 +184,13 @@ function ViewofMycart(cardData) {
     Ti.API.info("inside function ViewofMycart" + cardData);
     if (JSON.parse(cardData).data == null) {
         $.mycartItem.text = "0";
-        Alloy.Globals.MycartFlag = "false";
+        Alloy.Globals.cartFlag = false;
+
     } else {
         $.mycartItem.text = JSON.parse(cardData).data.length;
-        Alloy.Globals.MycartFlag = "true";
 
+        Alloy.Globals.cartFlag = true;
+        alert(Alloy.Globals.cartFlag);
     }
 
 }
