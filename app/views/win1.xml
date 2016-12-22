@@ -1,3 +1,6 @@
 <Alloy>
-    <Window id="win" backgroundColor="#fff" layout="vertical"></Window>
+    <Window >
+
+        <Button id='button' onClick='toPigLatin'>Translate</Button>
+    </Window>
 </Alloy>

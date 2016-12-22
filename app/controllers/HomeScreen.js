@@ -135,7 +135,7 @@ var client = Ti.Network.createHTTPClient({
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
-        // alert(response.message);
+        alert(response.message);
     },
     //  timeout : 5000  // in milliseconds
 });

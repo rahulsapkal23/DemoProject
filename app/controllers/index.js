@@ -1,7 +1,7 @@
 // ######################################### Setting Header #########################################
-$.header.__views.tital.text = "Home";
+$.header.__views.tital.text = "Login";
 $.header.__views.back.text = " ";
-
+$.header.__views.search.text = " ";
 
 // ######################################### checking login with API #########################################
 function check_Login(e) {
@@ -37,10 +37,10 @@ function GoToRegister(e) {
 function GoToLoginAPI() {
 
     var data = {
-        // email: $.email_id.value,
-        // password: $.password.value,
-        email: "rahul.sapkal@neosoft.com",
-        password: "rahuls123",
+        email: $.email_id.value,
+        password: $.password.value,
+        // email: "rahul.sapkal@neosoft.com",
+        // password: "rahuls123",
 
     }
     Ti.API.info(data);
@@ -50,7 +50,7 @@ function GoToLoginAPI() {
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
         Alloy.Globals.Mpassword = data.password;
-        // alert(response.message);
+        alert(response.message);
         GoToHomescreen(client.getResponseText());
 
 
@@ -60,7 +60,7 @@ function GoToLoginAPI() {
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
-        // alert(response.message);
+        alert(response.message);
 
     };
     client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/login');
@@ -79,5 +79,5 @@ function GoToHomescreen(e) {
 }
 
 $.index.open();
-// var window = Alloy.createController('win3').getView();
+// var window = Alloy.createController('win1').getView();
 // window.open();

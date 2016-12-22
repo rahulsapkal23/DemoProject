@@ -3,6 +3,7 @@ $.header.__views.tital.text = "Register";
 $.header.__views.back.addEventListener('click', function(e) {
     $.Registerwin.close();
 });
+$.header.__views.search.text = " ";
 
 function clickMale() {
     $.male.text = "\uf111";
@@ -29,7 +30,7 @@ function check_Register(e) {
     var emailRE = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/;
     var mobRE = /^\d{10}$/;
     var zipRE = /^\d{6}$/;
-    var passwordRE = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]){6,16}/;
+    var passwordRE = /^\w{6,16}$/;
     if ($.first_name.value == "") {
         $.viewfirst_name.backgroundColor = "blue";
         alert("please fill first name");
@@ -47,7 +48,7 @@ function check_Register(e) {
         $.viewlast_name.backgroundColor = "transprent";
         $.viewemail_id.backgroundColor = "transprent";
         $.viewpassword.backgroundColor = "blue";
-        alert("Password must be 1 lower 1 upper and 1 digit");
+        alert("Password must 6 letters");
     } else if ($.password.value != $.conform_password.value) {
         $.viewfirst_name.backgroundColor = "transprent";
         $.viewlast_name.backgroundColor = "transprent";
@@ -55,14 +56,7 @@ function check_Register(e) {
         $.viewpassword.backgroundColor = "transprent";
         $.viewconform_password.backgroundColor = "blue";
         alert("Password is not matched");
-    } else if (mobRE.test($.phone_no.value) == false) {
-        $.viewfirst_name.backgroundColor = "transprent";
-        $.viewlast_name.backgroundColor = "transprent";
-        $.viewemail_id.backgroundColor = "transprent";
-        $.viewpassword.backgroundColor = "transprent";
-        $.viewconform_password.backgroundColor = "transprent";
-        $.viewphone_no.backgroundColor = "blue";
-        alert("Phone No must be 10 digits");
+
 
     } else if ($.male.text == "\uf1db" && $.female.text == "\uf1db") {
         $.viewfirst_name.backgroundColor = "transprent";
@@ -73,6 +67,14 @@ function check_Register(e) {
         $.viewphone_no.backgroundColor = "transprent";
         $.viewGender.backgroundColor = "blue";
         alert("please Select Gender");
+    } else if (mobRE.test($.phone_no.value) == false) {
+        $.viewfirst_name.backgroundColor = "transprent";
+        $.viewlast_name.backgroundColor = "transprent";
+        $.viewemail_id.backgroundColor = "transprent";
+        $.viewpassword.backgroundColor = "transprent";
+        $.viewconform_password.backgroundColor = "transprent";
+        $.viewphone_no.backgroundColor = "blue";
+        alert("Phone No must be 10 digits");
 
     } else if ($.check.text == "\uf0c8") {
         $.viewfirst_name.backgroundColor = "transprent";
@@ -100,16 +102,22 @@ function check_Register(e) {
 
 // ######################################### making  HTTP POST request for API #########################################
 function GoToRegisterAPI() {
+    var genderval;
+    if ($.male.text == "\uf1db") {
+        genderval = "male";
+    } else {
+        genderval = "female";
+    }
     var data = {
         first_name: $.first_name.value,
         last_name: $.last_name.value,
         email: $.email_id.value,
         password: $.password.value,
         confirm_password: $.conform_password.value,
-        gender: "male",
+        gender: genderval,
         phone_no: $.phone_no.value
     }
-    Ti.API.info(data);
+    Ti.API.info("data" + JSON.stringify(data));
     var xhr = Ti.Network.createHTTPClient();
     xhr.onload = function(e) {
         var response = JSON.parse(xhr.getResponseText());
@@ -117,7 +125,7 @@ function GoToRegisterAPI() {
         Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
         Ti.API.info(response.message);
         alert(response.message);
-        var HomeScreen = Alloy.createController('HomeScreen').getView();
+        var HomeScreen = Alloy.createController('HomeScreen', response.data.access_token).getView();
         HomeScreen.open();
 
     };

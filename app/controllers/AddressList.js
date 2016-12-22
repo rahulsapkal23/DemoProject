@@ -140,8 +140,8 @@ $.place_add.addEventListener('click', function(e) {
             Ti.API.info("json stringfy load" + JSON.stringify(e));
             Ti.API.info("client.responseText onload" + client.getResponseText());
 
-            // alert(response.message);
-            alert(client.getResponseText());
+            alert(response.message);
+            // alert(client.getResponseText());
 
 
         };
@@ -150,7 +150,7 @@ $.place_add.addEventListener('click', function(e) {
             Ti.API.info(" onerror" + JSON.stringify(e));
             Ti.API.info("client.responseText onerror" + client.getResponseText());
             Ti.API.info(response.message);
-            // alert(response.message);
+            alert(response.message);
 
         };
         client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/order');

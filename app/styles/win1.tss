@@ -1,0 +1,6 @@
+"Window" : {
+    layout: 'vertical'
+}
+"#button" : {
+    top: '15dp'
+}
