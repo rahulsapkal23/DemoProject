@@ -152,33 +152,35 @@ client.send();
 
 
 // ################################# making  HTTP GET request for API ###################################
-var client1 = Ti.Network.createHTTPClient({
-    onload: function(e) {
-        var response1 = JSON.parse(client1.getResponseText());
-        Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
-        Ti.API.info("client1.responseText MyCart" + client1.getResponseText());
-        // function called fir list view according to Product id
+{
+    var client1 = Ti.Network.createHTTPClient({
+        onload: function(e) {
+            var response1 = JSON.parse(client1.getResponseText());
+            Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
+            Ti.API.info("client1.responseText MyCart" + client1.getResponseText());
+            // function called fir list view according to Product id
 
-        ViewofMycart(client1.getResponseText())
+            ViewofMycart(client1.getResponseText())
 
-    },
-    // function called when an error occurs, including a timeout
-    onerror: function(e) {
-        var response1 = JSON.parse(client1.getResponseText());
-        Ti.API.info(" onerror" + JSON.stringify(e));
-        Ti.API.info("client.responseText onerror" + client1.getResponseText());
-        Ti.API.info(response1.message);
-        alert(response1.message);
-    },
-    //  timeout : 5000  // in milliseconds
-});
-// Prepare the connection.
+        },
+        // function called when an error occurs, including a timeout
+        onerror: function(e) {
+            var response1 = JSON.parse(client1.getResponseText());
+            Ti.API.info(" onerror" + JSON.stringify(e));
+            Ti.API.info("client.responseText onerror" + client1.getResponseText());
+            Ti.API.info(response1.message);
+            alert(response1.message);
+        },
+        //  timeout : 5000  // in milliseconds
+    });
+    // Prepare the connection.
 
-client1.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/cart");
-client1.setRequestHeader("access_token", access_token);
+    client1.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/cart");
+    client1.setRequestHeader("access_token", access_token);
 
-// Send the request.
-client1.send();
+    // Send the request.
+    client1.send();
+}
 
 function ViewofMycart(cardData) {
     Ti.API.info("inside function ViewofMycart" + cardData);
