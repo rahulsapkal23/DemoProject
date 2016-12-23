@@ -189,7 +189,7 @@ function openBuy(e) {
                     Ti.API.info("client.responseText onload" + client.getResponseText());
                     Ti.API.info(response.message);
                     Alloy.Globals.cartFlag = true;
-                    Alloy.Globals.mycartItem++;
+
                     Ti.API.info("  Alloy.Globals.mycartItem" + Alloy.Globals.mycartItem);
                     alert(response.message);
                 };

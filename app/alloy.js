@@ -45,7 +45,7 @@
 // Alloy.Globals.Map = require('ti.map');
 
 Alloy.Globals.mycartItem;
-Alloy.Globals.cartFlag = false;
+// Alloy.Globals.cartFlag = false;
 
 /* ######################### Create DATABASE ######################### */
 var db = Ti.Database.open('Demo_DB');

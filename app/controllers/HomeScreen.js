@@ -182,13 +182,13 @@ client1.send();
 
 function ViewofMycart(cardData) {
     Ti.API.info("inside function ViewofMycart" + cardData);
+    Ti.API.info("sdssd" + JSON.parse(cardData).data);
     if (JSON.parse(cardData).data == null) {
         $.mycartItem.text = "0";
         Alloy.Globals.cartFlag = false;
 
     } else {
         $.mycartItem.text = JSON.parse(cardData).data.length;
-
         Alloy.Globals.cartFlag = true;
         alert(Alloy.Globals.cartFlag);
     }

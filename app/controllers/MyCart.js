@@ -38,19 +38,15 @@ function Refresh() {
             Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
             Ti.API.info("client.responseText MyCart" + client.getResponseText());
             // function called fir list view according to Product id
-            if (client.getResponseText().data == null) {
-                Alloy.Globals.cartFlag = false;
-                alert("card is empty" + Alloy.Globals.cartFlag);
-                $.Mycartwin.close();
 
-            } else {
-                Alloy.Globals.cartFlag = true;
-                alert("card is empty" + Alloy.Globals.cartFlag);
 
-                ViewofMycart(client.getResponseText())
-            }
+
+
+
+            ViewofMycart(client.getResponseText());
 
         },
+
         // function called when an error occurs, including a timeout
         onerror: function(e) {
             var response = JSON.parse(client.getResponseText());
