@@ -80,7 +80,7 @@
                     <Label class="Listicon_font" text="\uf007"></Label>
                     <Label class="ListItemLabel">My Orders</Label>
                 </View>
-                <View class="list_view">
+                <View class="list_view" onClick="GoToLogout">
                     <Label class="Listicon_font" text="\uf090"></Label>
                     <Label class="ListItemLabel">Logout</Label>
                 </View>

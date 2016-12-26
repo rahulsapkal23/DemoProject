@@ -229,3 +229,10 @@ function Store_Locator(e) {
     Store_Locator.open();
 }
 // export.SlideToMyProfile = SlideToMyProfile;
+
+function GoToLogout(e){
+  Ti.API.info("inside logout");
+  Ti.App.Properties.setString('ACCESS_TOKEN',null);
+  var login = Alloy.createController('index').getView();
+  login.open();
+}

@@ -51,6 +51,10 @@ Alloy.Globals.mycartItem;
 var db = Ti.Database.open('Demo_DB');
 db.execute('CREATE TABLE IF NOT EXISTS address (ADDRESS TEXT,LANDMARK TEXT,CITY TEXT,STATE TEXT,ZIP TEXT,COUNTRY TEXT)');
 // db.execute('DROP TABLE  address ');
+//
+// var db1 = Ti.Database.open('Demo_DB_Login');
+// db1.execute('CREATE TABLE IF NOT EXISTS Persistance_log (access_token TEXT)');
+// db.execute('DROP TABLE  address ');
 
 
 

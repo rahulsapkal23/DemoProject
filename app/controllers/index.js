@@ -76,10 +76,27 @@ function GoToHomescreen(e) {
     Ti.API.info("21212" + JSON.stringify(e));
     Ti.API.info("inside GoToHomescreen1111" + JSON.parse(e).data.access_token);
     Alloy.Globals.Maccess_token = JSON.parse(e).data.access_token;
+    // db1.execute('INSERT INTO Persistance_log VALUES (?)', Alloy.Globals.Maccess_token);
+    // Ti.API.info("inside click");
+    //   var rows = db1.execute('SELECT * FROM Persistance_log');
+    //     Ti.API.info(rows.field(0));
+  Ti.App.Properties.setString('ACCESS_TOKEN',Alloy.Globals.Maccess_token);
     var HomeScreen = Alloy.createController('HomeScreen', (JSON.parse(e)).data.access_token).getView();
     HomeScreen.open();
 }
 
-$.index.open();
+if (Ti.App.Properties.getString('ACCESS_TOKEN')==null) {
+
+  Ti.API.info("eeeeeeee"+Ti.App.Properties.getString('ACCESS_TOKEN'));
+    $.index.open();
+} else {
+  Ti.API.info("eeeeeeeerrrrrrr"+Ti.App.Properties.getString('ACCESS_TOKEN'));
+
+  var HomeScreen = Alloy.createController('HomeScreen',Ti.App.Properties.getString('ACCESS_TOKEN')).getView();
+  HomeScreen.open();
+
+}
+
+
 // var window = Alloy.createController('win1').getView();
 // window.open();
