@@ -66,8 +66,11 @@ var client = Ti.Network.createHTTPClient({
         Ti.API.info("client.responseText onload" + client.getResponseText());
         // function called fir list view according to Product id
         ListViewofProduct(client.getResponseText());
-
         Ti.API.info("p is"+p);
+        $.dynamicListView.addEventListener('scrollend',function (e) {
+          GetProdList();
+        });
+
 
     },
     // function called when an error occurs, including a timeout
@@ -89,9 +92,6 @@ client.send(data);
 }
 
 // ################################# function of setting data from API ###################################
-$.dynamicListView.addEventListener('scrollend',function (e) {
-  GetProdList();
-});
 
 
 // function GetProdList() {
@@ -345,11 +345,18 @@ function ListViewofProduct(Productdata) {
             default:
 
         }
+if (p==1) {
+  $.dynamicListView.sections[0].setItems(items, {
+      animated: "false",
 
-        $.dynamicListView.sections[0].setItems(items, {
-            animated: "false",
+  });
+} else {
+  $.dynamicListView.sections[0].appendItems(items, {
+      animated: "false",
 
-        });
+  });
+}
+
     }
 }
 
