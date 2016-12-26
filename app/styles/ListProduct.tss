@@ -103,3 +103,14 @@
 		fontSize: '40px'
 	}
 }
+
+".scrollviewAPI": {
+	width: Ti.UI.SIZE,
+		height: Ti.UI.FILL,
+		contentWidth: Ti.UI.SIZE,
+		contentHeight: Ti.UI.SIZE,
+  		showVerticalScrollIndicator: true,
+  		showHorizontalScrollIndicator: false,
+		backgroundColor:"transparent",
+		layout:"vertical"
+}

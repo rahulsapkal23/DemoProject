@@ -48,13 +48,27 @@ Ti.API.info("rahhhhhuuulll" + JSON.stringify(access_token));
 
 
 // ################################# making  HTTP GET request for API ###################################
+ var p=0;
+  GetProdList();
+ function GetProdList()
+{
+  p++;
+  var data = {
+  product_category_id:args,
+  limit:8,
+  page:p,
+}
+
 var client = Ti.Network.createHTTPClient({
     onload: function(e) {
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
         // function called fir list view according to Product id
-        ListViewofProduct(client.getResponseText())
+        ListViewofProduct(client.getResponseText());
+
+        Ti.API.info("p is"+p);
+
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
@@ -68,13 +82,22 @@ var client = Ti.Network.createHTTPClient({
 });
 // Prepare the connection.
 
-client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/products/getList?product_category_id=" + args);
+client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/products/getList");
 // Send the request.
-client.send();
+client.send(data);
 
+}
 
 // ################################# function of setting data from API ###################################
+$.dynamicListView.addEventListener('scrollend',function (e) {
+  GetProdList();
+});
 
+
+// function GetProdList() {
+//   alert("hiii");
+//   Ti.API.info("inside scrollend");
+// }
 function ListViewofProduct(Productdata) {
     Ti.API.info(Productdata);
     Ti.API.info("imageraj" + JSON.parse(Productdata).data.length);

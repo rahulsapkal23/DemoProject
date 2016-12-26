@@ -84,7 +84,7 @@ function check_Register(e) {
         $.viewconform_password.backgroundColor = "transprent";
         $.viewphone_no.backgroundColor = "transprent";
         $.viewGender.backgroundColor = "transprent";
-        $.viewcheck.backgroundColor = "blue";
+
         alert("please check out Terms and conditions");
     } else {
         $.viewfirst_name.backgroundColor = "transprent";
@@ -94,7 +94,7 @@ function check_Register(e) {
         $.viewconform_password.backgroundColor = "transprent";
         $.viewphone_no.backgroundColor = "transprent";
         $.viewGender.backgroundColor = "transprent";
-        $.viewcheck.backgroundColor = "transprent";
+
         GoToRegisterAPI();
 
     }
@@ -127,8 +127,10 @@ function GoToRegisterAPI() {
         alert(response.message);
         // var HomeScreen = Alloy.createController('HomeScreen', response.data.access_token).getView();
         // HomeScreen.open();
-        var index = Alloy.createController('index').getView();
-        index.open();
+          Alloy.Globals.Maccess_token = response.data.access_token;
+          Ti.API.info("global acees tokan"+ JSON.stringify(Alloy.Globals.Maccess_token));
+          var HomeScreen = Alloy.createController('HomeScreen',   Alloy.Globals.Maccess_token).getView();
+          HomeScreen.open();
 
     };
     xhr.onerror = function(e) {

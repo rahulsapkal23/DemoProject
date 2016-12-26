@@ -2,7 +2,7 @@
     <Window id="ListProductwin" class="container1" layout="vertical">
         <Widget id="header" src="header"/>
 
-        <ListView id="dynamicListView" onItemclick="GoToProductDetail">
+        <ListView id="dynamicListView" onItemclick="GoToProductDetail" height="Ti.UI.FILL">
             <Templates>
                 <ItemTemplate name="image_title" height="280px" >
                     <View  layout="composite"  backgroundColor="white" >
@@ -25,5 +25,6 @@
             </Templates>
             <ListSection/>
         </ListView>
+
     </Window>
 </Alloy>

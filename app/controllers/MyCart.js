@@ -2,7 +2,7 @@
 $.header.__views.back.addEventListener('click', function(e) {
     $.Mycartwin.close();
 });
-alert("inside my cart");
+// alert("inside my cart");
 
 // $.header.__views.search.addEventListener('click', function(e) {
 //     var window = Alloy.createController('HomeScreen').getView();
@@ -135,6 +135,10 @@ function itemclick(e) {
 
             var viewBody = Titanium.UI.createView({
                 backgroundColor: "#ededed",
+                height:"100%",
+                width:"100%",
+                 zIndex:1,
+
             });
             var view = Titanium.UI.createView({
                 top: "10%",
@@ -216,7 +220,8 @@ function itemclick(e) {
                     client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/editCart');
                     client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
                     client.send(data);
-                    $.dynamicListView.remove(viewBody);
+                     $.dynamicListView.remove(viewBody);
+                      // $.Viewcart.add($.dynamicListView);
                 }
             });
             view.add(Name);
@@ -225,6 +230,7 @@ function itemclick(e) {
             view.add(textField);
             view.add(button);
             viewBody.add(view);
+            // $.Viewcart.remove($.dynamicListView);
             $.dynamicListView.add(viewBody);
 
         } else {
@@ -310,10 +316,12 @@ function itemclick(e) {
                     client.setRequestHeader("access_token", Alloy.Globals.Maccess_token);
                     client.send(data);
                     $.dynamicListView.remove(viewBody);
+                      // $.Viewcart.add($.dynamicListView);
                 }
             });
             view.add(Name, image, Qty, textField, button);
             viewBody.add(view);
+            // $.Viewcart.remove($.dynamicListView);
             $.dynamicListView.add(viewBody);
         }
         Ti.API.info("inside open popover" + e);

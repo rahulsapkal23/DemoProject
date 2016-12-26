@@ -41,7 +41,7 @@ function GoToLoginAPI() {
         // password: $.password.value,
         // email: "rahul.sapkal@neosoft.com",
         // password: "rahuls123",
-        email: "rahul@n.com",
+        email: "r@g.com",
         password: "rahuls123",
 
     }

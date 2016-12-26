@@ -1,7 +1,7 @@
 <Alloy>
 	<Window id="Mycartwin" class="container1" layout="vertical">
 		<Widget id="header" src="header"/>
-
+		<View id="Viewcart" layout="vertical" backgroundColor="lime">
 		<ListView id="dynamicListView" onItemclick="itemclick" height="70%" width="1200px">
 			<Templates>
 				<ItemTemplate name="image_title" height="270px" width="1200px">
@@ -31,6 +31,7 @@
 		</View>
 		<View bottom="10px">
 			<Button id="order" class="buttonOrder">ORDER NOW</Button>
+		</View>
 		</View>
 	</Window>
 </Alloy>

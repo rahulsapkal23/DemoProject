@@ -190,7 +190,7 @@ function ViewofMycart(cardData) {
     } else {
         $.mycartItem.text = JSON.parse(cardData).data.length;
         Alloy.Globals.cartFlag = true;
-        alert(Alloy.Globals.cartFlag);
+        // alert(Alloy.Globals.cartFlag);
     }
 
 }

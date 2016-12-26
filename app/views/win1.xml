@@ -1,6 +1,6 @@
 <Alloy>
-    <Window >
+    <Window id="win1">
 
-        <Button id='button' onClick='toPigLatin'>Translate</Button>
+
     </Window>
 </Alloy>

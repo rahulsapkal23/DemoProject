@@ -80,8 +80,8 @@
 	color: "#ffffff",
 	width: "60%",
 	height: "50",
-	top: "10",
-	bottom: "10"
+
+	
 }
 ".viewcontainer[platform=ios formFactor=tablet]" : {
 	left: "20px",
