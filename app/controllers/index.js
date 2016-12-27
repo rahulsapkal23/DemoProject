@@ -83,6 +83,7 @@ function GoToHomescreen(e) {
     //   var rows = db1.execute('SELECT * FROM Persistance_log');
     //     Ti.API.info(rows.field(0));
   Ti.App.Properties.setString('ACCESS_TOKEN',Alloy.Globals.Maccess_token);
+    clearMemory();
     var HomeScreen = Alloy.createController('HomeScreen', (JSON.parse(e)).data.access_token).getView();
     HomeScreen.open();
 }

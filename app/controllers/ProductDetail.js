@@ -362,6 +362,7 @@ function openRate(e) {
             left: "200px",
             top: "100px",
 
+
         });
         for (var i = 0; i < 5; i++) {
             var star = Ti.UI.createLabel({
@@ -373,24 +374,15 @@ function openRate(e) {
                 },
                 text: "\uf005",
                 color: "#7f7f7f",
-
+                id:"r"+i,
+                ind:i,
 
             });
             viewstar.add(star);
 
 
         }
-        viewstar.addEventListener('click', function(e) {
-            Ti.API.info("inside star listener" + JSON.stringify(e));
-            if (e.source.color == "#7f7f7f") {
-                Ti.API.info("inside if");
-                e.source.color = "#ffba00";
-            } else if (e.source.color == "#ffba00") {
-                Ti.API.info("inside else");
-                e.source.color = "#7f7f7f";
-            }
 
-        })
         var button = Titanium.UI.createButton({
             backgroundColor: "#db1514",
             fontSize: "75px",
@@ -433,6 +425,18 @@ function openRate(e) {
         view.add(button);
         viewBody.add(view);
         $.ProductDetailwin.add(viewBody);
+        viewstar.addEventListener('click', function(e) {
+             Ti.API.info("inside star listener" + JSON.stringify(e));
+Ti.API.info("eded"+e);
+
+Ti.API.info("e.source.id"+e.source.id);
+for(var d=0;d<e.source.ind+1;d++)
+{
+  viewstar.children[d].color="#ffba00";
+}
+
+
+         })
 
     } else {
         var viewBody = Titanium.UI.createView({
@@ -545,7 +549,5 @@ function openRate(e) {
 
 function goToMyCart() {
     Ti.API.info("inside Go to my cart");
-
-
 
 };
