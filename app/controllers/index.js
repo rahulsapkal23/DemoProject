@@ -2,11 +2,12 @@
 $.header.__views.tital.text = "Login";
 $.header.__views.back1.text = " ";
 $.header.__views.search1.text = " ";
-
+$.button.addEventListener('click',check_Login);
 // ######################################### checking login with API #########################################
 function check_Login(e) {
     Ti.API.info("inside check_Login");
     // ############# function call of HTTP post req for API #################
+    // require('loader').loading($.indexwin);
     GoToLoginAPI();
 }
 
@@ -22,6 +23,7 @@ function ForgotPwd(e) {
     Ti.API.info("inside GoToRegister");
     var ForgotPwd = Alloy.createController('ForgotPwd').getView();
     ForgotPwd.open();
+
 }
 
 
@@ -52,7 +54,7 @@ function GoToLoginAPI() {
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
         Alloy.Globals.Mpassword = data.password;
-        alert(response.message);
+        // alert(response.message);
         GoToHomescreen(client.getResponseText());
 
 
@@ -63,7 +65,7 @@ function GoToLoginAPI() {
         Ti.API.info("client.responseText onerror" + client.getResponseText());
         Ti.API.info(response.message);
         alert(response.message);
-
+        response=null;
     };
     client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/login');
     client.send(data);
@@ -85,10 +87,10 @@ function GoToHomescreen(e) {
     HomeScreen.open();
 }
 
-if (Ti.App.Properties.getString('ACCESS_TOKEN')==null) {
+if (Ti.App.Properties.getString('ACCESS_TOKEN')==null ||Ti.App.Properties.getString('ACCESS_TOKEN')==undefined ) {
 
   Ti.API.info("eeeeeeee"+Ti.App.Properties.getString('ACCESS_TOKEN'));
-    $.index.open();
+    $.indexwin.open();
 } else {
   Ti.API.info("eeeeeeeerrrrrrr"+Ti.App.Properties.getString('ACCESS_TOKEN'));
 
@@ -100,3 +102,10 @@ if (Ti.App.Properties.getString('ACCESS_TOKEN')==null) {
 
 // var window = Alloy.createController('win1').getView();
 // window.open();
+
+
+function clearMemory() {
+  Ti.API.info("inside clear memory");
+  $.button.removeEventListener('click',check_Login);
+  $.destroy();
+}

@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window class="container" id="indexwin" layout="vertical">
 		<Widget id="header" src="header"/>
 		<Label id="NeoSTORE" class="NeoSTORE" top="100"></Label>
 
@@ -12,7 +12,7 @@
 			<TextField class="textField123" id="password" passwordMask="true" hintText="PassWord"/>
 		</View>
 		<View class="buttonContainer" top="100px">
-			<Button id="button" onClick="check_Login" class="button" title="LOGIN"></Button>
+			<Button id="button"  class="button" title="LOGIN"></Button>
 		</View>
 
 		<Label top="21" id="forgotgetpwd" class="forgotPwd" onClick="ForgotPwd">Forgot Password ?</Label>

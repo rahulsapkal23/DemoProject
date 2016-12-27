@@ -21,7 +21,7 @@ function Send_Pwd(e) {
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
         Ti.API.info(response.message);
-        alert(response.message);
+        // alert(response.message);
         // var HomeScreen = Alloy.createController('HomeScreen').getView();
         $.ForgotPwdWin.close();
 

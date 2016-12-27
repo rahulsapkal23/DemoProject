@@ -206,7 +206,7 @@ function itemclick(e) {
                         Ti.API.info("json stringfy load" + JSON.stringify(e));
                         Ti.API.info("client.responseText onload" + client.getResponseText());
                         Ti.API.info(response.message);
-                        alert(response.message);
+                        // alert(response.message);
                         Refresh();
                     };
                     client.onerror = function(e) {
@@ -301,7 +301,7 @@ function itemclick(e) {
                         var response = JSON.parse(client.getResponseText());
                         Ti.API.info("json stringfy load" + JSON.stringify(e));
                         Ti.API.info("client.responseText onload" + client.getResponseText());
-                        alert(response.message);
+                        // alert(response.message);
                         Refresh();
                     };
                     client.onerror = function(e) {
@@ -336,7 +336,7 @@ function itemclick(e) {
             var response = JSON.parse(client.getResponseText());
             Ti.API.info("json stringfy load" + JSON.stringify(e));
             Ti.API.info("client.responseText onload" + client.getResponseText());
-            alert(response.message)
+            // alert(response.message)
             Refresh();
 
         };

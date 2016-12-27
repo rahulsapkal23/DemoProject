@@ -143,7 +143,7 @@ $.place_add.addEventListener('click', function(e) {
             Ti.API.info("json stringfy load" + JSON.stringify(e));
             Ti.API.info("client.responseText onload" + client.getResponseText());
 
-            alert(response.message);
+            // alert(response.message);
             // alert(client.getResponseText());
 
 
