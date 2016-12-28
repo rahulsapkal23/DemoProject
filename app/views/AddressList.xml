@@ -1,31 +1,30 @@
 <Alloy>
     <Window id="AddressListwin" backgroundColor="#ededed" class="container1" layout="composite">
         <Widget id="header" top="0" src="header"/>
-        <ScrollView class="Add_AddressView" layout="vertical" >
+        <ScrollView class="Add_AddressView" layout="vertical">
 
-        <Label  class="LabelAddress">Shipping Address</Label>
-        <ListView id="dynamicListView" onItemclick="GoToAddressList" height="70%">
-            <Templates>
-                <ItemTemplate name="image_title" height="Ti.UI.SIZE"  >
+            <Label class="LabelAddress">Shipping Address</Label>
+            <ListView id="dynamicListView" onItemclick="GoToAddressList" height="70%">
+                <Templates>
+                    <ItemTemplate name="image_title">
 
-                    <View id="viewclose" layout="horizontal" class="adressListView"  >
-                      <Label  class="radio1" bindId="radio" ></Label>
+                        <View id="viewclose" layout="horizontal" class="adressListView">
+                            <Label class="radio1" bindId="radio"></Label>
 
+                            <View class="Addcontainer" layout="vertical">
+                                <Label class="close" bindId="close" id="close" text="\uf00d"></Label>
+                                <Label bindId="name" class="LabelNamecontainer"/>
+                                <Label bindId="Add" class="Labeladdcontainer"/>
 
-                        <View class="Addcontainer" layout="vertical" >
-                          <Label  class="close" bindId="close" id="close" text="\uf00d"></Label>
-                            <Label bindId="name" class="LabelNamecontainer"/>
-                            <Label bindId="Add" class="Labeladdcontainer"/>
-
+                            </View>
                         </View>
-                    </View>
-                </ItemTemplate>
-            </Templates>
-            <ListSection/>
-        </ListView>
-        <View top="10px" >
+                    </ItemTemplate>
+                </Templates>
+                <ListSection/>
+            </ListView>
+            <View top="10px">
                 <Button id="place_add" class="buttonSave">PLACE ORDER</Button>
-        </View>
+            </View>
         </ScrollView>
-  </Window>
+    </Window>
 </Alloy>

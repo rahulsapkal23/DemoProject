@@ -25,19 +25,19 @@
 
 ".Addcontainer": {
   top:"20px",
-  right: "20px",
-height: "256px",
+
+height: "200px",
    left:"20px",
-    /*borderColor:"black",*/
+    borderColor:"red",
 }
 
 ".Addcontainer[platform=android ]": {
   top:"20px",
-  right: "20px",
+  /*right: "20px",*/
 
    left:"20px",
     /*borderColor:"black",*/
-    height: "256px",
+    height: "200px",
     width: "906px",
 }
 

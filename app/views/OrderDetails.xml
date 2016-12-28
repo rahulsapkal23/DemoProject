@@ -1,30 +1,31 @@
-          <Alloy>
-          	<Window id="OrderDetailswin" class="container1" layout="vertical">
-          		<Widget id="header" src="header"/>
-          		<ListView id="dynamicListView" onItemclick="itemclick" height="Ti.UI.SIZE">
-          				<Templates>
-          						<ItemTemplate name="image_title" height="270px" >
-          								<View  layout="horizontal" class="Viewmycart" backgroundColor="white" >
-          										<ImageView bindId="image" class="ListImageContainer"  id="image"/>
-          										<View layout="vertical" top="1px"  class="viewcontainer"   >
-          												<Label  bindId="name" class="LabelNamecontainer"/>
-          												<Label  bindId="type" class="LabelTypecontainer"/>
-          <View class="Viewprice"  layout="horizontal">
-          	<Label  id="QTY" left="5" bindId="QTY"></Label>
+<Alloy>
+    <Window id="OrderDetailswin" class="container1" layout="vertical">
+        <Widget id="header" src="header"/>
+        <ListView id="dynamicListView" onItemclick="itemclick" height="Ti.UI.SIZE">
+            <Templates>
+                <ItemTemplate name="image_title" height="270px">
+                    <View layout="horizontal" class="Viewmycart" backgroundColor="white">
+                        <ImageView bindId="image" class="ListImageContainer" id="image"/>
+                        <View layout="vertical" top="1px" class="viewcontainer">
+                            <Label bindId="name" class="LabelNamecontainer"/>
+                            <Label bindId="type" class="LabelTypecontainer"/>
+                            <View class="Viewprice" layout="horizontal">
+                                <Label id="QTY" left="5" bindId="QTY"></Label>
 
-          </View>		</View>
-          <Label id="pr"  bindId="price"  />
-          								</View>
-          						</ItemTemplate>
-          				</Templates>
-          				<ListSection/>
-          		</ListView>
-          		<View height="200px" layout="horizontal"  class="Viewmycart" >
-          <Label left="40px" top="60px" class="LabelNamecontainer">Total</Label>
-          <Label left="65%" top="60px" class="LabelNamecontainer" id="total"></Label>
-          		</View>
-          		<View bottom="10px">
-          			<Button id="order" class="buttonOrder">ORDER NOW</Button>
-          		</View>
-          	</Window>
-          </Alloy>
+                            </View>
+                        </View>
+                        <Label id="pr" bindId="price"/>
+                    </View>
+                </ItemTemplate>
+            </Templates>
+            <ListSection/>
+        </ListView>
+        <View height="200px" layout="horizontal" class="Viewmycart">
+            <Label left="40px" top="60px" class="LabelNamecontainer">Total</Label>
+            <Label left="65%" top="60px" class="LabelNamecontainer" id="total"></Label>
+        </View>
+        <!-- <View bottom="10px">
+          			<Button id="order" onClick="" class="buttonOrder">ORDER NOW</Button>
+          		</View> -->
+    </Window>
+</Alloy>

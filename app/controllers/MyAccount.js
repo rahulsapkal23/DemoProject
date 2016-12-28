@@ -33,7 +33,7 @@ var client = Ti.Network.createHTTPClient({
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
-      require('loder').removeloder();
+        require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
@@ -160,10 +160,10 @@ function edit_Account(e) {
         var image = $.MyDP.image
         var imgStr = Ti.Utils.base64encode(image).toString();
 
-        Ti.API.info("inside submit stringfy" + JSON.stringify($.MyDP.image) + "sfhnd" + imgStr);
+        // Ti.API.info("inside submit stringfy" + JSON.stringify($.MyDP.image) + "sfhnd" + imgStr);
         // Ti.API.info("inside submit parse"+JSON.parse($.MyDP.image));
         // ######################################### making  HTTP POST request for API #########################################
-        Ti.API.info("hfuhhsduf" + imgStr + $.Dob.value);
+        // Ti.API.info("hfuhhsduf" + imgStr + $.Dob.value);
         var data = {
             first_name: $.first_name.value,
             last_name: $.last_name.value,

@@ -41,6 +41,7 @@ switch (args) {
     default:
 
 }
+access_token = Ti.App.Properties.getString('ACCESS_TOKEN');
 Ti.API.info("Inside Listview and id is" + args);
 Ti.API.info(JSON.stringify(args));
 Ti.API.info("rahhhhhuuulll" + access_token);
@@ -48,51 +49,52 @@ Ti.API.info("rahhhhhuuulll" + JSON.stringify(access_token));
 
 
 // ################################# making  HTTP GET request for API ###################################
- var p=0;
-  GetProdList();
+var p = 0;
+GetProdList();
 
- function GetProdList()
-{
-  p++;
-  var data = {
-  product_category_id:args,
-  limit:8,
-  page:p,
-}
-require('loder').addloder($.ListProductwin);
+function GetProdList() {
+    p++;
+    Ti.API.info("inside get list");
+    var data = {
+        product_category_id: args,
+        limit: 8,
+        page: p,
+    }
+    Ti.API.info("inside get list");
+    // require('loder').addloder($.ListProductwin);
 
-var client = Ti.Network.createHTTPClient({
-    onload: function(e) {
-      require('loder').removeloder();
+    var client = Ti.Network.createHTTPClient({
+        onload: function(e) {
+            // require('loder').removeloder();
+            // Ti.API.info("client.getResponseText()" + JSON.stringfy(e));
+            var response = JSON.parse(client.getResponseText());
+            // Ti.API.info("json stringfy load" + JSON.stringify(e));
+            Ti.API.info("client.responseText onload" + client.getResponseText());
+            // function called fir list view according to Product id
+            ListViewofProduct(client.getResponseText());
+            Ti.API.info("p is" + p);
+            $.dynamicListView.addEventListener('scrollend', function(e) {
+                GetProdList();
+            });
 
-        var response = JSON.parse(client.getResponseText());
-        Ti.API.info("json stringfy load" + JSON.stringify(e));
-        Ti.API.info("client.responseText onload" + client.getResponseText());
-        // function called fir list view according to Product id
-        ListViewofProduct(client.getResponseText());
-        Ti.API.info("p is"+p);
-        $.dynamicListView.addEventListener('scrollend',function (e) {
-          GetProdList();
-        });
 
+        },
+        // function called when an error occurs, including a timeout
+        onerror: function(e) {
+            // require('loder').removeloder();
+            var response = JSON.parse(client.getResponseText());
+            Ti.API.info(" onerror" + JSON.stringify(e));
+            // Ti.API.info("client.responseText onerror" + client.getResponseText());
+            // Ti.API.info(response.message);
+            // alert(response.message);
+        },
+        //  timeout : 5000  // in milliseconds
+    });
+    // Prepare the connection.
 
-    },
-    // function called when an error occurs, including a timeout
-    onerror: function(e) {
-      require('loder').removeloder();
-        var response = JSON.parse(client.getResponseText());
-        Ti.API.info(" onerror" + JSON.stringify(e));
-        Ti.API.info("client.responseText onerror" + client.getResponseText());
-        Ti.API.info(response.message);
-        // alert(response.message);
-    },
-    //  timeout : 5000  // in milliseconds
-});
-// Prepare the connection.
-
-client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/products/getList");
-// Send the request.
-client.send(data);
+    client.open("GET", "http://staging.php-dev.in:8844/trainingapp/api/products/getList?product_category_id=" + args + "&limit=8&page=" + p);
+    // Send the request.
+    client.send();
 
 }
 
@@ -350,17 +352,17 @@ function ListViewofProduct(Productdata) {
             default:
 
         }
-if (p==1) {
-  $.dynamicListView.sections[0].setItems(items, {
-      animated: "false",
+        if (p == 1) {
+            $.dynamicListView.sections[0].setItems(items, {
+                animated: "false",
 
-  });
-} else {
-  $.dynamicListView.sections[0].appendItems(items, {
-      animated: "false",
+            });
+        } else {
+            $.dynamicListView.sections[0].appendItems(items, {
+                animated: "false",
 
-  });
-}
+            });
+        }
 
     }
 }
