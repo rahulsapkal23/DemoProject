@@ -18,9 +18,10 @@ function check_Reset(e) {
 if ($.currentPWD.value==Alloy.Globals.Mpassword) {
   $.currentPWDview.backgroundColor = "transprent";
   if ($.newPWD.value==$.conformPWD.value) {
-    
+
     $.newPWDview.backgroundColor = "transprent";
     $.conformPWDview.backgroundColor = "transprent";
+      require('loder').addloder($.ResetAccountwin);
       GoToResetAPI();
   } else {
 
@@ -57,6 +58,7 @@ function GoToResetAPI() {
     Ti.API.info(data);
     var client = Ti.Network.createHTTPClient();
     client.onload = function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
@@ -67,6 +69,7 @@ function GoToResetAPI() {
 
     };
     client.onerror = function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());

@@ -102,6 +102,7 @@ function check_Register(e) {
 
 // ######################################### making  HTTP POST request for API #########################################
 function GoToRegisterAPI() {
+  require('loder').addloder($.Registerwin);
     var genderval;
     if ($.male.text == "\uf1db") {
         genderval = "male";
@@ -120,6 +121,7 @@ function GoToRegisterAPI() {
     Ti.API.info("data" + JSON.stringify(data));
     var xhr = Ti.Network.createHTTPClient();
     xhr.onload = function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(xhr.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
@@ -134,6 +136,7 @@ function GoToRegisterAPI() {
 
     };
     xhr.onerror = function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(xhr.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("xhr.responseText onerror" + xhr.getResponseText());

@@ -50,6 +50,7 @@ Ti.API.info("rahhhhhuuulll" + JSON.stringify(access_token));
 // ################################# making  HTTP GET request for API ###################################
  var p=0;
   GetProdList();
+
  function GetProdList()
 {
   p++;
@@ -58,9 +59,12 @@ Ti.API.info("rahhhhhuuulll" + JSON.stringify(access_token));
   limit:8,
   page:p,
 }
+require('loder').addloder($.ListProductwin);
 
 var client = Ti.Network.createHTTPClient({
     onload: function(e) {
+      require('loder').removeloder();
+
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
@@ -75,6 +79,7 @@ var client = Ti.Network.createHTTPClient({
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());

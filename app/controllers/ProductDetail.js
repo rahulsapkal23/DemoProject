@@ -20,10 +20,11 @@ Ti.API.info("Inside ProductDetail and id is" + args + JSON.stringify(access_toke
 Ti.API.info(JSON.stringify(args));
 
 Ti.API.info("Global variable access_token" + Alloy.Globals.Maccess_token);
-
+require('loder').addloder($.ProductDetailwin);
 // ################################# making  HTTP GET request for API ###################################
 var client = Ti.Network.createHTTPClient({
     onload: function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy ViewofProductDetails" + JSON.stringify(e));
         Ti.API.info("client.responseText ViewofProductDetails" + client.getResponseText());
@@ -32,6 +33,7 @@ var client = Ti.Network.createHTTPClient({
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
@@ -434,7 +436,10 @@ for(var d=0;d<e.source.ind+1;d++)
 {
   viewstar.children[d].color="#ffba00";
 }
-
+for(var d=e.source.ind+1;d<5;d++)
+{
+  viewstar.children[d].color="#7f7f7f";
+}
 
          })
 
@@ -479,13 +484,9 @@ for(var d=0;d<e.source.ind+1;d++)
                 font: {
                     fontFamily: 'FontAwesome',
                     fontSize: "132px",
-
-
                 },
                 text: "\uf005",
                 color: "#7f7f7f",
-
-
             });
             viewstar.add(star);
 

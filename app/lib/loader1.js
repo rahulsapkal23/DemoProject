@@ -1,3 +1,7 @@
+var load=null;
+
+
+
 function loading(Parentwin)
  {
   var view = Titanium.UI.createView({

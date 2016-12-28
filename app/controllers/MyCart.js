@@ -31,18 +31,15 @@ Ti.API.info("inside Add to cart" + Alloy.Globals.Maccess_token);
 // ################################# making  HTTP GET request for API ###################################
 
 function Refresh() {
-
+require('loder').addloder($.Mycartwin);
     var client = Ti.Network.createHTTPClient({
         onload: function(e) {
+
             var response = JSON.parse(client.getResponseText());
             Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
             Ti.API.info("client.responseText MyCart" + client.getResponseText());
             // function called fir list view according to Product id
-
-
-
-
-
+require('loder').removeloder();
             ViewofMycart(client.getResponseText());
 
         },
@@ -53,6 +50,7 @@ function Refresh() {
             Ti.API.info(" onerror" + JSON.stringify(e));
             Ti.API.info("client.responseText onerror" + client.getResponseText());
             Ti.API.info(response.message);
+            require('loder').removeloder();
             alert(response.message);
         },
         //  timeout : 5000  // in milliseconds

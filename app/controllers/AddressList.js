@@ -132,6 +132,7 @@ $.place_add.addEventListener('click', function(e) {
 
 
         // ######################################### API call #########################################
+        require('loder').addloder($.AddressListwin);
 
         var data = {
             address: flag_Add,
@@ -139,16 +140,19 @@ $.place_add.addEventListener('click', function(e) {
         Ti.API.info(data);
         var client = Ti.Network.createHTTPClient();
         client.onload = function(e) {
+                require('loder').removeloder();
             var response = JSON.parse(client.getResponseText());
             Ti.API.info("json stringfy load" + JSON.stringify(e));
             Ti.API.info("client.responseText onload" + client.getResponseText());
 
             // alert(response.message);
             // alert(client.getResponseText());
-
+            var window = Alloy.createController('MyOrder').getView();
+            window.open();
 
         };
         client.onerror = function(e) {
+                require('loder').removeloder();
             var response = JSON.parse(client.getResponseText());
             Ti.API.info(" onerror" + JSON.stringify(e));
             Ti.API.info("client.responseText onerror" + client.getResponseText());
@@ -161,8 +165,7 @@ $.place_add.addEventListener('click', function(e) {
         client.send(data);
 
         // http://staging.php-dev.in:8844/trainingapp/api/order
-        var window = Alloy.createController('MyOrder').getView();
-        window.open();
+
     }
 
 });

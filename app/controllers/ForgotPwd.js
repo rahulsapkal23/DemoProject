@@ -7,6 +7,7 @@ $.header.__views.search1.text = " ";
 
 
 // #########################################Function call API Hit #########################################
+require('loder').addloder($.ForgotPwdWin);
 
 function Send_Pwd(e) {
     Ti.API.info("inside send mail");
@@ -17,6 +18,8 @@ function Send_Pwd(e) {
     Ti.API.info(data);
     var xhr = Ti.Network.createHTTPClient();
     xhr.onload = function(e) {
+      require('loder').removeloder();
+
         var response = JSON.parse(xhr.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("xhr.responseText onload" + xhr.getResponseText());
@@ -27,6 +30,8 @@ function Send_Pwd(e) {
 
     };
     xhr.onerror = function(e) {
+      require('loder').removeloder();
+
         var response = JSON.parse(xhr.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("xhr.responseText onerror" + xhr.getResponseText());

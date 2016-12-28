@@ -62,7 +62,7 @@ color: "#333333",
 
 }
 ".textareaCity[platform=android]": {
-height: "60px",
+height: "100px",
 font: {
   fontSize: "30px",
 },

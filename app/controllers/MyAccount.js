@@ -21,17 +21,19 @@ $.header.__views.search.addEventListener('click', function(e) {
 var access_token123 = Alloy.Globals.Maccess_token;
 
 // ################################# making  HTTP GET request for API ###################################
-
+require('loder').addloder($.MyAccountwin);
 var client = Ti.Network.createHTTPClient({
     onload: function(e) {
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
         Ti.API.info("client.responseText MyCart" + client.getResponseText());
         // function called fir list view according to Product id
+        require('loder').removeloder();
         ViewofMyAccountDetails(client.getResponseText())
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
@@ -72,7 +74,7 @@ function edit_Account(e) {
         $.email_id.editable = "true";
         $.phone_no.editable = "true";
         $.Dob.editable = "true";
-        $.Dob.addEventListener('click', function() {
+        $.viewphone_no.addEventListener('click', function() {
             Ti.API.info("inside click");
             if (Ti.Platform.osname == "android") {
                 Ti.API.info("inside click android");

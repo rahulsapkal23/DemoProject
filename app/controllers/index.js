@@ -8,6 +8,7 @@ function check_Login(e) {
     Ti.API.info("inside check_Login");
     // ############# function call of HTTP post req for API #################
     // require('loader').loading($.indexwin);
+    require('loder').addloder($.indexwin);
     GoToLoginAPI();
 }
 
@@ -50,6 +51,7 @@ function GoToLoginAPI() {
     Ti.API.info(data);
     var client = Ti.Network.createHTTPClient();
     client.onload = function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy load" + JSON.stringify(e));
         Ti.API.info("client.responseText onload" + client.getResponseText());
@@ -60,6 +62,7 @@ function GoToLoginAPI() {
 
     };
     client.onerror = function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
@@ -67,6 +70,7 @@ function GoToLoginAPI() {
         alert(response.message);
         response=null;
     };
+
     client.open('POST', 'http://staging.php-dev.in:8844/trainingapp/api/users/login');
     client.send(data);
 
@@ -94,6 +98,7 @@ if (Ti.App.Properties.getString('ACCESS_TOKEN')==null ||Ti.App.Properties.getStr
     $.indexwin.open();
 } else {
   Ti.API.info("eeeeeeeerrrrrrr"+Ti.App.Properties.getString('ACCESS_TOKEN'));
+  Alloy.Globals.Maccess_token = Ti.App.Properties.getString('ACCESS_TOKEN');
 
   var HomeScreen = Alloy.createController('HomeScreen',Ti.App.Properties.getString('ACCESS_TOKEN')).getView();
   HomeScreen.open();

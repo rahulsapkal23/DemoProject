@@ -17,10 +17,11 @@ $.header.__views.search.addEventListener('click', function(e) {
     }
 });
 
-
+require('loder').addloder($.MyOrderwin);
 // ################################# making  HTTP GET request for API ###################################
 var client = Ti.Network.createHTTPClient({
     onload: function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
         Ti.API.info("client.responseText MyCart" + client.getResponseText());
@@ -29,6 +30,7 @@ var client = Ti.Network.createHTTPClient({
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
+      require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());
