@@ -6,16 +6,16 @@ $.header.__views.back.addEventListener('click', function(e) {
     $.OrderDetailswin.close();
 });
 
-
-$.header.__views.search.addEventListener('click', function(e) {
-    if (Alloy.Globals.cartFlag == true) {
-        var MyCart = Alloy.createController('MyCart').getView();
-        MyCart.open();
-
-    } else {
-        alert("My Cart is Empty");
-    }
-});
+$.header.__views.search1.text = " ";
+// $.header.__views.search.addEventListener('click', function(e) {
+//     if (Alloy.Globals.cartFlag == true) {
+//         var MyCart = Alloy.createController('MyCart').getView();
+//         MyCart.open();
+//
+//     } else {
+//         alert("My Cart is Empty");
+//     }
+// });
 
 
 
@@ -33,7 +33,7 @@ require('loder').addloder($.OrderDetailswin);
 
 var client = Ti.Network.createHTTPClient({
     onload: function(e) {
-      require('loder').removeloder();
+        require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info("json stringfy Mycart" + JSON.stringify(e));
         Ti.API.info("client.responseText MyCart" + client.getResponseText());
@@ -42,7 +42,7 @@ var client = Ti.Network.createHTTPClient({
     },
     // function called when an error occurs, including a timeout
     onerror: function(e) {
-      require('loder').removeloder();
+        require('loder').removeloder();
         var response = JSON.parse(client.getResponseText());
         Ti.API.info(" onerror" + JSON.stringify(e));
         Ti.API.info("client.responseText onerror" + client.getResponseText());

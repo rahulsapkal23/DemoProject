@@ -1,9 +1,9 @@
-".Add_AddressView": {
-  backgroundColor: "#ededed",
-  left: "40px",
-  top: "100px",
-  right: "40px",
-  bottom: "40px",
+".Add_AddressView" : {
+    backgroundColor: "#ededed",
+    left: "40px",
+    top: "100px",
+    right: "40px",
+    bottom: "40px"
 },
 ".radio1" : {
     font: {
@@ -16,76 +16,61 @@
     left: "30px",
     color: "white"
 }
-
-".adressListView": {
-
-   height:"256px",
+".adressListView" : {
+    height: "256px",
     /*width:"906px",*/
 }
-
-".Addcontainer": {
-  top:"20px",
-
-height: "200px",
-   left:"20px",
-    borderColor:"red",
+".Addcontainer" : {
+    top: "20px",
+    height: "200px",
+    left: "20px",
+    borderColor: "black"
 }
-
-".Addcontainer[platform=android ]": {
-  top:"20px",
-  /*right: "20px",*/
-
-   left:"20px",
+".Addcontainer[platform=android ]" : {
+    top: "20px",
+    /*right: "20px",*/
+    left: "20px",
     /*borderColor:"black",*/
     height: "200px",
-    width: "906px",
+    width: "906px"
 }
-
-".buttonSave": {
-	backgroundColor: "#db1514",
-	fontSize: "75px",
-	color: "#ffffff",
-	width: "60%",
-	height: "50",
-  top:"80px",
-
+".buttonSave" : {
+    backgroundColor: "#db1514",
+    fontSize: "75px",
+    color: "#ffffff",
+    width: "60%",
+    height: "50",
+    top: "80px"
 }
-
-".close": {
-  font: {
-      fontFamily: 'FontAwesome',
-      height: "48px",
-      width: "48px",
-
-      fontSize: "15",
-
-  },
-  top: "5px",
-  right: "5px",
-    color:"#8E8E8E",
+".close" : {
+    font: {
+        fontFamily: 'FontAwesome',
+        height: "48px",
+        width: "48px",
+        fontSize: "15"
+    },
+    top: "5px",
+    right: "5px",
+    color: "#8E8E8E"
 }
-
-".LabelNamecontainer": {
-  font: {
-    fontSize: "30px",
-  },
-  color: "#333333",
-  left: "0px",
+".LabelNamecontainer" : {
+    font: {
+        fontSize: "30px"
+    },
+    color: "#333333",
+    left: "5px"
 }
-
-".Labeladdcontainer": {
-  font: {
-    fontSize: "25px",
-  },
-  color: "#333333",
-  left: "20px"
+".Labeladdcontainer" : {
+    font: {
+        fontSize: "25px"
+    },
+    color: "#333333",
+    left: "20px"
 }
-
-".LabelAddress": {
-  color: "#333333",
-  font: {
-    fontSize: "30px",
-  },
-  left: "0px",
-
+".LabelAddress" : {
+    color: "#333333",
+    font: {
+        fontSize: "30px"
+    },
+    left: "5px"
 }
