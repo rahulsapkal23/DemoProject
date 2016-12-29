@@ -3,6 +3,8 @@
 $.header.__views.back.addEventListener('click', function(e) {
     clearMemory();
     $.ListProductwin.close();
+    var Homescreen = Alloy.createController('HomeScreen',Ti.App.Properties.getString('ACCESS_TOKEN')).getView();
+    Homescreen.open();
 });
 $.header.__views.search1.text = "\uf07a";
 $.header.__views.search.addEventListener('click', function(e) {

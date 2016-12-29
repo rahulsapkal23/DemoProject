@@ -494,15 +494,16 @@ for(var d=e.source.ind+1;d<5;d++)
         }
         viewstar.addEventListener('click', function(e) {
             Ti.API.info("inside star listener" + JSON.stringify(e));
-            if (e.source.color == "#7f7f7f") {
-                Ti.API.info("inside if");
-                e.source.color = "#ffba00";
-            } else if (e.source.color == "#ffba00") {
-                Ti.API.info("inside else");
-                e.source.color = "#7f7f7f";
+            for(var d=0;d<e.source.ind+1;d++)
+            {
+              viewstar.children[d].color="#ffba00";
+            }
+            for(var d=e.source.ind+1;d<5;d++)
+            {
+              viewstar.children[d].color="#7f7f7f";
             }
 
-        })
+                     })
         var button = Titanium.UI.createButton({
             backgroundColor: "#db1514",
             fontSize: "75px",
